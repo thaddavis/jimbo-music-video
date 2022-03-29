@@ -1,10 +1,10 @@
-import Phrase3 from '../World/Lyrics/Phrase3'
-import Phrase3Background from '../World/Lyrics/Phrase3Background'
-import Phrase3Light from '../World/Lyrics/Phrase3Light'
+import Phrase3 from 'Experience/World/Lyrics/1stStanza/Phrase3'
+import Phrase3Background from 'Experience/World/Lyrics/1stStanza/Phrase3Background'
+import Phrase3Light from 'Experience/World/Lyrics/1stStanza/Phrase3Light'
 import { v4 as uuidv4 } from 'uuid';
 
 import { EFFECTS } from '../Utils/Enums';
-import Phrase3Light2 from '../World/Lyrics/Phrase3Light2';
+import Phrase3Light2 from 'Experience/World/Lyrics/1stStanza/Phrase3Light2';
 
 export function addTimelineEvents_1st_verse_3rd_phrase(timeline) {
 

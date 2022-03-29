@@ -5,6 +5,18 @@ const path = require('path')
 
 module.exports = {
     entry: path.resolve(__dirname, '../src/script.js'),
+    // resolve: {
+    //     roots: [
+    //        path.resolve(__dirname, 'src/Experience'),
+    //     //    path.resolve(__dirname, 'node_modules')
+    //     ],
+    //     extensions: ['', '.js']
+    // },
+    resolve: {
+        alias: {
+          Experience: path.resolve(__dirname, '../src/Experience/')
+        },
+    },
     output:
     {
         hashFunction: 'xxhash64',

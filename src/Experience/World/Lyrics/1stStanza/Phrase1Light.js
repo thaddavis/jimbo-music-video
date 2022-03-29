@@ -1,10 +1,9 @@
 import * as THREE from 'three'
-import gsap from 'gsap'
-import Experience from '../../Experience.js'
+import Experience from 'Experience/Experience.js'
 
-import { executeEffect } from '../../Utils/Effect.js'
+import { executeEffect } from 'Experience/Utils/Effect.js'
 
-export default class Phrase2Light
+export default class Phrase1Light
 {
     constructor(timelineMetadata)
     {
@@ -27,8 +26,8 @@ export default class Phrase2Light
         directionalLight.shadow.mapSize.height = 2048
         directionalLight.shadow.camera.near = 0.5
         directionalLight.shadow.camera.far = 20
-        directionalLight.shadow.camera.top = 20
-        directionalLight.shadow.camera.right = 20
+        directionalLight.shadow.camera.top = 22
+        directionalLight.shadow.camera.right = 22
         directionalLight.shadow.camera.bottom = -20
         directionalLight.shadow.camera.left = -20
         directionalLight.position.set(2, 2, 14)

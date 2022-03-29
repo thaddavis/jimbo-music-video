@@ -1,11 +1,9 @@
 import * as THREE from 'three'
-import gsap from 'gsap'
-import Experience from '../../Experience.js'
-import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js'
+import Experience from 'Experience/Experience.js'
 
-import { executeEffect } from '../../Utils/Effect.js'
+import { executeEffect } from 'Experience/Utils/Effect.js'
 
-export default class Phrase1
+export default class Phrase2Background
 {
     constructor(timelineMetadata)
     {
@@ -26,7 +24,7 @@ export default class Phrase1
 
     setGeometry()
     {
-        this.geometry = new THREE.CircleGeometry(5, 256)
+        this.geometry = new THREE.PlaneGeometry( 20, 20, 10, 10 );
     }
 
     setTextures()
@@ -54,8 +52,8 @@ export default class Phrase1
         // })
 
         this.material = new THREE.MeshStandardMaterial({
-            color: 'red',
-            transparent: true
+            color: 'white',
+            // transparent: true
         })
     }
 
@@ -63,36 +61,16 @@ export default class Phrase1
     {   
         console.log('setMesh')
 
-        // this.mesh = new THREE.Mesh(this.geometry, this.material)
-        // this.mesh.rotation.x = - Math.PI * 0.5
-        // this.mesh.receiveShadow = true
-        // this.scene.add(this.mesh)
+        this.mesh = new THREE.Mesh(this.geometry, this.material)
+        // const planeGeometry = new THREE.PlaneGeometry( 20, 20, 32, 32 );
+        // const planeMaterial = new THREE.MeshStandardMaterial( { color: 0xffffff } )
+        // this.mesh = new THREE.Mesh( planeGeometry, planeMaterial );
 
-        const material = new THREE.MeshStandardMaterial()
-
-        // Text
-        const textGeometry = new TextGeometry(
-            'I told you I meant it',
-            {
-                font: this.experience.resources.items['helvetikerFont'],
-                size: 1.0,
-                height: 0.2,
-                curveSegments: 24,
-                bevelEnabled: true,
-                bevelThickness: 0.03,
-                bevelSize: 0.02,
-                bevelOffset: 0,
-                bevelSegments: 5
-            }
-        )
-
-        textGeometry.center()
-        this.mesh = new THREE.Mesh(textGeometry, this.material)
-
-        this.mesh.castShadow = true
-
-        this.mesh.position.set(0,0,2)
-
+        // this.mesh.position.x = 0 
+        // this.mesh.position.y = 0
+        // this.mesh.position.z = -1
+        this.mesh.receiveShadow = true
+        // this.mesh.castShadow = true;
         this.scene.add(this.mesh)
     }
 
@@ -116,12 +94,12 @@ export default class Phrase1
     destroy() {
         console.log('destroy')
 
-        console.log(
-            this.geometry    
-        )
-        console.log(
-            this.material    
-        )
+        // console.log(
+        //     this.geometry    
+        // )
+        // console.log(
+        //     this.material    
+        // )
         
         // debugger
 

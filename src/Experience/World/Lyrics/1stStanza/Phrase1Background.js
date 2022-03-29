@@ -1,8 +1,8 @@
 import * as THREE from 'three'
 import gsap from 'gsap'
-import Experience from '../../Experience.js'
+import Experience from 'Experience/Experience.js'
 
-import { executeEffect } from '../../Utils/Effect.js'
+import { executeEffect } from 'Experience/Utils/Effect.js'
 
 export default class Phrase1Background
 {
