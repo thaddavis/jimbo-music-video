@@ -46,4 +46,11 @@ export default class Camera
         // debugger
         executeEffect(this.instance, timelineMetadata, this.experience.time.delta, this.experience.time)
     }
+
+    setCameraToInitialValue(timelineMetadata) {
+        
+        // debugger
+        initializeEffect(this.instance, timelineMetadata, this.experience.time)
+        // debugger
+    }
 }

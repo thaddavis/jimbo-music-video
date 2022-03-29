@@ -73,8 +73,8 @@ export default class Floor
         this.scene.add(this.mesh)
     }
 
-    setInitialProperties(timelineMetadata) {
-        console.log('setInitialProperties', timelineMetadata)
+    setInitialProperties() {
+        console.log('setInitialProperties', this.timelineMetadata)
 
         initializeEffect(this, this.timelineMetadata, this.experience.time)
 

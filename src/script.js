@@ -30,9 +30,9 @@ const main = () => {
         peaks.on('player.timeupdate', (e) => {
             // console.log('event player.timeupdate', e)
 
-            // if (e > 25) {
-            //     window.peaks.player.seek(17)
-            // }
+            if (e > 52) {
+                window.peaks.player.seek(29)
+            }
         });
 
         peaks.on('player.playing', (e) => {
@@ -62,13 +62,26 @@ const main = () => {
         });
 
         const experience = new Experience(document.querySelector('canvas.webgl'), peaks)
-
-        // const myAudio = document.getElementById('audio');
-        // myAudio.addEventListener('canplaythrough', function() {
-        //     this.currentTime = 12;
-        //     this.play();
-        // });
     });
+
+    const audio = document.querySelector('audio');
+    if (audio) {
+
+        window.addEventListener('keydown', function (event) {
+      
+          var key = event.which || event.keyCode;
+      
+          if (key === 32) { // spacebar
+      
+            // eat the spacebar, so it does not scroll the page
+            event.preventDefault();
+      
+            audio.paused ? audio.play() : audio.pause();
+            
+          }
+      
+        });
+      }
 
 }
 

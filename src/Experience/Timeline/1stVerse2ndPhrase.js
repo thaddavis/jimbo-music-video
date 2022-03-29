@@ -11,7 +11,7 @@ export function addTimelineEvents_1st_verse_2nd_phrase(timeline) {
     timeline[uuidv4()] = {
         isGlobal: false,
         effect: {
-            name: EFFECTS.SCALE_FROM_TO,
+            name: EFFECTS.FROM_TO,
             properties: [{
                 path: 'mesh.scale',
                 from: {
@@ -38,7 +38,7 @@ export function addTimelineEvents_1st_verse_2nd_phrase(timeline) {
     timeline[uuidv4()] = {
         isGlobal: false,
         effect: {
-            name: EFFECTS.SCALE_FROM_TO,
+            name: EFFECTS.FROM_TO,
             properties: [{
                 path: 'mesh.scale',
                 from: {
@@ -65,19 +65,19 @@ export function addTimelineEvents_1st_verse_2nd_phrase(timeline) {
     timeline[uuidv4()] = {
         isGlobal: true,
         effect: {
-            name: EFFECTS.GLOBAL_POSITION_FROM_TO,
+            name: EFFECTS.GLOBAL_FROM_TO,
             pathToExperienceGlobal: 'camera.instance',
             properties: [{
                 path: 'position',
                 from: {
                     x: 0,
                     y: 5,
-                    z: 2
+                    z: 10
                 },
                 to: {
                     x: 4,
                     y: -3,
-                    z: 2
+                    z: 10
                 }
             }],
             startAt: 19,
@@ -89,7 +89,7 @@ export function addTimelineEvents_1st_verse_2nd_phrase(timeline) {
     timeline[uuidv4()] = {
         isGlobal: false,
         effect: {
-            name: EFFECTS.POSITION_FROM_TO,
+            name: EFFECTS.FROM_TO,
             properties: [{
                 path: 'light.position',
                 from: {
@@ -113,7 +113,7 @@ export function addTimelineEvents_1st_verse_2nd_phrase(timeline) {
     timeline[uuidv4()] = {
         isGlobal: false,
         effect: {
-            name: EFFECTS.POSITION_FROM_TO,
+            name: EFFECTS.FROM_TO,
             properties: [{
                 path: 'light.position',
                 from: {

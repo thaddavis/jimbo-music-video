@@ -9,6 +9,22 @@ import { addTimelineEvents_intro } from '../Timeline/Intro'
 import { addTimelineEvents_1st_verse_1st_phrase } from '../Timeline/1stVerse1stPhrase'
 import { addTimelineEvents_1st_verse_2nd_phrase } from '../Timeline/1stVerse2ndPhrase'
 import { addTimelineEvents_1st_verse_3rd_phrase } from '../Timeline/1stVerse3rdPhrase'
+import { addTimelineEvents_ad_libs_for_you_for_you } from '../Timeline/AdLibs/ForYouForYou'
+
+import { addTimelineEvents_2nd_verse_1st_phrase } from '../Timeline/2ndVerse/2ndVerse1stPhrase'
+import { addTimelineEvents_2nd_verse_2nd_phrase } from '../Timeline/2ndVerse/2ndVerse2ndPhrase'
+import { addTimelineEvents_2nd_verse_3rd_phrase } from '../Timeline/2ndVerse/2ndVerse3rdPhrase'
+import { addTimelineEvents_ad_libs_for_you_for_you_alt } from '../Timeline/AdLibs/ForYouForYouAlt'
+
+import { addTimelineEvents_3rd_stanza_1st_phrase } from '../Timeline/3rdStanza/3rdStanza1stPhrase'
+import { addTimelineEvents_3rd_stanza_2nd_phrase } from '../Timeline/3rdStanza/3rdStanza2ndPhrase'
+import { addTimelineEvents_3rd_stanza_3rd_phrase } from '../Timeline/3rdStanza/3rdStanza3rdPhrase'
+
+import { addTimelineEvents_ad_libs_for_you_up } from '../Timeline/AdLibs/ForYouForYouUp'
+
+import { addTimelineEvents_4th_stanza_1st_phrase } from '../Timeline/4thStanza/4thStanza1stPhrase'
+import { addTimelineEvents_4th_stanza_2nd_phrase } from '../Timeline/4thStanza/4thStanza2ndPhrase'
+import { addTimelineEvents_4th_stanza_3rd_phrase } from '../Timeline/4thStanza/4thStanza3rdPhrase'
 
 import { 
     EFFECTS,
@@ -45,6 +61,21 @@ export default class World
             addTimelineEvents_1st_verse_1st_phrase(this.timelineOfEvents)
             addTimelineEvents_1st_verse_2nd_phrase(this.timelineOfEvents)
             addTimelineEvents_1st_verse_3rd_phrase(this.timelineOfEvents)
+            addTimelineEvents_ad_libs_for_you_for_you(this.timelineOfEvents)
+
+            addTimelineEvents_2nd_verse_1st_phrase(this.timelineOfEvents)
+            addTimelineEvents_2nd_verse_2nd_phrase(this.timelineOfEvents)
+            addTimelineEvents_2nd_verse_3rd_phrase(this.timelineOfEvents)
+            addTimelineEvents_ad_libs_for_you_for_you_alt(this.timelineOfEvents)
+
+            addTimelineEvents_3rd_stanza_1st_phrase(this.timelineOfEvents)
+            addTimelineEvents_3rd_stanza_2nd_phrase(this.timelineOfEvents)
+            addTimelineEvents_3rd_stanza_3rd_phrase(this.timelineOfEvents)
+            addTimelineEvents_ad_libs_for_you_up(this.timelineOfEvents)
+
+            addTimelineEvents_4th_stanza_1st_phrase(this.timelineOfEvents)
+            addTimelineEvents_4th_stanza_2nd_phrase(this.timelineOfEvents)
+            addTimelineEvents_4th_stanza_3rd_phrase(this.timelineOfEvents)
 
             this.environment = new Environment()
         })
@@ -62,8 +93,7 @@ export default class World
 
             if (
               [
-                EFFECTS.POSITION_FROM_TO,
-                EFFECTS.SCALE_FROM_TO
+                EFFECTS.FROM_TO
               ].includes(updatable.effect.name)
             ) {
 
@@ -87,7 +117,7 @@ export default class World
                 }
             } else if (
                 [
-                    EFFECTS.GLOBAL_POSITION_FROM_TO
+                    EFFECTS.GLOBAL_FROM_TO
                 ].includes(updatable.effect.name)
             ) {
                 if (
@@ -100,10 +130,20 @@ export default class World
                     // debugger
                     this.updatables[updatableId] = {
                         isGlobal: true,
-                        // globalObject: get(window.experience, updatable.effect.pathToExperienceGlobal),
                         updatable: updatable
                     }
                     // debugger
+
+                    // vvv initialize camera to from value for effect vvv
+                    if ([
+                        GLOBAL_UPDATABLES.CAMERA_INSTANCE
+                    ].includes(get(this.updatables[updatableId], 'updatable.effect.pathToExperienceGlobal'))
+                    ) {
+                        // debugger
+                        window.experience.camera.setCameraToInitialValue(this.updatables[updatableId].updatable)
+                    }
+                    // ^^^ initialize camera to from value for effect ^^^
+
                     updatable.started = true
                 } else if (
                     this.experience.playerInstance.player.getCurrentTime() > updatable.effect.endAt &&
@@ -132,12 +172,9 @@ export default class World
                     GLOBAL_UPDATABLES.CAMERA_INSTANCE
                 ].includes(get(this.updatables[updatableId], 'updatable.effect.pathToExperienceGlobal'))
                 ) {
-
+                    // debugger
                     window.experience.camera.updateCamera(this.updatables[updatableId].updatable)
-
                 }
-
-                
 
             } else {
                 this.updatables[updatableId].update()

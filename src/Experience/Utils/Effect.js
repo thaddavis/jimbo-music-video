@@ -4,7 +4,7 @@ import {
     delay
 } from 'lodash'
 import {
-    EFFECTS
+    EFFECTS, GLOBAL_UPDATABLES
 } from './Enums'
 
 export function executeEffect(
@@ -16,22 +16,25 @@ export function executeEffect(
     // debugger
 
     if ([
-        EFFECTS.POSITION_FROM_TO,
-        EFFECTS.SCALE_FROM_TO,
-        EFFECTS.GLOBAL_POSITION_FROM_TO
+        EFFECTS.FROM_TO,
+        EFFECTS.GLOBAL_FROM_TO
     ].includes(timelineMetadata.effect.name)) {
 
         if (get(timelineMetadata, 'theClass.name') === 'Phrase1') {
             // debugger
         } else if (get(timelineMetadata, 'theClass.name') === 'Floor') {
             // debugger
-        } else if (get(timelineMetadata, 'effect.name') === EFFECTS.GLOBAL_POSITION_FROM_TO) {
+        } else if (get(timelineMetadata, 'effect.name') === EFFECTS.FROM_TO) {
+            // debugger
+        } else if (get(timelineMetadata, 'theClass.name') === 'ForYou') {
+            // debugger
+        } else if (get(timelineMetadata, 'effect.pathToExperienceGlobal') === GLOBAL_UPDATABLES.CAMERA_INSTANCE) {
             // debugger
         }
 
         for (let property of timelineMetadata.effect.properties) {
             
-            if (get(timelineMetadata, 'effect.name') === EFFECTS.GLOBAL_POSITION_FROM_TO) {
+            if (get(timelineMetadata, 'effect.name') === EFFECTS.FROM_TO) {
                 // debugger
             }
 
@@ -49,7 +52,7 @@ export function executeEffect(
                 object.needsUpdate = true
             } else if (typeof value === 'object' && value.isVector3) {
 
-                if (get(timelineMetadata, 'effect.name') === EFFECTS.GLOBAL_POSITION_FROM_TO) {
+                if (get(timelineMetadata, 'effect.name') === EFFECTS.FROM_TO) {
                     // debugger
                 }
 
@@ -68,7 +71,7 @@ export function executeEffect(
                 }
 
                 // debugger
-                if (get(timelineMetadata, 'effect.name') === EFFECTS.GLOBAL_POSITION_FROM_TO) {
+                if (get(timelineMetadata, 'effect.name') === EFFECTS.FROM_TO) {
                     // debugger
                 }
 
@@ -80,7 +83,7 @@ export function executeEffect(
                     updatedValue.z,
                 );
 
-                if (get(timelineMetadata, 'effect.name') === EFFECTS.GLOBAL_POSITION_FROM_TO) {
+                if (get(timelineMetadata, 'effect.name') === EFFECTS.FROM_TO) {
                     // debugger
                 }
 
@@ -89,7 +92,7 @@ export function executeEffect(
         }
     } else if (
         [
-            EFFECTS.GLOBAL_POSITION_FROM_TO
+            EFFECTS.GLOBAL_FROM_TO
         ].includes(timelineMetadata.effect.name)
     ) {
         // debugger

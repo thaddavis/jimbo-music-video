@@ -11,7 +11,7 @@ export function addTimelineEvents_1st_verse_3rd_phrase(timeline) {
     timeline[uuidv4()] = {
         isGlobal: false,
         effect: {
-            name: EFFECTS.SCALE_FROM_TO,
+            name: EFFECTS.FROM_TO,
             properties: [{
                 path: 'mesh.scale',
                 from: {
@@ -29,7 +29,7 @@ export function addTimelineEvents_1st_verse_3rd_phrase(timeline) {
                 // to: 0
             }],
             startAt: 21,
-            endAt: 24
+            endAt: 23
         },
         started: false,
         theClass: Phrase3
@@ -38,7 +38,7 @@ export function addTimelineEvents_1st_verse_3rd_phrase(timeline) {
     timeline[uuidv4()] = {
         isGlobal: false,
         effect: {
-            name: EFFECTS.SCALE_FROM_TO,
+            name: EFFECTS.FROM_TO,
             properties: [{
                 path: 'mesh.scale',
                 from: {
@@ -56,7 +56,7 @@ export function addTimelineEvents_1st_verse_3rd_phrase(timeline) {
                 // to: 0
             }],
             startAt: 21,
-            endAt: 24
+            endAt: 23
         },
         started: false,
         theClass: Phrase3Background
@@ -65,23 +65,23 @@ export function addTimelineEvents_1st_verse_3rd_phrase(timeline) {
     timeline[uuidv4()] = {
         isGlobal: true,
         effect: {
-            name: EFFECTS.GLOBAL_POSITION_FROM_TO,
+            name: EFFECTS.GLOBAL_FROM_TO,
             pathToExperienceGlobal: 'camera.instance',
             properties: [{
                 path: 'position',
                 from: {
                     x: 4,
                     y: -5,
-                    z: 2
+                    z: 15
                 },
                 to: {
                     x: -4,
                     y: -3,
-                    z: 1
+                    z: 14
                 }
             }],
             startAt: 21,
-            endAt: 24
+            endAt: 23
         },
         started: false 
     }
@@ -89,7 +89,7 @@ export function addTimelineEvents_1st_verse_3rd_phrase(timeline) {
     timeline[uuidv4()] = {
         isGlobal: false,
         effect: {
-            name: EFFECTS.POSITION_FROM_TO,
+            name: EFFECTS.FROM_TO,
             properties: [{
                 path: 'light.position',
                 from: {
@@ -104,7 +104,7 @@ export function addTimelineEvents_1st_verse_3rd_phrase(timeline) {
                 }
             }],
             startAt: 21,
-            endAt: 24
+            endAt: 23
         },
         started: false,
         theClass: Phrase3Light
@@ -113,7 +113,7 @@ export function addTimelineEvents_1st_verse_3rd_phrase(timeline) {
     timeline[uuidv4()] = {
         isGlobal: false,
         effect: {
-            name: EFFECTS.POSITION_FROM_TO,
+            name: EFFECTS.FROM_TO,
             properties: [{
                 path: 'light.position',
                 from: {
@@ -128,7 +128,7 @@ export function addTimelineEvents_1st_verse_3rd_phrase(timeline) {
                 }
             }],
             startAt: 21,
-            endAt: 24
+            endAt: 23
         },
         started: false,
         theClass: Phrase3Light2

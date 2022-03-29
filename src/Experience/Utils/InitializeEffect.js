@@ -3,18 +3,25 @@ import {
     get,
 } from 'lodash'
 
+import { EFFECTS, GLOBAL_UPDATABLES } from './Enums'
+
 export function initializeEffect(
     object,
     timelineMetadata,
     timeObject
 ) {
     // debugger
-
     // if (timelineMetadata.theClass.name === 'Phrase1') {
     //     debugger
     // } else if (timelineMetadata.theClass.name === 'Floor') {
     //     debugger
     // }
+    if (
+        get(timelineMetadata, 'effect.name') === EFFECTS.GLOBAL_FROM_TO &&
+        get(timelineMetadata, 'effect.pathToExperienceGlobal') === GLOBAL_UPDATABLES.CAMERA_INSTANCE
+    ) {
+        // debugger
+    }
 
     for (let property of timelineMetadata.effect.properties) {
         
@@ -31,24 +38,16 @@ export function initializeEffect(
             object.needsUpdate = true
         } else if (typeof value === 'object' && value.isVector3) {
             // console.log(typeof value)
-            let updatedValue = {}
+            let initialValue = {}
+            
             for (let dimension of ['x', 'y', 'z']) {
-                // debugger
-                updatedValue[dimension] = value[dimension] + (property.to[dimension] - property.from[dimension]) * (
-                    (timeObject.current - timelineMetadata.effect.startAt) / (
-                    // delta /
-                        (
-                            timelineMetadata.effect.endAt - timelineMetadata.effect.startAt
-                        )
-                    )
-                )
-                
+                initialValue[dimension] = property.from[dimension]
             }
 
             value.set(
-                updatedValue.x,
-                updatedValue.y,
-                updatedValue.z,
+                initialValue.x,
+                initialValue.y,
+                initialValue.z,
             );
 
             // debugger

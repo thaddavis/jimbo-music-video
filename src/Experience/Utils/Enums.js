@@ -1,7 +1,6 @@
 export const EFFECTS = {
-    POSITION_FROM_TO: 'positionFromTo',
-    SCALE_FROM_TO: 'scaleFromTo',
-    GLOBAL_POSITION_FROM_TO: 'globalPositionFromTo',
+    FROM_TO: 'fromTo',
+    GLOBAL_FROM_TO: 'globalFromTo',
 }
 
 export const GLOBAL_UPDATABLES = {

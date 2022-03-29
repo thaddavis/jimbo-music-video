@@ -26,7 +26,7 @@ export default class Phrase1Background
     setGeometry()
     {
         // this.geometry = new THREE.CircleGeometry(5, 256)
-        this.geometry = new THREE.PlaneGeometry( 20, 20 );
+        this.geometry = new THREE.PlaneGeometry( 20, 20, 10, 10 );
     }
 
     setTextures()
