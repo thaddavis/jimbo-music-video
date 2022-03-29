@@ -4,7 +4,7 @@ import Experience from 'Experience/Experience.js'
 
 import { executeEffect } from 'Experience/Utils/Effect.js'
 
-export default class Phrase2Background
+export default class Phrase3Background
 {
     constructor(timelineMetadata)
     {

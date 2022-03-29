@@ -4,7 +4,7 @@ import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js'
 
 import { executeEffect } from 'Experience/Utils/Effect.js'
 
-export default class Phrase2
+export default class Phrase3
 {
     constructor(timelineMetadata)
     {

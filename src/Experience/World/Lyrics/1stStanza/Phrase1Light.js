@@ -1,7 +1,9 @@
 import * as THREE from 'three'
 import Experience from 'Experience/Experience.js'
 
+import { get } from 'lodash'
 import { executeEffect } from 'Experience/Utils/Effect.js'
+import { Config } from 'Experience/Config'
 
 export default class Phrase1Light
 {
@@ -20,10 +22,8 @@ export default class Phrase1Light
     setLight() {
         const directionalLight = new THREE.DirectionalLight(0xffffff, 1, 100)
         directionalLight.castShadow = true
-        // directionalLight.shadow.mapSize.width = 1024
-        // directionalLight.shadow.mapSize.height = 1024
-        directionalLight.shadow.mapSize.width = 2048
-        directionalLight.shadow.mapSize.height = 2048
+        directionalLight.shadow.mapSize.width = get(Config, 'shadows.mapSize.x', 2048)
+        directionalLight.shadow.mapSize.height = get(Config, 'shadows.mapSize.y', 2048)
         directionalLight.shadow.camera.near = 0.5
         directionalLight.shadow.camera.far = 20
         directionalLight.shadow.camera.top = 22
