@@ -43,9 +43,7 @@ export default class Camera
     }
 
     updateCamera(timelineMetadata) {
-        console.log('--- _-_ ---')
-
-        debugger
+        // debugger
         executeEffect(this.instance, timelineMetadata, this.experience.time.delta, this.experience.time)
     }
 }

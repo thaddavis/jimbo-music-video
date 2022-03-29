@@ -6,7 +6,10 @@ import Fox from './Fox.js'
 import { v4 as uuidv4 } from 'uuid';
 
 import { addTimelineEvents_intro } from '../Timeline/Intro'
-import { addTimelineEvents_1st_verse } from '../Timeline/1stVerse'
+import { addTimelineEvents_1st_verse_1st_phrase } from '../Timeline/1stVerse1stPhrase'
+import { addTimelineEvents_1st_verse_2nd_phrase } from '../Timeline/1stVerse2ndPhrase'
+import { addTimelineEvents_1st_verse_3rd_phrase } from '../Timeline/1stVerse3rdPhrase'
+
 import { 
     EFFECTS,
     GLOBAL_UPDATABLES
@@ -39,7 +42,9 @@ export default class World
             // Setup
             
             addTimelineEvents_intro(this.timelineOfEvents)
-            addTimelineEvents_1st_verse(this.timelineOfEvents)
+            addTimelineEvents_1st_verse_1st_phrase(this.timelineOfEvents)
+            addTimelineEvents_1st_verse_2nd_phrase(this.timelineOfEvents)
+            addTimelineEvents_1st_verse_3rd_phrase(this.timelineOfEvents)
 
             this.environment = new Environment()
         })

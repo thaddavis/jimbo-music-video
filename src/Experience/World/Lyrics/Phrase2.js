@@ -1,16 +1,16 @@
 import * as THREE from 'three'
 import gsap from 'gsap'
-import Experience from '../Experience.js'
+import Experience from '../../Experience.js'
+import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js'
 
-import { executeEffect } from '../Utils/Effect.js'
-import { initializeEffect } from '../Utils/InitializeEffect.js'
+import { executeEffect } from '../../Utils/Effect.js'
 
-export default class Floor
+export default class Phrase2
 {
     constructor(timelineMetadata)
     {
         
-        console.log('constructor Floor')
+        console.log('constructor Phrase1')
         this.timelineMetadata = timelineMetadata
         this.experience = new Experience()
         this.scene = this.experience.scene
@@ -19,7 +19,7 @@ export default class Floor
         this.setGeometry()
         // this.setTextures()
         this.setMaterial()
-        this.setMesh(timelineMetadata)
+        this.setMesh()
 
         this.start()
     }
@@ -53,7 +53,7 @@ export default class Floor
             // normalMap: this.textures.normal
         // })
 
-        this.material = new THREE.MeshBasicMaterial({
+        this.material = new THREE.MeshStandardMaterial({
             color: 'red',
             transparent: true
         })
@@ -63,22 +63,37 @@ export default class Floor
     {   
         console.log('setMesh')
 
-        this.mesh = new THREE.Mesh(this.geometry, this.material)
-
-        this.setInitialProperties()
-
+        // this.mesh = new THREE.Mesh(this.geometry, this.material)
         // this.mesh.rotation.x = - Math.PI * 0.5
-        this.mesh.position.z = 0.1
-        this.mesh.receiveShadow = true
+        // this.mesh.receiveShadow = true
+        // this.scene.add(this.mesh)
+
+        const material = new THREE.MeshStandardMaterial()
+
+        // Text
+        const textGeometry = new TextGeometry(
+            'I told you I swept it',
+            {
+                font: this.experience.resources.items['helvetikerFont'],
+                size: 1.0,
+                height: 0.2,
+                curveSegments: 24,
+                bevelEnabled: true,
+                bevelThickness: 0.03,
+                bevelSize: 0.02,
+                bevelOffset: 0,
+                bevelSegments: 5
+            }
+        )
+
+        textGeometry.center()
+        this.mesh = new THREE.Mesh(textGeometry, this.material)
+
+        this.mesh.castShadow = true
+
+        this.mesh.position.set(0,0,2)
+
         this.scene.add(this.mesh)
-    }
-
-    setInitialProperties(timelineMetadata) {
-        console.log('setInitialProperties', timelineMetadata)
-
-        initializeEffect(this, this.timelineMetadata, this.experience.time)
-
-        // debugger
     }
 
     start() {
@@ -95,22 +110,18 @@ export default class Floor
         // console.log(this.experience)
         // console.log("DELTA", this.experience.time.delta)
 
-        // debugger
-
         executeEffect(this, this.timelineMetadata, this.experience.time.delta, this.experience.time)
-
-        
     }
 
     destroy() {
-        // console.log('destroy')
+        console.log('destroy')
 
-        // console.log(
-        //     this.geometry    
-        // )
-        // console.log(
-        //     this.material    
-        // )
+        console.log(
+            this.geometry    
+        )
+        console.log(
+            this.material    
+        )
         
         // debugger
 

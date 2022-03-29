@@ -4,7 +4,7 @@ import Experience from '../../Experience.js'
 
 import { executeEffect } from '../../Utils/Effect.js'
 
-export default class Phrase1Light
+export default class Phrase1Light2
 {
     constructor(timelineMetadata)
     {
@@ -21,8 +21,8 @@ export default class Phrase1Light
     setLight() {
         const directionalLight = new THREE.DirectionalLight(0xffffff, 1, 100)
         directionalLight.castShadow = true
-        // directionalLight.shadow.mapSize.width = 1024
-        // directionalLight.shadow.mapSize.height = 1024
+        directionalLight.shadow.mapSize.width = 1024
+        directionalLight.shadow.mapSize.height = 1024
         directionalLight.shadow.mapSize.width = 2048
         directionalLight.shadow.mapSize.height = 2048
         directionalLight.shadow.camera.near = 0.5
@@ -31,7 +31,7 @@ export default class Phrase1Light
         directionalLight.shadow.camera.right = 20
         directionalLight.shadow.camera.bottom = -20
         directionalLight.shadow.camera.left = -20
-        directionalLight.position.set(2, 2, 14)
+        directionalLight.position.set(2, -2, 14)
 
         const t = new THREE.Object3D();
         t.translateX(0);

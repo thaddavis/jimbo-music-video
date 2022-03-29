@@ -8,8 +8,8 @@ export default class EventEmitter
 
     on(_names, callback)
     {
-        console.log('on _names', _names)
-        console.log('on callback', callback)
+        // console.log('on _names', _names)
+        // console.log('on callback', callback)
 
         // Errors
         if(typeof _names === 'undefined' || _names === '')

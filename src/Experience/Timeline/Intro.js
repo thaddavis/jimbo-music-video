@@ -22,7 +22,7 @@ export function addTimelineEvents_intro(timeline) {
                 }
             }],
             startAt: 0,
-            endAt: 17
+            endAt: 16
         },
         started: false,
         theClass: Floor

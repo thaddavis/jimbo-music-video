@@ -4,7 +4,7 @@ import Experience from '../../Experience.js'
 
 import { executeEffect } from '../../Utils/Effect.js'
 
-export default class Phrase1Light
+export default class Phrase2Light
 {
     constructor(timelineMetadata)
     {

@@ -7,7 +7,7 @@ export default class Resources extends EventEmitter
 {
     constructor(sources)
     {
-        console.log('Resources')
+        // console.log('Resources')
         super()
 
         this.sources = sources

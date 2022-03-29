@@ -26,13 +26,13 @@ export function executeEffect(
         } else if (get(timelineMetadata, 'theClass.name') === 'Floor') {
             // debugger
         } else if (get(timelineMetadata, 'effect.name') === EFFECTS.GLOBAL_POSITION_FROM_TO) {
-            debugger
+            // debugger
         }
 
         for (let property of timelineMetadata.effect.properties) {
             
             if (get(timelineMetadata, 'effect.name') === EFFECTS.GLOBAL_POSITION_FROM_TO) {
-                debugger
+                // debugger
             }
 
             const value = get(object, property.path)
@@ -50,7 +50,7 @@ export function executeEffect(
             } else if (typeof value === 'object' && value.isVector3) {
 
                 if (get(timelineMetadata, 'effect.name') === EFFECTS.GLOBAL_POSITION_FROM_TO) {
-                    debugger
+                    // debugger
                 }
 
                 // console.log(typeof value)
@@ -69,8 +69,7 @@ export function executeEffect(
 
                 // debugger
                 if (get(timelineMetadata, 'effect.name') === EFFECTS.GLOBAL_POSITION_FROM_TO) {
-                    debugger
-                    console.log(value)
+                    // debugger
                 }
 
                 
@@ -82,8 +81,7 @@ export function executeEffect(
                 );
 
                 if (get(timelineMetadata, 'effect.name') === EFFECTS.GLOBAL_POSITION_FROM_TO) {
-                    debugger
-                    console.log(value)
+                    // debugger
                 }
 
                 object.needsUpdate = true
