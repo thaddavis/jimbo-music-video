@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js'
 import EventEmitter from './EventEmitter.js'
 
 export default class Resources extends EventEmitter
@@ -25,6 +26,7 @@ export default class Resources extends EventEmitter
         this.loaders.gltfLoader = new GLTFLoader()
         this.loaders.textureLoader = new THREE.TextureLoader()
         this.loaders.cubeTextureLoader = new THREE.CubeTextureLoader()
+        this.loaders.fontLoader = new FontLoader()
     }
 
     startLoading()
@@ -33,25 +35,36 @@ export default class Resources extends EventEmitter
         console.log('this.sources', this.sources)
         console.log('this.sources.length', this.sources.length)
         console.log('this.sources.length === 0', this.sources.length === 0)
+        
         // if (this.sources && this.sources.length === 0) {
         //     console.log('startLoading...')
         //     debugger
         //     this.trigger('ready')
         // }
 
-        setTimeout(() => {
-            if (this.sources && this.sources.length === 0) {
-                console.log('startLoading...')
-                // debugger
-                this.trigger('ready')
-            }
-        }, 1)
+        // setTimeout(() => {
+        //     if (this.sources && this.sources.length === 0) {
+        //         console.log('startLoading...')
+        //         // debugger
+        //         this.trigger('ready')
+        //     }
+        // }, 1)
 
         for(const source of this.sources)
         {
             if(source.type === 'gltfModel')
             {
                 this.loaders.gltfLoader.load(
+                    source.path,
+                    (file) =>
+                    {
+                        this.sourceLoaded(source, file)
+                    }
+                )
+            }
+            else if(source.type === 'font')
+            {
+                this.loaders.fontLoader.load(
                     source.path,
                     (file) =>
                     {

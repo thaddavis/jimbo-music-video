@@ -1,16 +1,15 @@
 import * as THREE from 'three'
 import gsap from 'gsap'
-import Experience from '../Experience.js'
+import Experience from '../../Experience.js'
 
-import { executeEffect } from '../Utils/Effect.js'
-import { initializeEffect } from '../Utils/InitializeEffect.js'
+import { executeEffect } from '../../Utils/Effect.js'
 
-export default class Floor
+export default class Phrase1Background
 {
     constructor(timelineMetadata)
     {
         
-        console.log('constructor Floor')
+        console.log('constructor Phrase1')
         this.timelineMetadata = timelineMetadata
         this.experience = new Experience()
         this.scene = this.experience.scene
@@ -19,14 +18,15 @@ export default class Floor
         this.setGeometry()
         // this.setTextures()
         this.setMaterial()
-        this.setMesh(timelineMetadata)
+        this.setMesh()
 
         this.start()
     }
 
     setGeometry()
     {
-        this.geometry = new THREE.CircleGeometry(5, 256)
+        // this.geometry = new THREE.CircleGeometry(5, 256)
+        this.geometry = new THREE.PlaneGeometry( 20, 20 );
     }
 
     setTextures()
@@ -53,9 +53,9 @@ export default class Floor
             // normalMap: this.textures.normal
         // })
 
-        this.material = new THREE.MeshBasicMaterial({
-            color: 'red',
-            transparent: true
+        this.material = new THREE.MeshStandardMaterial({
+            color: 'white',
+            // transparent: true
         })
     }
 
@@ -64,20 +64,16 @@ export default class Floor
         console.log('setMesh')
 
         this.mesh = new THREE.Mesh(this.geometry, this.material)
+        // const planeGeometry = new THREE.PlaneGeometry( 20, 20, 32, 32 );
+        // const planeMaterial = new THREE.MeshStandardMaterial( { color: 0xffffff } )
+        // this.mesh = new THREE.Mesh( planeGeometry, planeMaterial );
 
-        this.setInitialProperties()
-
-        // this.mesh.rotation.x = - Math.PI * 0.5
+        // this.mesh.position.x = 0 
+        // this.mesh.position.y = 0
+        // this.mesh.position.z = -1
         this.mesh.receiveShadow = true
+        // this.mesh.castShadow = true;
         this.scene.add(this.mesh)
-    }
-
-    setInitialProperties(timelineMetadata) {
-        console.log('setInitialProperties', timelineMetadata)
-
-        initializeEffect(this, this.timelineMetadata, this.experience.time)
-
-        // debugger
     }
 
     start() {
@@ -94,22 +90,18 @@ export default class Floor
         // console.log(this.experience)
         // console.log("DELTA", this.experience.time.delta)
 
-        // debugger
-
         executeEffect(this, this.timelineMetadata, this.experience.time.delta, this.experience.time)
-
-        
     }
 
     destroy() {
         console.log('destroy')
 
-        console.log(
-            this.geometry    
-        )
-        console.log(
-            this.material    
-        )
+        // console.log(
+        //     this.geometry    
+        // )
+        // console.log(
+        //     this.material    
+        // )
         
         // debugger
 

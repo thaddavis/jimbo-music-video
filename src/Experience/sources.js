@@ -1,4 +1,9 @@
 export default [
+    {
+        name: 'helvetikerFont',
+        type: 'font',
+        path: 'fonts/helvetiker_regular.typeface.json'
+    }
     // {
     //     name: 'environmentMapTexture',
     //     type: 'cubeTexture',

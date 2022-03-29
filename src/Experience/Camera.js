@@ -2,6 +2,9 @@ import * as THREE from 'three'
 import Experience from './Experience.js'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
+import { executeEffect } from './Utils/Effect.js'
+import { initializeEffect } from './Utils/InitializeEffect.js'
+
 export default class Camera
 {
     constructor()
@@ -17,8 +20,8 @@ export default class Camera
 
     setInstance()
     {
-        this.instance = new THREE.PerspectiveCamera(35, this.sizes.width / this.sizes.height, 0.1, 100)
-        this.instance.position.set(6, 4, 8)
+        this.instance = new THREE.PerspectiveCamera(45, this.sizes.width / this.sizes.height, 0.1, 100)
+        this.instance.position.set(0, 0, 22)
         this.scene.add(this.instance)
     }
 
@@ -37,5 +40,12 @@ export default class Camera
     update()
     {
         this.controls.update()
+    }
+
+    updateCamera(timelineMetadata) {
+        console.log('--- _-_ ---')
+
+        debugger
+        executeEffect(this.instance, timelineMetadata, this.experience.time.delta, this.experience.time)
     }
 }

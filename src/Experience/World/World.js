@@ -5,6 +5,18 @@ import Fox from './Fox.js'
 
 import { v4 as uuidv4 } from 'uuid';
 
+import { addTimelineEvents_intro } from '../Timeline/Intro'
+import { addTimelineEvents_1st_verse } from '../Timeline/1stVerse'
+import { 
+    EFFECTS,
+    GLOBAL_UPDATABLES
+} from '../Utils/Enums.js';
+
+import {
+    set,
+    get,
+} from 'lodash'
+
 export default class World
 {
     constructor()
@@ -26,26 +38,9 @@ export default class World
             console.log('ready')
             // Setup
             
-            this.timelineOfEvents[uuidv4()] = {
-                effect: {
-                    name: 'fromTo',
-                    properties: [{
-                        path: 'mesh.position.x',
-                        from: 0,
-                        to: 10
-                        // path: 'mesh.material.opacity',
-                        // from: 1,
-                        // to: 0
-                    }],
-                    startAt: 0,
-                    endAt: 17
-                },
-                started: false,
-                theClass: Floor
-            }
+            addTimelineEvents_intro(this.timelineOfEvents)
+            addTimelineEvents_1st_verse(this.timelineOfEvents)
 
-
-            // this.fox = new Fox()
             this.environment = new Environment()
         })
     }
@@ -53,48 +48,99 @@ export default class World
     update()
     {
         // debugger
-        console.log(this.experience.playerInstance.player.getCurrentTime())
-        console.log('this.experience.time', this.experience.time)
+        // console.log(this.experience.playerInstance.player.getCurrentTime())
+        // console.log('this.experience.time', this.experience.time)
         // debugger
 
         for (let updatableId in this.timelineOfEvents) {
-
-            // debugger
-
             const updatable = this.timelineOfEvents[updatableId]
 
-            console.log(updatable)
-
-            console.log(this.experience.playerInstance.player.getCurrentTime() >= updatable.effect.startAt &&
-            updatable.started === false)
-            
-            // debugger
-
             if (
-                this.experience.playerInstance.player.getCurrentTime() >= updatable.effect.startAt &&
-                this.experience.playerInstance.player.getCurrentTime() <= updatable.effect.endAt &&
-                updatable.started === false
+              [
+                EFFECTS.POSITION_FROM_TO,
+                EFFECTS.SCALE_FROM_TO
+              ].includes(updatable.effect.name)
             ) {
-                // debugger
-                this.updatables[updatableId] = new updatable.theClass(updatable)
-                updatable.started = true
+
+                if (
+                    this.experience.playerInstance.player.getCurrentTime() >= updatable.effect.startAt &&
+                    this.experience.playerInstance.player.getCurrentTime() <= updatable.effect.endAt &&
+                    updatable.started === false
+                ) {
+                    // debugger
+                    this.updatables[updatableId] = new updatable.theClass(updatable)
+                    updatable.started = true
+                } else if (
+                    this.experience.playerInstance.player.getCurrentTime() > updatable.effect.endAt &&
+                    updatable.started === true
+                ) {
+                    // debugger
+                    // dispose and delete
+                    this.updatables[updatableId].destroy()
+                    this.timelineOfEvents[updatableId].started = false
+                    delete this.updatables[updatableId]
+                }
             } else if (
-                this.experience.playerInstance.player.getCurrentTime() > updatable.effect.endAt &&
-                updatable.started === true
+                [
+                    EFFECTS.GLOBAL_POSITION_FROM_TO
+                ].includes(updatable.effect.name)
             ) {
-                // debugger
-                // dispose and delete
-                this.updatables[updatableId].destroy()
-                this.timelineOfEvents[updatableId].started = false
-                delete this.updatables[updatableId]
+                if (
+                    this.experience.playerInstance.player.getCurrentTime() >= updatable.effect.startAt &&
+                    this.experience.playerInstance.player.getCurrentTime() <= updatable.effect.endAt &&
+                    updatable.started === false
+                ) {
+                    // debugger
+                    // this.updatables[updatableId] = new updatable.theClass(updatable)
+                    // debugger
+                    this.updatables[updatableId] = {
+                        isGlobal: true,
+                        // globalObject: get(window.experience, updatable.effect.pathToExperienceGlobal),
+                        updatable: updatable
+                    }
+                    // debugger
+                    updatable.started = true
+                } else if (
+                    this.experience.playerInstance.player.getCurrentTime() > updatable.effect.endAt &&
+                    updatable.started === true
+                ) {
+                    // delete
+                    this.timelineOfEvents[updatableId].started = false
+                    delete this.updatables[updatableId]
+                }
+            } else {
+
             }
         }
 
         // debugger
 
         for (let updatableId in this.updatables) {
-            // debugger
-            this.updatables[updatableId].update()
+            
+            if (
+                this.updatables[updatableId]
+                &&
+                this.updatables[updatableId].isGlobal
+            ) {
+                
+                if ([
+                    GLOBAL_UPDATABLES.CAMERA_INSTANCE
+                ].includes(get(this.updatables[updatableId], 'updatable.effect.pathToExperienceGlobal'))
+                ) {
+
+                    window.experience.camera.updateCamera(this.updatables[updatableId].updatable)
+
+                }
+
+                
+
+            } else {
+                this.updatables[updatableId].update()
+            }
         }
+    }
+
+    reset() {
+
     }
 }

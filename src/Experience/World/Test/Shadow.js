@@ -17,7 +17,6 @@ export default class Floor
         this.resources = this.experience.resources
 
         this.setGeometry()
-        // this.setTextures()
         this.setMaterial()
         this.setMesh(timelineMetadata)
 
@@ -31,59 +30,31 @@ export default class Floor
 
     setTextures()
     {
-        this.textures = {}
-
-        this.textures.color = this.resources.items.grassColorTexture
-        this.textures.color.encoding = THREE.sRGBEncoding
-        this.textures.color.repeat.set(1.5, 1.5)
-        this.textures.color.wrapS = THREE.RepeatWrapping
-        this.textures.color.wrapT = THREE.RepeatWrapping
-
-        this.textures.normal = this.resources.items.grassNormalTexture
-        this.textures.normal.repeat.set(1.5, 1.5)
-        this.textures.normal.wrapS = THREE.RepeatWrapping
-        this.textures.normal.wrapT = THREE.RepeatWrapping
     }
 
     setMaterial()
     {
         console.log('setMaterial')
-        // this.material = new THREE.MeshStandardMaterial({
-            // map: this.textures.color,
-            // normalMap: this.textures.normal
-        // })
-
-        this.material = new THREE.MeshBasicMaterial({
-            color: 'red',
-            transparent: true
-        })
     }
 
     setMesh()
     {   
         console.log('setMesh')
-
-        this.mesh = new THREE.Mesh(this.geometry, this.material)
-
-        this.setInitialProperties()
-
+        // this.mesh = new THREE.Mesh(this.geometry, this.material)
+        // this.setInitialProperties()
         // this.mesh.rotation.x = - Math.PI * 0.5
-        this.mesh.receiveShadow = true
-        this.scene.add(this.mesh)
+        // this.mesh.receiveShadow = true
+        // this.scene.add(this.mesh)
     }
 
     setInitialProperties(timelineMetadata) {
         console.log('setInitialProperties', timelineMetadata)
-
         initializeEffect(this, this.timelineMetadata, this.experience.time)
-
-        // debugger
     }
 
-    start() {
-        // console.log('starting Floor.js', this.mesh.position)
+    start()
+    {
 
-        // debugger
     }
 
     update()
@@ -94,11 +65,7 @@ export default class Floor
         // console.log(this.experience)
         // console.log("DELTA", this.experience.time.delta)
 
-        // debugger
-
         executeEffect(this, this.timelineMetadata, this.experience.time.delta, this.experience.time)
-
-        
     }
 
     destroy() {
@@ -113,9 +80,9 @@ export default class Floor
         
         // debugger
 
-        const object = this.scene.getObjectByProperty( 'uuid', this.mesh.uuid );
-        object.geometry.dispose();
-        object.material.dispose();
-        this.scene.remove( object );
+        // const object = this.scene.getObjectByProperty( 'uuid', this.mesh.uuid );
+        // object.geometry.dispose();
+        // object.material.dispose();
+        // this.scene.remove( object );
     }
 }

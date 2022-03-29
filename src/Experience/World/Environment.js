@@ -16,7 +16,10 @@ export default class Environment
             this.debugFolder = this.debug.ui.addFolder('environment')
         }
 
-        this.setSunLight()
+        // this.setSunLight()
+        this.setLights()
+        // this.addGrid()
+        this.addFrame()
         // this.setEnvironmentMap()
     }
 
@@ -63,6 +66,63 @@ export default class Environment
         }
     }
 
+    setLights()
+    {
+        console.log('setLights')
+
+        // vvv Directional light vvv
+        // const directionalLight = new THREE.DirectionalLight(0xffffff, 1, 100)
+        // directionalLight.castShadow = true
+        // directionalLight.shadow.mapSize.width = 1024
+        // directionalLight.shadow.mapSize.height = 1024
+        // directionalLight.shadow.mapSize.width = 2048
+        // directionalLight.shadow.mapSize.height = 2048
+        // directionalLight.shadow.camera.near = 0.5
+        // directionalLight.shadow.camera.far = 20
+        // directionalLight.shadow.camera.top = 20
+        // directionalLight.shadow.camera.right = 20
+        // directionalLight.shadow.camera.bottom = -20
+        // directionalLight.shadow.camera.left = -20
+        // directionalLight.position.set(2, 2, 14)
+        // const t = new THREE.Object3D();
+        // t.translateX(0);
+        // t.translateY(0);
+        // t.translateZ(0);
+        // directionalLight.target = t;
+        // this.scene.add(directionalLight)
+        // this.scene.add(directionalLight.target);
+        // const directionalLightCameraHelper = new THREE.CameraHelper(directionalLight.shadow.camera)
+        // directionalLightCameraHelper.visible = true
+        // this.scene.add(directionalLightCameraHelper)
+        // ^^^ Directional light ^^^
+
+        // const light = new THREE.DirectionalLight( 0xffffff, 1, 100 );
+        // light.position.set( -10, 10, 10 ); // default; light shining from top
+        // light.castShadow = true; // default false
+        // this.scene.add(light)
+
+        // light.shadow.mapSize.width = 512; // default
+        // light.shadow.mapSize.height = 512; // default
+        // light.shadow.camera.near = 0.5; // default
+        // light.shadow.camera.far = 50; // default
+
+        // const sphereGeometry = new THREE.SphereGeometry( 5, 32, 32 );
+        // const sphereMaterial = new THREE.MeshStandardMaterial( { color: 0xff0000 } );
+        // const sphere = new THREE.Mesh( sphereGeometry, sphereMaterial );
+        // sphere.castShadow = true; //default is false
+        // sphere.receiveShadow = false; //default
+        // this.scene.add( sphere );
+
+        // const planeGeometry = new THREE.PlaneGeometry( 20, 20, 32, 32 );
+        // const planeMaterial = new THREE.MeshStandardMaterial( { color: 0x00ff00 } )
+        // const plane = new THREE.Mesh( planeGeometry, planeMaterial );
+        // plane.receiveShadow = true;
+        // this.scene.add( plane );
+
+        // const helper = new THREE.CameraHelper( light.shadow.camera );
+        // this.scene.add( helper );
+    }
+
     setEnvironmentMap()
     {
         this.environmentMap = {}
@@ -97,5 +157,38 @@ export default class Environment
                 .step(0.001)
                 .onChange(this.environmentMap.updateMaterials)
         }
+    }
+
+    addGrid()
+    {
+        console.log('addGrid')
+
+        this.gridHelper = new THREE.GridHelper(10,10)
+        this.gridHelper.rotation.x = - Math.PI * 0.5
+        this.scene.add(this.gridHelper)
+
+        // The X axis is red. The Y axis is green. The Z axis is blue.
+        const axesHelper = new THREE.AxesHelper( 5 );
+        this.scene.add( axesHelper );
+    }
+
+    addFrame()
+    {
+        console.log('addFrame')
+
+        const points = [];
+        points.push( new THREE.Vector3( -16, -9, 0 ) );
+        points.push( new THREE.Vector3( -16, 9, 0 ) );
+        points.push( new THREE.Vector3( 16, 9, 0 ) );
+        points.push( new THREE.Vector3( 16, -9, 0 ) );
+        points.push( new THREE.Vector3( -16, -9, 0 ) );
+
+        const geometry = new THREE.BufferGeometry().setFromPoints( points );
+        const material = new THREE.MeshBasicMaterial({
+            color: 'orange',
+        })
+
+        this.frame = new THREE.Line(geometry, material)
+        this.scene.add(this.frame)
     }
 }

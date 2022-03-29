@@ -17,6 +17,7 @@ export default class Experience
 {
     constructor(_canvas, playerInstance)
     {
+        // debugger
         // Singleton
         if(instance)
         {
@@ -26,6 +27,8 @@ export default class Experience
         
         // Global access
         window.experience = this
+
+        // debugger
 
         // Options
         this.canvas = _canvas
@@ -45,7 +48,7 @@ export default class Experience
         this.world = new World()
 
         this.stats = new Stats();
-        this.stats.showPanel( 0 ); // 0: fps, 1: ms, 2: mb, 3+: custom
+        this.stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
         document.body.appendChild( this.stats.dom );
         
         // Resize event
@@ -107,6 +110,8 @@ export default class Experience
 
         this.camera.controls.dispose()
         this.renderer.instance.dispose()
+
+        instance = null
 
         if(this.debug.active)
             this.debug.ui.destroy()
