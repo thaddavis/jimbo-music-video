@@ -30,6 +30,13 @@ import { addTimelineEvents_b_section_background } from 'Experience/Timeline/BSec
 import { addTimelineEvents_b_section_camera } from 'Experience/Timeline/BSection/Camera'
 import { addTimelineEvents_b_section_light } from 'Experience/Timeline/BSection/Light'
 
+import { addTimelineEvents_b_section_1st_phrase } from 'Experience/Timeline/BSection/Phrase1'
+import { addTimelineEvents_b_section_phrase1a } from 'Experience/Timeline/BSection/Phrase1a'
+import { addTimelineEvents_b_section_phrase1b } from 'Experience/Timeline/BSection/Phrase1b';
+import { addTimelineEvents_b_section_2nd_phrase } from 'Experience/Timeline/BSection/Phrase2'
+import { addTimelineEvents_b_section_phrase2a } from 'Experience/Timeline/BSection/Phrase2a';
+import { addTimelineEvents_b_section_phrase2b } from 'Experience/Timeline/BSection/Phrase2b';
+
 import { 
     EFFECTS,
     GLOBAL_UPDATABLES
@@ -39,6 +46,7 @@ import {
     set,
     get,
 } from 'lodash'
+
 
 export default class World
 {
@@ -84,6 +92,13 @@ export default class World
             addTimelineEvents_b_section_background(this.timelineOfEvents)
             addTimelineEvents_b_section_camera(this.timelineOfEvents)
             addTimelineEvents_b_section_light(this.timelineOfEvents)
+
+            addTimelineEvents_b_section_1st_phrase(this.timelineOfEvents)
+            addTimelineEvents_b_section_phrase1a(this.timelineOfEvents)
+            addTimelineEvents_b_section_phrase1b(this.timelineOfEvents)
+            addTimelineEvents_b_section_2nd_phrase(this.timelineOfEvents)
+            addTimelineEvents_b_section_phrase2a(this.timelineOfEvents)
+            addTimelineEvents_b_section_phrase2b(this.timelineOfEvents)
 
             this.environment = new Environment()
         })

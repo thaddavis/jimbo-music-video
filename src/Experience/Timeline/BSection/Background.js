@@ -67,7 +67,7 @@ export function addTimelineEvents_b_section_background(timeline) {
                     z: 2
                 }
             }],
-            startAt: 59.5,
+            startAt: 59.3,
             endAt: 65.5
         },
         started: false,
