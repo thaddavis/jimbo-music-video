@@ -30,7 +30,7 @@ export default class Phrase1Light
         directionalLight.shadow.camera.right = 22
         directionalLight.shadow.camera.bottom = -20
         directionalLight.shadow.camera.left = -20
-        directionalLight.position.set(2, 2, 14)
+        directionalLight.position.set(2, 4, 14)
 
         const t = new THREE.Object3D();
         t.translateX(0);

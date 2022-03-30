@@ -6,14 +6,14 @@ import Fox from './Fox.js'
 import { v4 as uuidv4 } from 'uuid';
 
 import { addTimelineEvents_intro } from '../Timeline/Intro'
-import { addTimelineEvents_1st_verse_1st_phrase } from '../Timeline/1stVerse1stPhrase'
-import { addTimelineEvents_1st_verse_2nd_phrase } from '../Timeline/1stVerse2ndPhrase'
-import { addTimelineEvents_1st_verse_3rd_phrase } from '../Timeline/1stVerse3rdPhrase'
+import { addTimelineEvents_1st_verse_1st_phrase } from '../Timeline/1stStanza/1stVerse1stPhrase'
+import { addTimelineEvents_1st_verse_2nd_phrase } from '../Timeline/1stStanza/1stVerse2ndPhrase'
+import { addTimelineEvents_1st_verse_3rd_phrase } from '../Timeline/1stStanza/1stVerse3rdPhrase'
 import { addTimelineEvents_ad_libs_for_you_for_you } from '../Timeline/AdLibs/ForYouForYou'
 
-import { addTimelineEvents_2nd_verse_1st_phrase } from '../Timeline/2ndVerse/2ndVerse1stPhrase'
-import { addTimelineEvents_2nd_verse_2nd_phrase } from '../Timeline/2ndVerse/2ndVerse2ndPhrase'
-import { addTimelineEvents_2nd_verse_3rd_phrase } from '../Timeline/2ndVerse/2ndVerse3rdPhrase'
+import { addTimelineEvents_2nd_verse_1st_phrase } from '../Timeline/2ndStanza/2ndStanza1stPhrase'
+import { addTimelineEvents_2nd_verse_2nd_phrase } from '../Timeline/2ndStanza/2ndStanza2ndPhrase'
+import { addTimelineEvents_2nd_verse_3rd_phrase } from '../Timeline/2ndStanza/2ndStanza3rdPhrase'
 import { addTimelineEvents_ad_libs_for_you_for_you_alt } from '../Timeline/AdLibs/ForYouForYouAlt'
 
 import { addTimelineEvents_3rd_stanza_1st_phrase } from '../Timeline/3rdStanza/3rdStanza1stPhrase'
@@ -25,6 +25,10 @@ import { addTimelineEvents_ad_libs_for_you_up } from '../Timeline/AdLibs/ForYouF
 import { addTimelineEvents_4th_stanza_1st_phrase } from '../Timeline/4thStanza/4thStanza1stPhrase'
 import { addTimelineEvents_4th_stanza_2nd_phrase } from '../Timeline/4thStanza/4thStanza2ndPhrase'
 import { addTimelineEvents_4th_stanza_3rd_phrase } from '../Timeline/4thStanza/4thStanza3rdPhrase'
+
+import { addTimelineEvents_b_section_background } from 'Experience/Timeline/BSection/Background'
+import { addTimelineEvents_b_section_camera } from 'Experience/Timeline/BSection/Camera'
+import { addTimelineEvents_b_section_light } from 'Experience/Timeline/BSection/Light'
 
 import { 
     EFFECTS,
@@ -76,6 +80,10 @@ export default class World
             addTimelineEvents_4th_stanza_1st_phrase(this.timelineOfEvents)
             addTimelineEvents_4th_stanza_2nd_phrase(this.timelineOfEvents)
             addTimelineEvents_4th_stanza_3rd_phrase(this.timelineOfEvents)
+
+            addTimelineEvents_b_section_background(this.timelineOfEvents)
+            addTimelineEvents_b_section_camera(this.timelineOfEvents)
+            addTimelineEvents_b_section_light(this.timelineOfEvents)
 
             this.environment = new Environment()
         })

@@ -30,7 +30,7 @@ const main = () => {
         peaks.on('player.timeupdate', (e) => {
             // console.log('event player.timeupdate', e)
 
-            if (e > 52) {
+            if (e > 74) {
                 window.peaks.player.seek(29)
             }
         });

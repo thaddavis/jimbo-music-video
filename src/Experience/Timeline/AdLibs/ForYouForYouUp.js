@@ -14,14 +14,14 @@ export function addTimelineEvents_ad_libs_for_you_up(timeline) {
             properties: [{
                 path: 'mesh.scale',
                 from: {
-                    x: 1,
-                    y: 1,
-                    z: 1
+                    x: 1.5,
+                    y: 1.5,
+                    z: 1.5
                 },
                 to: {
-                    x: 2,
-                    y: 2,
-                    z: 2
+                    x: 1.2,
+                    y: 1.2,
+                    z: 1.2
                 }
             },
             {
@@ -29,12 +29,12 @@ export function addTimelineEvents_ad_libs_for_you_up(timeline) {
                 from: {
                     x: 0,
                     y: 0,
-                    z: 0
+                    z: 1
                 },
                 to: {
                     x: 0,
                     y: -2,
-                    z: 0 
+                    z: 1  
                 }
             }
             ],
@@ -105,8 +105,8 @@ export function addTimelineEvents_ad_libs_for_you_up(timeline) {
                 },
                 to: {
                     x: 0,
-                    y: -2,
-                    z: 14
+                    y: -4 ,
+                    z: 12
                 }
             }],
             startAt: 37.5,
