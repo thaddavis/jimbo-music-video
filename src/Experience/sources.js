@@ -4,6 +4,11 @@ export default [
         type: 'font',
         path: 'fonts/helvetiker_regular.typeface.json'
     },
+    {
+        name: 'polishFlag',
+        type: 'texture',
+        path: 'textures/flag/Flag_of_Poland.png'
+    },
     // vvv vvv
     {
         name: 'skin1ColorTexture',

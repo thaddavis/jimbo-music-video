@@ -37,6 +37,8 @@ import { addTimelineEvents_b_section_2nd_phrase } from 'Experience/Timeline/BSec
 import { addTimelineEvents_b_section_phrase2a } from 'Experience/Timeline/BSection/Phrase2a';
 import { addTimelineEvents_b_section_phrase2b } from 'Experience/Timeline/BSection/Phrase2b';
 
+import { addTimelineEvents_b_section_flag_cutaway } from 'Experience/Timeline/BSection/Cutaways/BSectionFlag.js';
+
 import { 
     EFFECTS,
     GLOBAL_UPDATABLES
@@ -99,6 +101,8 @@ export default class World
             addTimelineEvents_b_section_2nd_phrase(this.timelineOfEvents)
             addTimelineEvents_b_section_phrase2a(this.timelineOfEvents)
             addTimelineEvents_b_section_phrase2b(this.timelineOfEvents)
+
+            addTimelineEvents_b_section_flag_cutaway(this.timelineOfEvents)
 
             this.environment = new Environment()
         })

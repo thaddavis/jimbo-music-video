@@ -1,5 +1,4 @@
 import Phrase2b from 'Experience/World/Lyrics/BSection/Phrase2b'
-import Phrase2bBackground from 'Experience/World/Lyrics/BSection/Phrase2bBackground'
 import Phrase2bLight from 'Experience/World/Lyrics/BSection/Phrase2bLight'
 import { v4 as uuidv4 } from 'uuid';
 
