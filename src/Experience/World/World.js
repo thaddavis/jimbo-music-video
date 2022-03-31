@@ -1,9 +1,5 @@
 import Experience from '../Experience.js'
 import Environment from './Environment.js'
-import Floor from './Floor.js'
-import Fox from './Fox.js'
-
-import { v4 as uuidv4 } from 'uuid';
 
 import { addTimelineEvents_intro } from '../Timeline/Intro'
 import { addTimelineEvents_1st_verse_1st_phrase } from '../Timeline/1stStanza/1stVerse1stPhrase'

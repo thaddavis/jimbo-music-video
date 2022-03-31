@@ -14,14 +14,14 @@ export function addTimelineEvents_ad_libs_for_you_up(timeline) {
             properties: [{
                 path: 'mesh.scale',
                 from: {
-                    x: 1.5,
-                    y: 1.5,
-                    z: 1.5
+                    x: 1.0,
+                    y: 1.0,
+                    z: 1.0
                 },
                 to: {
-                    x: 1.2,
-                    y: 1.2,
-                    z: 1.2
+                    x: 0.8,
+                    y: 0.8,
+                    z: 0.8
                 }
             },
             {

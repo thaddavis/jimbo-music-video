@@ -28,7 +28,7 @@ export function addTimelineEvents_b_section_phrase2b(timeline) {
                 // to: 0
             }],
             startAt: 65.2,
-            endAt: 72.5,
+            endAt: 71.7,
         },
         started: false,
         theClass: Phrase2b

@@ -74,12 +74,12 @@ export function addTimelineEvents_4th_stanza_1st_phrase(timeline) {
                 from: {
                     x: 0,
                     y: 0,
-                    z: 12
+                    z: 14
                 },
                 to: {
                     x: 0,
                     y: 0,
-                    z: 12
+                    z: 14
                 }
             }],
             startAt: 38.5,

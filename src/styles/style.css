@@ -1,5 +1,4 @@
-*
-{
+* {
     margin: 0;
     padding: 0;
 }
@@ -27,9 +26,10 @@ body {
 
 #overview-container {
     background-color: aliceblue;
-    position: absolute;
-    bottom: 0;
+    /* position: absolute; */
+    /* bottom: 0; */
     width: 100%;
+    opacity: 0;
     height: 85px;
 }
 
@@ -52,6 +52,7 @@ body {
     opacity: 50%;
     flex: 0 0 30%;
     z-index: 100;
+    opacity: 0;
 }
 
 #controls {
@@ -88,10 +89,19 @@ p code {
     margin-left: 4em
 }
 
-.webgl
-{
+.webgl {
     position: fixed;
     top: 0;
     left: 0;
     outline: none;
+}
+
+#debug {
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    background-color: pink;
+    width: 100px;
+    height: 100px;
+    z-index: 200;
 }

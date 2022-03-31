@@ -72,12 +72,12 @@ export function addTimelineEvents_3rd_stanza_3rd_phrase(timeline) {
                 from: {
                     x: 4,
                     y: -5,
-                    z: 15
+                    z: 16
                 },
                 to: {
                     x: -4,
                     y: -3,
-                    z: 14
+                    z: 18 
                 }
             }],
             startAt: 35,

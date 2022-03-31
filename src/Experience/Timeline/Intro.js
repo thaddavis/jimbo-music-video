@@ -231,21 +231,32 @@ export function addTimelineEvents_intro(timeline) {
                         z: 3
                     },
                     to: {
-                        x: 8,
-                        y: 8,
-                        z: 8
+                        x: 9,
+                        y: 9,
+                        z: 9
                     }
                 },
                 {
                     path: 'rotation',
                     from: {
+                        // x: 0.9663591195426452,
+                        // y: -0.9086510911493443,
+                        // z: 1.219916915922639
+                        // x: -Math.PI / 2,
+                        // y: Math.PI / 4,
+                        // x: Math.PI / 4,
                         x: 0,
+                        // y: - Math.PI * 1 / 10,
                         y: 0,
                         z: 0
                     },
                     to: {
                         x: 0,
-                        y: Math.PI * 2,
+                        // y: Math.PI/6,
+                        // y: Math.PI * 3 / 4,
+                        // y: Math.PI * 2,
+                        y: Math.PI * 44.7 / 100,
+                        // y: 0,
                         z: 0
                     }
                 }

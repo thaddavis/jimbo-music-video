@@ -72,12 +72,12 @@ export function addTimelineEvents_2nd_verse_1st_phrase(timeline) {
                 from: {
                     x: 0,
                     y: 5,
-                    z: 10
+                    z: 12
                 },
                 to: {
                     x: 0,
                     y: 4,
-                    z: 12
+                    z: 14
                 }
             }],
             startAt: 24.5,

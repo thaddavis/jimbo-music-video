@@ -29,7 +29,7 @@ export function addTimelineEvents_1st_verse_3rd_phrase(timeline) {
                 // to: 0
             }],
             startAt: 21,
-            endAt: 23
+            endAt: 23.7
         },
         started: false,
         theClass: Phrase3
@@ -56,7 +56,7 @@ export function addTimelineEvents_1st_verse_3rd_phrase(timeline) {
                 // to: 0
             }],
             startAt: 21,
-            endAt: 23
+            endAt: 23.7
         },
         started: false,
         theClass: Phrase3Background
@@ -72,16 +72,16 @@ export function addTimelineEvents_1st_verse_3rd_phrase(timeline) {
                 from: {
                     x: 2,
                     y: -2,
-                    z: 15
+                    z: 16
                 },
                 to: {
                     x: -2,
                     y: -2,
-                    z: 14
+                    z: 18
                 }
             }],
             startAt: 21,
-            endAt: 23
+            endAt: 23.7
         },
         started: false 
     }
@@ -104,7 +104,7 @@ export function addTimelineEvents_1st_verse_3rd_phrase(timeline) {
                 }
             }],
             startAt: 21,
-            endAt: 23
+            endAt: 23.7
         },
         started: false,
         theClass: Phrase3Light
@@ -128,7 +128,7 @@ export function addTimelineEvents_1st_verse_3rd_phrase(timeline) {
                 }
             }],
             startAt: 21,
-            endAt: 23
+            endAt: 23.7
         },
         started: false,
         theClass: Phrase3Light2

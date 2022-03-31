@@ -45,12 +45,12 @@ export function addTimelineEvents_b_section_2nd_phrase(timeline) {
                 from: {
                     x: 0,
                     y: 1,
-                    z: 12
+                    z: 16
                 },
                 to: {
                     x: 0,
                     y: -1,
-                    z: 12
+                    z: 18
                 }
             }],
             startAt: 59.3,

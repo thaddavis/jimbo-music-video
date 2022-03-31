@@ -37,12 +37,12 @@ export function addTimelineEvents_b_section_camera(timeline) {
                 from: {
                     x: 0,
                     y: -4,
-                    z: 12
+                    z: 16
                 },
                 to: {
                     x: 0,
                     y: -6,
-                    z: 14
+                    z: 18
                 }
             }],
             startAt: 45.8,
@@ -85,12 +85,12 @@ export function addTimelineEvents_b_section_camera(timeline) {
                 from: {
                     x: 0,
                     y: -8,
-                    z: 10
+                    z: 16
                 },
                 to: {
                     x: 0,
                     y: -9,
-                    z: 12
+                    z: 18
                 }
             }],
             startAt: 59.3,

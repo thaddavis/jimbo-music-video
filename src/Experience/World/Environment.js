@@ -19,7 +19,7 @@ export default class Environment
         // this.setSunLight()
         this.setLights()
         // this.addGrid()
-        this.addFrame()
+        // this.addFrame()
         // this.setEnvironmentMap()
     }
 
