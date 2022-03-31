@@ -8,15 +8,12 @@ export default class Phrase2cBackground
 {
     constructor(timelineMetadata)
     {
-        
-        console.log('constructor Phrase2cBackground')
         this.timelineMetadata = timelineMetadata
         this.experience = new Experience()
         this.scene = this.experience.scene
         this.resources = this.experience.resources
 
         this.setGeometry()
-        // this.setTextures()
         this.setMaterial()
         this.setMesh()
 
@@ -25,7 +22,6 @@ export default class Phrase2cBackground
 
     setGeometry()
     {
-        // this.geometry = new THREE.CircleGeometry(5, 256)
         this.geometry = new THREE.PlaneGeometry( 20, 20, 10, 10 );
     }
 

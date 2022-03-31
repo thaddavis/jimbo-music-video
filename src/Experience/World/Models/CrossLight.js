@@ -9,8 +9,6 @@ export default class CrossLight
 {
     constructor(timelineMetadata)
     {
-        
-        console.log('constructor CrossLight')
         this.timelineMetadata = timelineMetadata
         this.experience = new Experience()
         this.scene = this.experience.scene
@@ -53,8 +51,6 @@ export default class CrossLight
     }
 
     destroy() {
-        console.log('destroy')
-
         const object = this.scene.getObjectByProperty( 'uuid', this.light.uuid );
         this.scene.remove( object );
     }

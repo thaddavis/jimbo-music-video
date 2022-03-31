@@ -10,8 +10,6 @@ export default class Phrase2cLight2
 {
     constructor(timelineMetadata)
     {
-        
-        console.log('constructor Phrase2cLight2')
         this.timelineMetadata = timelineMetadata
         this.experience = new Experience()
         this.scene = this.experience.scene
@@ -54,8 +52,6 @@ export default class Phrase2cLight2
     }
 
     destroy() {
-        console.log('destroy')
-
         const object = this.scene.getObjectByProperty( 'uuid', this.light.uuid );
         this.scene.remove( object );
     }

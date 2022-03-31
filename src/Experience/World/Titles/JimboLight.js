@@ -10,8 +10,6 @@ export default class JimboLight
 {
     constructor(timelineMetadata)
     {
-        
-        console.log('constructor ForYouLight')
         this.timelineMetadata = timelineMetadata
         this.experience = new Experience()
         this.scene = this.experience.scene

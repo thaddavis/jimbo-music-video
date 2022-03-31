@@ -125,8 +125,6 @@ export default class Flag
     }
 
     destroy() {
-        console.log('destroy')
-
         // console.log(
         //     this.geometry    
         // )

@@ -54,8 +54,6 @@ export default class Floor
 
     setMesh()
     {   
-        console.log('setMesh')
-
         this.mesh = new THREE.Mesh(this.geometry, this.material)
 
         this.setInitialProperties()

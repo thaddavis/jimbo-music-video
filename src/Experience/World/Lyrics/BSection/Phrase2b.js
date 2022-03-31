@@ -8,8 +8,6 @@ export default class Phrase2d
 {
     constructor(timelineMetadata)
     {
-        
-        console.log('constructor Phrase2d')
         this.timelineMetadata = timelineMetadata
         this.experience = new Experience()
         this.scene = this.experience.scene
