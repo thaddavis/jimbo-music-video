@@ -1,14 +1,16 @@
 import * as THREE from 'three'
-import Experience from '../../Experience.js'
+import Experience from 'Experience/Experience.js'
 
-import { executeEffect } from '../../Utils/Effect.js'
+import { get } from 'lodash'
+import { executeEffect } from 'Experience/Utils/Effect.js'
+import { Config } from 'Experience/Config'
 
-export default class JimboLight
+export default class CrossLight
 {
     constructor(timelineMetadata)
     {
         
-        console.log('constructor ForYouLight')
+        console.log('constructor CrossLight')
         this.timelineMetadata = timelineMetadata
         this.experience = new Experience()
         this.scene = this.experience.scene
@@ -20,18 +22,16 @@ export default class JimboLight
     setLight() {
         const directionalLight = new THREE.DirectionalLight(0xffffff, 1, 100)
         directionalLight.castShadow = true
-        // directionalLight.shadow.mapSize.width = 1024
-        // directionalLight.shadow.mapSize.height = 1024
-        directionalLight.shadow.mapSize.width = 2048
-        directionalLight.shadow.mapSize.height = 2048
+        directionalLight.shadow.mapSize.width = get(Config, 'shadows.mapSize.x', 2048)
+        directionalLight.shadow.mapSize.height = get(Config, 'shadows.mapSize.y', 2048)
         directionalLight.shadow.camera.near = 0.5
         directionalLight.shadow.camera.far = 20
         directionalLight.shadow.camera.top = 22
         directionalLight.shadow.camera.right = 22
         directionalLight.shadow.camera.bottom = -20
         directionalLight.shadow.camera.left = -20
-        directionalLight.position.set(2, 2, 14)
-        
+        directionalLight.position.set(0, 0, 14)
+
         const t = new THREE.Object3D();
         t.translateX(0);
         t.translateY(0);
@@ -49,7 +49,6 @@ export default class JimboLight
 
     update()
     {
-        // debugger
         executeEffect(this, this.timelineMetadata, this.experience.time.delta, this.experience.time)
     }
 

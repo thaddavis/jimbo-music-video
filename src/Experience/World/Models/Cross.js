@@ -5,21 +5,20 @@ import { executeEffect } from 'Experience/Utils/Effect.js'
 
 import { initializeEffect } from 'Experience/Utils/InitializeEffect.js'
 
-export default class WitherberryLogo
+export default class Cross
 {
     constructor(timelineMetadata)
     {
         
-        console.log('constructor WitherberryLogo')
+        console.log('constructor Cross')
         this.timelineMetadata = timelineMetadata
         this.experience = new Experience()
         this.scene = this.experience.scene
         this.resources = this.experience.resources
 
-        this.resource = this.resources.items.witherberryLogo
+        this.resource = this.resources.items.crossModel
 
         this.setModel()
-        
         this.start()
     }
 
@@ -47,9 +46,11 @@ export default class WitherberryLogo
     {
         console.log('setInitialProperties', this.timelineMetadata)
 
+        debugger
+
         initializeEffect(this.model, this.timelineMetadata, this.experience.time)
 
-        // debugger
+        debugger
     }
 
     start() {

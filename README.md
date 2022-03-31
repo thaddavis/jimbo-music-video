@@ -7,8 +7,7 @@ https://threejs-journey.com/
 
 TODO
 
-- Add Lyrics For B Section with shadows
-- Add Wavy Poland flag using shaders
-- Fill out the 2nd half lyrics
+- Globe that zooms into Poland and England
+- England Flag
 - Explosion effect
 - Hallelujah

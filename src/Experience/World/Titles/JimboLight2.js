@@ -30,9 +30,9 @@ export default class JimboLight2
         directionalLight.shadow.camera.right = 22
         directionalLight.shadow.camera.bottom = -20
         directionalLight.shadow.camera.left = -20
-        directionalLight.position.set(2, 2, 14)
-
-        const t = new THREE.Object3D(0,-6, 0);
+        directionalLight.position.set(-2, 2, 14)
+        
+        const t = new THREE.Object3D(0, 0, 0);
         t.translateX(0);
         t.translateY(0);
         t.translateZ(0);

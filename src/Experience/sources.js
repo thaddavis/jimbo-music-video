@@ -14,7 +14,11 @@ export default [
         type: 'gltfModel',
         path: 'models/WitherberryLogo-smoothed-v6.glb'
     },
-    // WitherberryLogo-smoothed-v6
+    {
+        name: 'crossModel',
+        type: 'gltfModel',
+        path: 'models/cross.gltf'
+    },  
     // vvv vvv
     {
         name: 'skin1ColorTexture',

@@ -23,7 +23,7 @@ export function executeEffect(
         if (get(timelineMetadata, 'theClass.name') === 'Phrase1') {
             // debugger
         } else if (get(timelineMetadata, 'theClass.name') === 'WitherberryLogo') {
-            debugger
+            // debugger
         } else if (get(timelineMetadata, 'theClass.name') === 'Floor') {
             // debugger
         } else if (get(timelineMetadata, 'effect.name') === EFFECTS.FROM_TO) {
@@ -70,7 +70,7 @@ export function executeEffect(
                 ) // covers animating rotation
             ) {
 
-                debugger
+                // debugger
                 // handle property `rotation`
             
                 let updatedValue = {}

@@ -36,13 +36,13 @@ export function addTimelineEvents_b_section_camera(timeline) {
                 path: 'position',
                 from: {
                     x: 0,
-                    y: -8,
-                    z: 10
+                    y: -4,
+                    z: 12
                 },
                 to: {
                     x: 0,
-                    y: -9,
-                    z: 12
+                    y: -6,
+                    z: 14
                 }
             }],
             startAt: 45.8,
@@ -94,7 +94,7 @@ export function addTimelineEvents_b_section_camera(timeline) {
                 }
             }],
             startAt: 59.3,
-            endAt: 72
+            endAt: 72.5
         },
         started: false 
     }

@@ -38,6 +38,7 @@ import { addTimelineEvents_b_section_phrase2a } from 'Experience/Timeline/BSecti
 import { addTimelineEvents_b_section_phrase2b } from 'Experience/Timeline/BSection/Phrase2b';
 
 import { addTimelineEvents_b_section_flag_cutaway } from 'Experience/Timeline/BSection/Cutaways/BSectionFlag.js';
+import { addTimelineEvents_bridge_cross }  from 'Experience/Timeline/Bridge/Cross'
 
 import { 
     EFFECTS,
@@ -103,6 +104,8 @@ export default class World
             addTimelineEvents_b_section_phrase2b(this.timelineOfEvents)
 
             addTimelineEvents_b_section_flag_cutaway(this.timelineOfEvents)
+            
+            addTimelineEvents_bridge_cross(this.timelineOfEvents)
 
             this.environment = new Environment()
         })

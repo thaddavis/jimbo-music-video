@@ -35,29 +35,29 @@ export function addTimelineEvents_b_section_1st_phrase(timeline) {
         theClass: Phrase1
     }
 
-    timeline[uuidv4()] = {
-        isGlobal: true,
-        effect: {
-            name: EFFECTS.GLOBAL_FROM_TO,
-            pathToExperienceGlobal: 'camera.instance',
-            properties: [{
-                path: 'position',
-                from: {
-                    x: 0,
-                    y: 1,
-                    z: 12
-                },
-                to: {
-                    x: 0,
-                    y: -1,
-                    z: 12
-                }
-            }],
-            startAt: 45.5,
-            endAt: 51
-        },
-        started: false 
-    }
+    // timeline[uuidv4()] = {
+    //     isGlobal: true,
+    //     effect: {
+    //         name: EFFECTS.GLOBAL_FROM_TO,
+    //         pathToExperienceGlobal: 'camera.instance',
+    //         properties: [{
+    //             path: 'position',
+    //             from: {
+    //                 x: 0,
+    //                 y: 1,
+    //                 z: 12
+    //             },
+    //             to: {
+    //                 x: 0,
+    //                 y: 0,
+    //                 z: 12
+    //             }
+    //         }],
+    //         startAt: 45.5,
+    //         endAt: 51
+    //     },
+    //     started: false 
+    // }
 
     timeline[uuidv4()] = {
         isGlobal: false,

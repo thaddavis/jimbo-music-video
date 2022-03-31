@@ -3,12 +3,12 @@ import Experience from '../../Experience.js'
 
 import { executeEffect } from '../../Utils/Effect.js'
 
-export default class JimboLight
+export default class JimboLight4
 {
     constructor(timelineMetadata)
     {
         
-        console.log('constructor ForYouLight')
+        console.log('constructor JimboLight4')
         this.timelineMetadata = timelineMetadata
         this.experience = new Experience()
         this.scene = this.experience.scene
@@ -30,9 +30,9 @@ export default class JimboLight
         directionalLight.shadow.camera.right = 22
         directionalLight.shadow.camera.bottom = -20
         directionalLight.shadow.camera.left = -20
-        directionalLight.position.set(2, 2, 14)
+        directionalLight.position.set(1, 1, 2)
         
-        const t = new THREE.Object3D();
+        const t = new THREE.Object3D(0, 0, 0);
         t.translateX(0);
         t.translateY(0);
         t.translateZ(0);
@@ -49,7 +49,6 @@ export default class JimboLight
 
     update()
     {
-        // debugger
         executeEffect(this, this.timelineMetadata, this.experience.time.delta, this.experience.time)
     }
 
