@@ -68,12 +68,13 @@ export default class Floor
         this.setInitialProperties()
 
         // this.mesh.rotation.x = - Math.PI * 0.5
-        this.mesh.position.z = 0.1
+        // this.mesh.position.z = 0.1
         this.mesh.receiveShadow = true
         this.scene.add(this.mesh)
     }
 
-    setInitialProperties() {
+    setInitialProperties()
+    {
         console.log('setInitialProperties', this.timelineMetadata)
 
         initializeEffect(this, this.timelineMetadata, this.experience.time)

@@ -22,6 +22,8 @@ export function executeEffect(
 
         if (get(timelineMetadata, 'theClass.name') === 'Phrase1') {
             // debugger
+        } else if (get(timelineMetadata, 'theClass.name') === 'WitherberryLogo') {
+            debugger
         } else if (get(timelineMetadata, 'theClass.name') === 'Floor') {
             // debugger
         } else if (get(timelineMetadata, 'effect.name') === EFFECTS.FROM_TO) {
@@ -34,12 +36,19 @@ export function executeEffect(
 
         for (let property of timelineMetadata.effect.properties) {
             
+            // console.log('--- --- ---', get(timelineMetadata, 'theClass.name'))
+            // console.log('--- --- ---', get(timelineMetadata, 'theClass.name') === 'WitherberryLogo')
+
             if (get(timelineMetadata, 'effect.name') === EFFECTS.FROM_TO) {
                 // debugger
+            } else if (get(timelineMetadata, 'theClass.name') === 'WitherberryLogo') {
+                // console.log('1')
+                // debugger
+                // console.log('2')
             }
 
             const value = get(object, property.path)
-            if (typeof value === 'number') {
+            if (typeof value === 'number') { // covers animating scalars
                 let updatedValue = value + (property.to - property.from) * (
                     // (timeObject.current - timelineMetadata.effect.startAt) / ( // calculate the delta
                     delta /
@@ -50,18 +59,24 @@ export function executeEffect(
                 )
                 set(object, property.path, updatedValue)
                 object.needsUpdate = true
-            } else if (typeof value === 'object' && value.isVector3) {
+            } else if (
+                (typeof value === 'object' && value.isVector3) // covers animating position and scal
+                ||
+                (
+                    typeof value === 'object' && 
+                    value.hasOwnProperty('_x') &&
+                    value.hasOwnProperty('_y') &&
+                    value.hasOwnProperty('_z')
+                ) // covers animating rotation
+            ) {
 
-                if (get(timelineMetadata, 'effect.name') === EFFECTS.FROM_TO) {
-                    // debugger
-                }
-
-                // console.log(typeof value)
+                debugger
+                // handle property `rotation`
+            
                 let updatedValue = {}
                 for (let dimension of ['x', 'y', 'z']) {
                     // debugger
                     updatedValue[dimension] = value[dimension] + (property.to[dimension] - property.from[dimension]) * (
-                        // (timeObject.current - timelineMetadata.effect.startAt) / (
                         delta /
                             (
                                 timelineMetadata.effect.endAt - timelineMetadata.effect.startAt
@@ -70,24 +85,14 @@ export function executeEffect(
                     
                 }
 
-                // debugger
-                if (get(timelineMetadata, 'effect.name') === EFFECTS.FROM_TO) {
-                    // debugger
-                }
-
-                
-
                 value.set(
                     updatedValue.x,
                     updatedValue.y,
                     updatedValue.z,
                 );
 
-                if (get(timelineMetadata, 'effect.name') === EFFECTS.FROM_TO) {
-                    // debugger
-                }
-
                 object.needsUpdate = true
+            
             }
         }
     } else if (

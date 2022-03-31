@@ -36,23 +36,35 @@ export function initializeEffect(
             )
             set(object, property.path, updatedValue)
             object.needsUpdate = true
-        } else if (typeof value === 'object' && value.isVector3) {
-            // console.log(typeof value)
-            let initialValue = {}
+        } else if (
+            (typeof value === 'object' && value.isVector3) // covers animating position and scal
+            ||
+            (
+                typeof value === 'object' && 
+                value.hasOwnProperty('_x') &&
+                value.hasOwnProperty('_y') &&
+                value.hasOwnProperty('_z')
+            ) // covers animating rotation
+        ) {
             
-            for (let dimension of ['x', 'y', 'z']) {
-                initialValue[dimension] = property.from[dimension]
-            }
+            
 
-            value.set(
-                initialValue.x,
-                initialValue.y,
-                initialValue.z,
-            );
+                let initialValue = {}
+                
+                for (let dimension of ['x', 'y', 'z']) {
+                    initialValue[dimension] = property.from[dimension]
+                }
 
-            // debugger
+                value.set(
+                    initialValue.x,
+                    initialValue.y,
+                    initialValue.z,
+                );
 
-            object.needsUpdate = true
+                // debugger
+
+                object.needsUpdate = true
+            
         }
     }
 

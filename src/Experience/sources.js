@@ -9,6 +9,12 @@ export default [
         type: 'texture',
         path: 'textures/flag/Flag_of_Poland.png'
     },
+    {
+        name: 'witherberryLogo',
+        type: 'gltfModel',
+        path: 'models/WitherberryLogo-smoothed-v6.glb'
+    },
+    // WitherberryLogo-smoothed-v6
     // vvv vvv
     {
         name: 'skin1ColorTexture',
