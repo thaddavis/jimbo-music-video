@@ -28,8 +28,8 @@ export function addTimelineEvents_3rd_stanza_2nd_phrase(timeline) {
                 // from: 1,
                 // to: 0
             }],
-            startAt: 33,
-            endAt: 35
+            startAt: 33000,
+            endAt: 35000
         },
         started: false,
         theClass: Phrase2
@@ -55,8 +55,8 @@ export function addTimelineEvents_3rd_stanza_2nd_phrase(timeline) {
                 // from: 1,
                 // to: 0
             }],
-            startAt: 33,
-            endAt: 35
+            startAt: 33000,
+            endAt: 35000
         },
         started: false,
         theClass: Phrase2Background
@@ -80,8 +80,8 @@ export function addTimelineEvents_3rd_stanza_2nd_phrase(timeline) {
                     z: 12
                 }
             }],
-            startAt: 33,
-            endAt: 35
+            startAt: 33000,
+            endAt: 35000
         },
         started: false 
     }
@@ -103,8 +103,8 @@ export function addTimelineEvents_3rd_stanza_2nd_phrase(timeline) {
                     z: 4
                 }
             }],
-            startAt: 33,
-            endAt: 35
+            startAt: 33000,
+            endAt: 35000
         },
         started: false,
         theClass: Phrase2Light
@@ -127,8 +127,8 @@ export function addTimelineEvents_3rd_stanza_2nd_phrase(timeline) {
                     z: 4
                 }
             }],
-            startAt: 33,
-            endAt: 35
+            startAt: 33000,
+            endAt: 35000
         },
         started: false,
         theClass: Phrase2Light2

@@ -28,8 +28,8 @@ export function addTimelineEvents_1st_verse_2nd_phrase(timeline) {
                 // from: 1,
                 // to: 0
             }],
-            startAt: 19,
-            endAt: 21
+            startAt: 19000,
+            endAt: 21000
         },
         started: false,
         theClass: Phrase2
@@ -55,8 +55,8 @@ export function addTimelineEvents_1st_verse_2nd_phrase(timeline) {
                 // from: 1,
                 // to: 0
             }],
-            startAt: 19,
-            endAt: 21
+            startAt: 19000,
+            endAt: 21000
         },
         started: false,
         theClass: Phrase2Background
@@ -80,8 +80,8 @@ export function addTimelineEvents_1st_verse_2nd_phrase(timeline) {
                     z: 12
                 }
             }],
-            startAt: 19,
-            endAt: 21
+            startAt: 19000,
+            endAt: 21000
         },
         started: false 
     }
@@ -103,8 +103,8 @@ export function addTimelineEvents_1st_verse_2nd_phrase(timeline) {
                     z: 4
                 }
             }],
-            startAt: 19,
-            endAt: 21
+            startAt: 19000,
+            endAt: 21000
         },
         started: false,
         theClass: Phrase2Light
@@ -127,8 +127,8 @@ export function addTimelineEvents_1st_verse_2nd_phrase(timeline) {
                     z: 4
                 }
             }],
-            startAt: 19,
-            endAt: 21
+            startAt: 19000,
+            endAt: 21000
         },
         started: false,
         theClass: Phrase2Light2

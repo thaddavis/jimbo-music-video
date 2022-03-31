@@ -9,8 +9,6 @@ export default class WitherberryLogo
 {
     constructor(timelineMetadata)
     {
-        
-        console.log('constructor WitherberryLogo')
         this.timelineMetadata = timelineMetadata
         this.experience = new Experience()
         this.scene = this.experience.scene
@@ -45,11 +43,7 @@ export default class WitherberryLogo
 
     setInitialProperties()
     {
-        console.log('setInitialProperties', this.timelineMetadata)
-
         initializeEffect(this.model, this.timelineMetadata, this.experience.time)
-
-        // debugger
     }
 
     start() {
@@ -66,10 +60,6 @@ export default class WitherberryLogo
     }
 
     destroy() {
-        console.log('destroy')
-
-        // debugger
-
         const object = this.scene.getObjectByProperty( 'uuid', this.resource.scene.uuid );
 
         this.resource.scene.traverse((child) =>

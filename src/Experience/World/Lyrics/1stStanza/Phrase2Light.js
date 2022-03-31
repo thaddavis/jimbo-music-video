@@ -10,8 +10,6 @@ export default class Phrase2Light
 {
     constructor(timelineMetadata)
     {
-        
-        console.log('constructor Phrase1Light')
         this.timelineMetadata = timelineMetadata
         this.experience = new Experience()
         this.scene = this.experience.scene
@@ -22,7 +20,7 @@ export default class Phrase2Light
 
     setLight() {
         const directionalLight = new THREE.DirectionalLight(0xffffff, 1, 100)
-        directionalLight.castShadow = true
+        directionalLight.castShadow = get(Config, 'shadows.castShadows', false)
         directionalLight.shadow.mapSize.width = get(Config, 'shadows.mapSize.x', 2048)
         directionalLight.shadow.mapSize.height = get(Config, 'shadows.mapSize.y', 2048)
         directionalLight.shadow.camera.near = 0.5
@@ -54,8 +52,6 @@ export default class Phrase2Light
     }
 
     destroy() {
-        console.log('destroy')
-
         const object = this.scene.getObjectByProperty( 'uuid', this.light.uuid );
         this.scene.remove( object );
     }

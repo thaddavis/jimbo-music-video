@@ -33,24 +33,6 @@ export default class Resources extends EventEmitter
     startLoading()
     {
         // Load each source
-        console.log('this.sources', this.sources)
-        console.log('this.sources.length', this.sources.length)
-        console.log('this.sources.length === 0', this.sources.length === 0)
-        
-        // if (this.sources && this.sources.length === 0) {
-        //     console.log('startLoading...')
-        //     debugger
-        //     this.trigger('ready')
-        // }
-
-        // setTimeout(() => {
-        //     if (this.sources && this.sources.length === 0) {
-        //         console.log('startLoading...')
-        //         // debugger
-        //         this.trigger('ready')
-        //     }
-        // }, 1)
-
         for(const source of this.sources)
         {
             if(source.type === 'gltfModel')
@@ -98,7 +80,7 @@ export default class Resources extends EventEmitter
 
     sourceLoaded(source, file)
     {
-        console.log('sourceLoaded')
+        // console.log('sourceLoaded')
 
         this.items[source.name] = file
 

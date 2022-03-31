@@ -9,8 +9,6 @@ export default class Cross
 {
     constructor(timelineMetadata)
     {
-        
-        console.log('constructor Cross')
         this.timelineMetadata = timelineMetadata
         this.experience = new Experience()
         this.scene = this.experience.scene
@@ -25,10 +23,6 @@ export default class Cross
     setModel()
     {
         this.model = this.resource.scene
-        // this.model.scale.set(1, 1, 1)
-        // this.model.position.set(0,-4, 2)
-        // this.model.position.set(0,0,0)
-
         this.setInitialProperties()
 
         this.scene.add(this.model)
@@ -44,33 +38,21 @@ export default class Cross
 
     setInitialProperties()
     {
-        console.log('setInitialProperties', this.timelineMetadata)
-
-        debugger
-
         initializeEffect(this.model, this.timelineMetadata, this.experience.time)
-
-        debugger
     }
 
-    start() {
-        // console.log('starting Floor.js', this.mesh.position)
-
-        // debugger
+    start()
+    {
+        
     }
 
     update()
     {        
-        // debugger
-
         executeEffect(this.model, this.timelineMetadata, this.experience.time.delta, this.experience.time)
     }
 
     destroy() {
-        console.log('destroy')
-
-        // debugger
-
+        
         const object = this.scene.getObjectByProperty( 'uuid', this.resource.scene.uuid );
 
         this.resource.scene.traverse((child) =>

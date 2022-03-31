@@ -10,8 +10,6 @@ export default class Flag
 {
     constructor(timelineMetadata)
     {
-        
-        console.log('constructor Flag')
         this.timelineMetadata = timelineMetadata
         this.experience = new Experience()
         this.scene = this.experience.scene
@@ -59,7 +57,6 @@ export default class Flag
 
     setMaterial()
     {
-        console.log('setMaterial')
         // // this.material = new THREE.MeshStandardMaterial({
         //     // map: this.textures.color,
         //     // normalMap: this.textures.normal
@@ -88,8 +85,6 @@ export default class Flag
 
     setMesh()
     {   
-        console.log('setMesh')
-
         this.mesh = new THREE.Mesh(this.geometry, this.material)
         // const planeGeometry = new THREE.PlaneGeometry( 20, 20, 32, 32 );
         // const planeMaterial = new THREE.MeshStandardMaterial( { color: 0xffffff } )

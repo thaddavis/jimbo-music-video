@@ -10,7 +10,6 @@ export default class Floor
     constructor(timelineMetadata)
     {
         
-        console.log('constructor Floor')
         this.timelineMetadata = timelineMetadata
         this.experience = new Experience()
         this.scene = this.experience.scene
@@ -47,13 +46,7 @@ export default class Floor
 
     setMaterial()
     {
-        console.log('setMaterial')
-        // this.material = new THREE.MeshStandardMaterial({
-            // map: this.textures.color,
-            // normalMap: this.textures.normal
-        // })
-
-        this.material = new THREE.MeshBasicMaterial({
+         this.material = new THREE.MeshBasicMaterial({
             color: 'red',
             transparent: true
         })
@@ -75,18 +68,10 @@ export default class Floor
 
     setInitialProperties()
     {
-        console.log('setInitialProperties', this.timelineMetadata)
-
         initializeEffect(this, this.timelineMetadata, this.experience.time)
-
-        // debugger
     }
 
-    start() {
-        // console.log('starting Floor.js', this.mesh.position)
-
-        // debugger
-    }
+    start() {}
 
     update()
     {

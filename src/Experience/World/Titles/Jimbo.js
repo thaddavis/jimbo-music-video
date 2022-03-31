@@ -10,15 +10,12 @@ export default class Jimbo
 {
     constructor(timelineMetadata)
     {
-        
-        console.log('constructor Jimbo')
         this.timelineMetadata = timelineMetadata
         this.experience = new Experience()
         this.scene = this.experience.scene
         this.resources = this.experience.resources
 
         this.setGeometry()
-        // this.setTextures()
         this.setMaterial()
         this.setMesh()
 
@@ -32,12 +29,6 @@ export default class Jimbo
 
     setMaterial()
     {
-        console.log('setMaterial')
-        // this.material = new THREE.MeshStandardMaterial({
-            // map: this.textures.color,
-            // normalMap: this.textures.normal
-        // })
-
         this.material = new THREE.MeshStandardMaterial({
             color: 'red',
             transparent: true
@@ -46,7 +37,6 @@ export default class Jimbo
 
     setMesh()
     {   
-        console.log('setMesh')
         // Text
         const textGeometry = new TextGeometry(
             'JIMBO',
@@ -72,10 +62,6 @@ export default class Jimbo
 
     setInitialProperties()
     {
-        console.log('setInitialProperties', this.timelineMetadata)
-        
-        // debugger
-        
         initializeEffect(this, this.timelineMetadata, this.experience.time)
     }
 
@@ -85,27 +71,10 @@ export default class Jimbo
 
     update()
     {
-        // console.log('updating Floor.js')
-        // console.log(this.timelineMetadata)
-        // this.time.delta * 0.001)
-        // console.log(this.experience)
-        // console.log("DELTA", this.experience.time.delta)
-
         executeEffect(this, this.timelineMetadata, this.experience.time.delta, this.experience.time)
     }
 
     destroy() {
-        console.log('destroy')
-
-        console.log(
-            this.geometry    
-        )
-        console.log(
-            this.material    
-        )
-        
-        // debugger
-
         const object = this.scene.getObjectByProperty( 'uuid', this.mesh.uuid );
         object.geometry.dispose();
         object.material.dispose();

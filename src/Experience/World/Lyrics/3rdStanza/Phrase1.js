@@ -9,8 +9,6 @@ export default class Phrase1
 {
     constructor(timelineMetadata)
     {
-        
-        console.log('constructor Phrase1')
         this.timelineMetadata = timelineMetadata
         this.experience = new Experience()
         this.scene = this.experience.scene
@@ -47,12 +45,6 @@ export default class Phrase1
 
     setMaterial()
     {
-        console.log('setMaterial')
-        // this.material = new THREE.MeshStandardMaterial({
-            // map: this.textures.color,
-            // normalMap: this.textures.normal
-        // })
-
         this.material = new THREE.MeshStandardMaterial({
             color: 'red',
             transparent: true
@@ -61,15 +53,6 @@ export default class Phrase1
 
     setMesh()
     {   
-        console.log('setMesh')
-
-        // this.mesh = new THREE.Mesh(this.geometry, this.material)
-        // this.mesh.rotation.x = - Math.PI * 0.5
-        // this.mesh.receiveShadow = true
-        // this.scene.add(this.mesh)
-
-        const material = new THREE.MeshStandardMaterial()
-
         // Text
         const textGeometry = new TextGeometry(
             'I told you I meant it',
@@ -96,35 +79,17 @@ export default class Phrase1
         this.scene.add(this.mesh)
     }
 
-    start() {
-        // console.log('starting Floor.js', this.mesh.position)
-
-        // debugger
+    start()
+    {
+        
     }
 
     update()
     {
-        // console.log('updating Floor.js')
-        // console.log(this.timelineMetadata)
-        // this.time.delta * 0.001)
-        // console.log(this.experience)
-        // console.log("DELTA", this.experience.time.delta)
-
         executeEffect(this, this.timelineMetadata, this.experience.time.delta, this.experience.time)
     }
 
     destroy() {
-        console.log('destroy')
-
-        console.log(
-            this.geometry    
-        )
-        console.log(
-            this.material    
-        )
-        
-        // debugger
-
         const object = this.scene.getObjectByProperty( 'uuid', this.mesh.uuid );
         object.geometry.dispose();
         object.material.dispose();

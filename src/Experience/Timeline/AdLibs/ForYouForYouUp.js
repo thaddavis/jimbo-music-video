@@ -38,8 +38,8 @@ export function addTimelineEvents_ad_libs_for_you_up(timeline) {
                 }
             }
             ],
-            startAt: 37.5,
-            endAt: 38.5
+            startAt: 37500,
+            endAt: 38500
         },
         started: false,
         theClass: ForYou
@@ -61,8 +61,8 @@ export function addTimelineEvents_ad_libs_for_you_up(timeline) {
                     z: 2
                 }
             }],
-            startAt: 37.5,
-            endAt: 38.5
+            startAt: 37500,
+            endAt: 38500
         },
         started: false,
         theClass: ForYouBackground
@@ -84,8 +84,8 @@ export function addTimelineEvents_ad_libs_for_you_up(timeline) {
                     z: 0
                 }
             }],
-            startAt: 37.5,
-            endAt: 38.5
+            startAt: 37500,
+            endAt: 38500
         },
         started: false,
         theClass: ForYouLight
@@ -109,8 +109,8 @@ export function addTimelineEvents_ad_libs_for_you_up(timeline) {
                     z: 12
                 }
             }],
-            startAt: 37.5,
-            endAt: 38.5
+            startAt: 37500,
+            endAt: 38500
         },
         started: false 
     }

@@ -28,8 +28,8 @@ export function addTimelineEvents_1st_verse_1st_phrase(timeline) {
                 // from: 1,
                 // to: 0
             }],
-            startAt: 17,
-            endAt: 19
+            startAt: 17000,
+            endAt: 19000
         },
         started: false,
         theClass: Phrase1
@@ -55,8 +55,8 @@ export function addTimelineEvents_1st_verse_1st_phrase(timeline) {
                 // from: 1,
                 // to: 0
             }],
-            startAt: 17,
-            endAt: 19
+            startAt: 17000,
+            endAt: 19000
         },
         started: false,
         theClass: Phrase1Background
@@ -72,16 +72,16 @@ export function addTimelineEvents_1st_verse_1st_phrase(timeline) {
                 from: {
                     x: 0,
                     y: 5,
-                    z: 12
+                    z: 10
                 },
                 to: {
                     x: 0,
                     y: 4,
-                    z: 12
+                    z: 10
                 }
             }],
-            startAt: 17,
-            endAt: 19
+            startAt: 17000,
+            endAt: 19000
         },
         started: false 
     }
@@ -103,35 +103,11 @@ export function addTimelineEvents_1st_verse_1st_phrase(timeline) {
                     z: 4
                 }
             }],
-            startAt: 17,
-            endAt: 19
+            startAt: 17000,
+            endAt: 19000
         },
         started: false,
         theClass: Phrase1Light
-    }
-
-    timeline[uuidv4()] = {
-        isGlobal: false,
-        effect: {
-            name: EFFECTS.FROM_TO,
-            properties: [{
-                path: 'light.position',
-                from: {
-                    x: 0,
-                    y: 0,
-                    z: 2
-                },
-                to: {
-                    x: 0,
-                    y: 4,
-                    z: 4
-                }
-            }],
-            startAt: 17,
-            endAt: 19
-        },
-        started: false,
-        theClass: Phrase1Light2
     }
 
 }

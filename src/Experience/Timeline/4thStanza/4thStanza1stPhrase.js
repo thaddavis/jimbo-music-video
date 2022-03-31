@@ -30,8 +30,8 @@ export function addTimelineEvents_4th_stanza_1st_phrase(timeline) {
                 // from: 1,
                 // to: 0
             }],
-            startAt: 38.5,
-            endAt: 40
+            startAt: 38500,
+            endAt: 40000
         },
         started: false,
         theClass: Phrase1
@@ -57,8 +57,8 @@ export function addTimelineEvents_4th_stanza_1st_phrase(timeline) {
                 // from: 1,
                 // to: 0
             }],
-            startAt: 38.5,
-            endAt: 40
+            startAt: 38500,
+            endAt: 40000
         },
         started: false,
         theClass: Phrase1Background
@@ -82,8 +82,8 @@ export function addTimelineEvents_4th_stanza_1st_phrase(timeline) {
                     z: 14
                 }
             }],
-            startAt: 38.5,
-            endAt: 40
+            startAt: 38500,
+            endAt: 40000
         },
         started: false 
     }
@@ -105,8 +105,8 @@ export function addTimelineEvents_4th_stanza_1st_phrase(timeline) {
                     z: 4
                 }
             }],
-            startAt: 38.5,
-            endAt: 40
+            startAt: 38500,
+            endAt: 40000
         },
         started: false,
         theClass: Phrase1Light
@@ -129,8 +129,8 @@ export function addTimelineEvents_4th_stanza_1st_phrase(timeline) {
                     z: 4
                 }
             }],
-            startAt: 38.5,
-            endAt: 40
+            startAt: 38500,
+            endAt: 40000
         },
         started: false,
         theClass: Phrase1Light2

@@ -58,7 +58,7 @@ export function addTimelineEvents_intro(timeline) {
                 }
             ],
             startAt: 0,
-            endAt: 1.25
+            endAt: 1250
         },
         started: false,
         theClass: WitherberryLogo
@@ -96,7 +96,7 @@ export function addTimelineEvents_intro(timeline) {
                 }
             ],
             startAt: 0,
-            endAt: 1.25
+            endAt: 1250
         },
         started: false,
         theClass: Jimbo
@@ -119,7 +119,7 @@ export function addTimelineEvents_intro(timeline) {
                 }
             }],
             startAt: 0,
-            endAt: 1.25
+            endAt: 1250
         },
         started: false,
         theClass: JimboLight
@@ -142,7 +142,7 @@ export function addTimelineEvents_intro(timeline) {
                 }
             }],
             startAt: 0,
-            endAt: 1.25
+            endAt: 1250
         },
         started: false,
         theClass: JimboLight2
@@ -166,7 +166,7 @@ export function addTimelineEvents_intro(timeline) {
             }],
             startAt: 0,
             // endAt: 1.25
-            endAt: 17
+            endAt: 17000
         },
         started: false,
         theClass: JimboLight3
@@ -190,7 +190,7 @@ export function addTimelineEvents_intro(timeline) {
             }],
             startAt: 0,
             // endAt: 1.25
-            endAt: 17
+            endAt: 17000
         },
         started: false,
         theClass: JimboLight4
@@ -261,8 +261,8 @@ export function addTimelineEvents_intro(timeline) {
                     }
                 }
             ],
-            startAt: 1.25,
-            endAt: 17
+            startAt: 1250,
+            endAt: 17000
         },
         started: false,
         theClass: Globe
@@ -286,8 +286,8 @@ export function addTimelineEvents_intro(timeline) {
                     z: 10
                 }
             }],
-            startAt: 1.25,
-            endAt: 17
+            startAt: 1250,
+            endAt: 17000
         },
         started: false 
     }

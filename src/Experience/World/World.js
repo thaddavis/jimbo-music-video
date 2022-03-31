@@ -51,8 +51,6 @@ export default class World
 {
     constructor()
     {
-        console.log('World constructor')
-
         this.experience = new Experience()
         this.scene = this.experience.scene
         this.resources = this.experience.resources
@@ -60,14 +58,9 @@ export default class World
         this.updatables = {};
 
         // Wait for resources
-
-        console.log('definite on ready handler')
-
         this.resources.on('ready', () =>
         {
-            console.log('ready')
             // Setup
-            
             addTimelineEvents_intro(this.timelineOfEvents)
             addTimelineEvents_1st_verse_1st_phrase(this.timelineOfEvents)
             addTimelineEvents_1st_verse_2nd_phrase(this.timelineOfEvents)
@@ -124,15 +117,15 @@ export default class World
             ) {
 
                 if (
-                    this.experience.playerInstance.player.getCurrentTime() >= updatable.effect.startAt &&
-                    this.experience.playerInstance.player.getCurrentTime() <= updatable.effect.endAt &&
+                    this.experience.time.elapsed >= updatable.effect.startAt &&
+                    this.experience.time.elapsed <= updatable.effect.endAt &&
                     updatable.started === false
                 ) {
                     // debugger
                     this.updatables[updatableId] = new updatable.theClass(updatable)
                     updatable.started = true
                 } else if (
-                    this.experience.playerInstance.player.getCurrentTime() > updatable.effect.endAt &&
+                    this.experience.time.elapsed > updatable.effect.endAt &&
                     updatable.started === true
                 ) {
                     // debugger
@@ -147,8 +140,8 @@ export default class World
                 ].includes(updatable.effect.name)
             ) {
                 if (
-                    this.experience.playerInstance.player.getCurrentTime() >= updatable.effect.startAt &&
-                    this.experience.playerInstance.player.getCurrentTime() <= updatable.effect.endAt &&
+                    this.experience.time.elapsed >= updatable.effect.startAt &&
+                    this.experience.time.elapsed <= updatable.effect.endAt &&
                     updatable.started === false
                 ) {
                     // debugger
@@ -172,7 +165,7 @@ export default class World
 
                     updatable.started = true
                 } else if (
-                    this.experience.playerInstance.player.getCurrentTime() > updatable.effect.endAt &&
+                    this.experience.time.elapsed > updatable.effect.endAt &&
                     updatable.started === true
                 ) {
                     // delete

@@ -8,15 +8,12 @@ export default class Phrase2Background
 {
     constructor(timelineMetadata)
     {
-        
-        console.log('constructor Phrase1')
         this.timelineMetadata = timelineMetadata
         this.experience = new Experience()
         this.scene = this.experience.scene
         this.resources = this.experience.resources
 
         this.setGeometry()
-        // this.setTextures()
         this.setMaterial()
         this.setMesh()
 
@@ -46,64 +43,29 @@ export default class Phrase2Background
 
     setMaterial()
     {
-        console.log('setMaterial')
-        // this.material = new THREE.MeshStandardMaterial({
-            // map: this.textures.color,
-            // normalMap: this.textures.normal
-        // })
-
         this.material = new THREE.MeshStandardMaterial({
             color: 'white',
-            // transparent: true
         })
     }
 
     setMesh()
     {   
-        console.log('setMesh')
-
         this.mesh = new THREE.Mesh(this.geometry, this.material)
-        // const planeGeometry = new THREE.PlaneGeometry( 20, 20, 32, 32 );
-        // const planeMaterial = new THREE.MeshStandardMaterial( { color: 0xffffff } )
-        // this.mesh = new THREE.Mesh( planeGeometry, planeMaterial );
-
-        // this.mesh.position.x = 0 
-        // this.mesh.position.y = 0
-        // this.mesh.position.z = -1
         this.mesh.receiveShadow = true
-        // this.mesh.castShadow = true;
         this.scene.add(this.mesh)
     }
 
-    start() {
-        // console.log('starting Floor.js', this.mesh.position)
-
-        // debugger
+    start()
+    {
+    
     }
 
     update()
     {
-        // console.log('updating Floor.js')
-        // console.log(this.timelineMetadata)
-        // this.time.delta * 0.001)
-        // console.log(this.experience)
-        // console.log("DELTA", this.experience.time.delta)
-
         executeEffect(this, this.timelineMetadata, this.experience.time.delta, this.experience.time)
     }
 
     destroy() {
-        console.log('destroy')
-
-        // console.log(
-        //     this.geometry    
-        // )
-        // console.log(
-        //     this.material    
-        // )
-        
-        // debugger
-
         const object = this.scene.getObjectByProperty( 'uuid', this.mesh.uuid );
         object.geometry.dispose();
         object.material.dispose();

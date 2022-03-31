@@ -1,5 +1,4 @@
 import Phrase1a from 'Experience/World/Lyrics/BSection/Phrase1a'
-import Phrase1aBackground from 'Experience/World/Lyrics/BSection/Phrase1aBackground'
 import Phrase1aLight from 'Experience/World/Lyrics/BSection/Phrase1aLight'
 import { v4 as uuidv4 } from 'uuid';
 
@@ -28,8 +27,8 @@ export function addTimelineEvents_b_section_phrase1a(timeline) {
                 // from: 1,
                 // to: 0
             }],
-            startAt: 50.5,
-            endAt: 56.5
+            startAt: 50500,
+            endAt: 56500
         },
         started: false,
         theClass: Phrase1a
@@ -53,8 +52,8 @@ export function addTimelineEvents_b_section_phrase1a(timeline) {
                     z: 18
                 }
             }],
-            startAt: 50.5,
-            endAt: 56.5
+            startAt: 50500,
+            endAt: 56500
         },
         started: false 
     }
@@ -76,8 +75,8 @@ export function addTimelineEvents_b_section_phrase1a(timeline) {
                     z: 4
                 }
             }],
-            startAt: 50.5,
-            endAt: 56.5
+            startAt: 50500,
+            endAt: 56500
         },
         started: false,
         theClass: Phrase1aLight
@@ -100,8 +99,8 @@ export function addTimelineEvents_b_section_phrase1a(timeline) {
                     z: 4
                 }
             }],
-            startAt: 50.5,
-            endAt: 56.5
+            startAt: 50500,
+            endAt: 56500
         },
         started: false,
         theClass: Phrase1aLight2

@@ -9,8 +9,6 @@ export default class SkinPlane1
 {
     constructor(timelineMetadata)
     {
-        
-        console.log('constructor SkinPlane1')
         this.timelineMetadata = timelineMetadata
         this.experience = new Experience()
         this.scene = this.experience.scene
@@ -33,8 +31,6 @@ export default class SkinPlane1
     {
         this.textures = {}
 
-        console.log(this.resources)
-
         this.textures.color = this.resources.items.skin1ColorTexture
         this.textures.color.encoding = THREE.sRGBEncoding
         // this.textures.color.repeat.set(1.5, 1.5)
@@ -48,8 +44,6 @@ export default class SkinPlane1
 
     setMaterial()
     {
-        console.log('setMaterial')
-        
         this.material = new THREE.MeshStandardMaterial({
             map: this.textures.color,
             normalMap: this.textures.normal,
@@ -60,27 +54,12 @@ export default class SkinPlane1
             displacementScale: 0.05,
             transparent: true
         })
-
-        // this.material = new THREE.MeshStandardMaterial({
-        //     color: 'white',
-        //     // transparent: true
-        // })
     }
 
     setMesh()
     {   
-        console.log('setMesh')
-
         this.mesh = new THREE.Mesh(this.geometry, this.material)
-        // const planeGeometry = new THREE.PlaneGeometry( 20, 20, 32, 32 );
-        // const planeMaterial = new THREE.MeshStandardMaterial( { color: 0xffffff } )
-        // this.mesh = new THREE.Mesh( planeGeometry, planeMaterial );
-
-        // this.mesh.position.x = 0 
-        // this.mesh.position.y = 0
-        // this.mesh.position.z = -1
         this.mesh.receiveShadow = true
-        // this.mesh.castShadow = true;
         this.scene.add(this.mesh)
     }
 
@@ -102,17 +81,6 @@ export default class SkinPlane1
     }
 
     destroy() {
-        console.log('destroy')
-
-        // console.log(
-        //     this.geometry    
-        // )
-        // console.log(
-        //     this.material    
-        // )
-        
-        // debugger
-
         const object = this.scene.getObjectByProperty( 'uuid', this.mesh.uuid );
         object.geometry.dispose();
         object.material.dispose();

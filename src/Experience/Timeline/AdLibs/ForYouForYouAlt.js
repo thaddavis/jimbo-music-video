@@ -24,8 +24,8 @@ export function addTimelineEvents_ad_libs_for_you_for_you_alt(timeline) {
                     z: 2
                 }
             }],
-            startAt: 30.5,
-            endAt: 31.5
+            startAt: 30500,
+            endAt: 31500
         },
         started: false,
         theClass: ForYou
@@ -47,8 +47,8 @@ export function addTimelineEvents_ad_libs_for_you_for_you_alt(timeline) {
                     z: 2.0
                 }
             }],
-            startAt: 30.5,
-            endAt: 31.5
+            startAt: 30500,
+            endAt: 31500
         },
         started: false,
         theClass: ForYou
@@ -70,8 +70,8 @@ export function addTimelineEvents_ad_libs_for_you_for_you_alt(timeline) {
                     z: 2
                 }
             }],
-            startAt: 30.5,
-            endAt: 31.5
+            startAt: 30500,
+            endAt: 31500
         },
         started: false,
         theClass: ForYouBackground
@@ -93,8 +93,8 @@ export function addTimelineEvents_ad_libs_for_you_for_you_alt(timeline) {
                     z: 0
                 }
             }],
-            startAt: 30.5,
-            endAt: 31.5
+            startAt: 30500,
+            endAt: 31500
         },
         started: false,
         theClass: ForYouLight
@@ -118,8 +118,8 @@ export function addTimelineEvents_ad_libs_for_you_for_you_alt(timeline) {
                     z: 12
                 }
             }],
-            startAt: 30.5,
-            endAt: 31.5
+            startAt: 30500,
+            endAt: 31500
         },
         started: false 
     }

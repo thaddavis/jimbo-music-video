@@ -9,8 +9,6 @@ export default class Globe
 {
     constructor(timelineMetadata)
     {
-        
-        console.log('constructor Globe')
         this.timelineMetadata = timelineMetadata
         this.experience = new Experience()
         this.scene = this.experience.scene
@@ -25,10 +23,6 @@ export default class Globe
     setModel()
     {
         this.model = this.resource.scene
-        // this.model.scale.set(1, 1, 1)
-        // this.model.position.set(0,-4, 2)
-        // this.model.position.set(0,0,0)
-
         this.setInitialProperties()
 
         let axisX = new THREE.Vector3(1, 0, 0).normalize();
@@ -36,13 +30,7 @@ export default class Globe
         let axisZ = new THREE.Vector3(0, 0, 1).normalize();
         let tiltAxis = new THREE.Vector3(0, 1, 0).normalize();
 
-        // this.model.rotateOnAxis( axisX, 0 );
         this.model.rotateOnAxis( axisX, Math.PI * 27 / 100 );
-        // this.model.rotateOnAxis( axisY, -Math.PI/3 );
-        // this.model.rotateOnAxis( axis, Math.PI / 8 );
-        // this.model.rotateOnAxis( axis, Math.PI / 16 );
-
-        // this.model.up.set(axisX)
 
         this.scene.add(this.model)
 
@@ -57,35 +45,20 @@ export default class Globe
 
     setInitialProperties()
     {
-        console.log('setInitialProperties', this.timelineMetadata)
-
-        // debugger
-
         initializeEffect(this.model, this.timelineMetadata, this.experience.time)
-
-        // debugger
     }
 
-    start() {
-        // console.log('starting Floor.js', this.mesh.position)
-
-        // debugger
+    start()
+    {
+        
     }
 
     update()
     {        
-        // debugger
-
-        // console.log('update', this.model.rotation)
-
         executeEffect(this.model, this.timelineMetadata, this.experience.time.delta, this.experience.time)
     }
 
     destroy() {
-        console.log('destroy')
-
-        // debugger
-
         const object = this.scene.getObjectByProperty( 'uuid', this.resource.scene.uuid );
 
         this.resource.scene.traverse((child) =>

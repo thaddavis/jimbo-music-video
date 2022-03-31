@@ -25,8 +25,8 @@ export function addTimelineEvents_b_section_flag_cutaway(timeline) {
                     z: 1,
                 }
             }],
-            startAt: 44.7,
-            endAt: 45.7
+            startAt: 44700,
+            endAt: 45700
         },
         started: false,
         theClass: Flag
@@ -49,8 +49,8 @@ export function addTimelineEvents_b_section_flag_cutaway(timeline) {
                     z: 1,
                 }
             }],
-            startAt: 57.7,
-            endAt: 59.3
+            startAt: 57700,
+            endAt: 59300
         },
         started: false,
         theClass: Flag
