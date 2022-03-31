@@ -18,6 +18,11 @@ export default [
         name: 'crossModel',
         type: 'gltfModel',
         path: 'models/cross.gltf'
+    },
+    {
+        name: 'globeModel',
+        type: 'gltfModel',
+        path: 'models/globe.gltf'
     },  
     // vvv vvv
     {

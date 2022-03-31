@@ -1,4 +1,5 @@
 import Floor from '../World/Floor'
+import Globe from 'Experience/World/Models/Globe'
 import { v4 as uuidv4 } from 'uuid';
 
 import { EFFECTS } from '../Utils/Enums';
@@ -164,7 +165,8 @@ export function addTimelineEvents_intro(timeline) {
                 }
             }],
             startAt: 0,
-            endAt: 1.25
+            // endAt: 1.25
+            endAt: 17
         },
         started: false,
         theClass: JimboLight3
@@ -187,7 +189,8 @@ export function addTimelineEvents_intro(timeline) {
                 }
             }],
             startAt: 0,
-            endAt: 1.25
+            // endAt: 1.25
+            endAt: 17
         },
         started: false,
         theClass: JimboLight4
@@ -219,24 +222,63 @@ export function addTimelineEvents_intro(timeline) {
     timeline[uuidv4()] = {
         effect: {
             name: EFFECTS.FROM_TO,
+            properties: [
+                {
+                    path: 'scale',
+                    from: {
+                        x: 3,
+                        y: 3,
+                        z: 3
+                    },
+                    to: {
+                        x: 8,
+                        y: 8,
+                        z: 8
+                    }
+                },
+                {
+                    path: 'rotation',
+                    from: {
+                        x: 0,
+                        y: 0,
+                        z: 0
+                    },
+                    to: {
+                        x: 0,
+                        y: Math.PI * 2,
+                        z: 0
+                    }
+                }
+            ],
+            startAt: 1.25,
+            endAt: 17
+        },
+        started: false,
+        theClass: Globe
+    }
+
+    timeline[uuidv4()] = {
+        isGlobal: true,
+        effect: {
+            name: EFFECTS.GLOBAL_FROM_TO,
+            pathToExperienceGlobal: 'camera.instance',
             properties: [{
-                path: 'mesh.scale',
+                path: 'position',
                 from: {
-                    x: 1,
-                    y: 1,
-                    z: 1
+                    x: 0,
+                    y: 0,
+                    z: 10
                 },
                 to: {
-                    x: 2,
-                    y: 2,
-                    z: 2
+                    x: 0,
+                    y: 0,
+                    z: 10
                 }
             }],
             startAt: 1.25,
             endAt: 17
         },
-        started: false,
-        theClass: Floor
+        started: false 
     }
 
 }
