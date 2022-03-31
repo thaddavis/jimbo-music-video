@@ -23,6 +23,11 @@ export default [
         name: 'globeModel',
         type: 'gltfModel',
         path: 'models/globe.gltf'
+    },
+    {
+        name: 'jimboAudio',
+        type: 'audio',
+        path: 'assets/08Jimbo.mp3'
     },  
     // vvv vvv
     {

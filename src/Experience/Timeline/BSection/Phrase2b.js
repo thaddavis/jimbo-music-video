@@ -27,7 +27,7 @@ export function addTimelineEvents_b_section_phrase2b(timeline) {
                 // from: 1,
                 // to: 0
             }],
-            startAt: 652000,
+            startAt: 65200,
             endAt: 71700,
         },
         started: false,

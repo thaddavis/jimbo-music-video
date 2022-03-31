@@ -11,6 +11,7 @@ import Resources from './Utils/Resources.js'
 
 import sources from './sources.js'
 import EffectComposerClass from './EffectComposerClass.js'
+import AudioClass from './World/AudioClass.js'
 
 let instance = null
 
@@ -48,6 +49,7 @@ export default class Experience
 
         this.effectComposer = new EffectComposerClass()
 
+        this.audio = new AudioClass()
         this.world = new World()
 
         this.stats = new Stats();

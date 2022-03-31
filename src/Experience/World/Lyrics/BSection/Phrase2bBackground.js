@@ -1,8 +1,8 @@
 import * as THREE from 'three'
-import gsap from 'gsap'
 import Experience from 'Experience/Experience.js'
-
 import { executeEffect } from 'Experience/Utils/Effect.js'
+import { Config } from 'Experience/Config'
+import { get } from 'lodash'
 
 export default class Phrase2dBackground
 {
@@ -35,7 +35,7 @@ export default class Phrase2dBackground
     setMesh()
     {   
         this.mesh = new THREE.Mesh(this.geometry, this.material)
-        this.mesh.receiveShadow = true
+        this.mesh.receiveShadow = get(Config, 'shadows.receiveShadows', false)
         this.scene.add(this.mesh)
     }
 

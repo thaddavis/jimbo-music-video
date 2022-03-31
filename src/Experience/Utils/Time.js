@@ -15,10 +15,10 @@ export default class Time extends EventEmitter
         this.playerInstance = playerInstance
         // this.start = this.playerInstance.player.getCurrentTime()
         // vvv vvv
-        const audio = document.querySelector('audio')
-        if (audio) {
-            audio.paused ? audio.play() : audio.pause()
-        }
+        // const audio = document.querySelector('audio')
+        // if (audio) {
+        //     audio.paused ? audio.play() : audio.pause()
+        // }
         // ^^^ ^^^
 
         this.start = Date.now()

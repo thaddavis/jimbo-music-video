@@ -1,10 +1,9 @@
 import * as THREE from 'three'
-import gsap from 'gsap'
 import Experience from 'Experience/Experience.js'
-
 import { executeEffect } from 'Experience/Utils/Effect.js'
 import { Vector2 } from 'three'
-
+import { Config } from 'Experience/Config'
+import { get } from 'lodash'
 export default class SkinPlane1
 {
     constructor(timelineMetadata)
@@ -59,24 +58,16 @@ export default class SkinPlane1
     setMesh()
     {   
         this.mesh = new THREE.Mesh(this.geometry, this.material)
-        this.mesh.receiveShadow = true
+        this.mesh.receiveShadow = get(Config, 'shadows.receiveShadows', false)
         this.scene.add(this.mesh)
     }
 
-    start() {
-        // console.log('starting Floor.js', this.mesh.position)
-
-        // debugger
+    start()
+    {
     }
 
     update()
     {
-        // console.log('updating Floor.js')
-        // console.log(this.timelineMetadata)
-        // this.time.delta * 0.001)
-        // console.log(this.experience)
-        // console.log("DELTA", this.experience.time.delta)
-
         executeEffect(this, this.timelineMetadata, this.experience.time.delta, this.experience.time)
     }
 

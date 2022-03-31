@@ -1,8 +1,10 @@
 import * as THREE from 'three'
-import gsap from 'gsap'
 import Experience from 'Experience/Experience.js'
 
 import { executeEffect } from 'Experience/Utils/Effect.js'
+
+import { get } from 'lodash'
+import { Config } from 'Experience/Config'
 
 export default class Phrase1Background
 {
@@ -14,7 +16,6 @@ export default class Phrase1Background
         this.resources = this.experience.resources
 
         this.setGeometry()
-        // this.setTextures()
         this.setMaterial()
         this.setMesh()
 
@@ -26,34 +27,17 @@ export default class Phrase1Background
         this.geometry = new THREE.PlaneGeometry( 20, 20, 10, 10 );
     }
 
-    setTextures()
-    {
-        this.textures = {}
-
-        this.textures.color = this.resources.items.grassColorTexture
-        this.textures.color.encoding = THREE.sRGBEncoding
-        this.textures.color.repeat.set(1.5, 1.5)
-        this.textures.color.wrapS = THREE.RepeatWrapping
-        this.textures.color.wrapT = THREE.RepeatWrapping
-
-        this.textures.normal = this.resources.items.grassNormalTexture
-        this.textures.normal.repeat.set(1.5, 1.5)
-        this.textures.normal.wrapS = THREE.RepeatWrapping
-        this.textures.normal.wrapT = THREE.RepeatWrapping
-    }
-
     setMaterial()
     {
         this.material = new THREE.MeshStandardMaterial({
-            color: 'white',
-            // transparent: true
+            color: 'white'
         })
     }
 
     setMesh()
     {   
         this.mesh = new THREE.Mesh(this.geometry, this.material)
-        this.mesh.receiveShadow = true
+        this.mesh.receiveShadow = get(Config, 'shadows.receiveShadows', false)
         this.scene.add(this.mesh)
     }
 

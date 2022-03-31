@@ -4,6 +4,7 @@ export const Config = {
             x: 2048,
             y: 2048
         },
-        castShadows: false
+        castShadows: false,
+        receiveShadows: false
     }
 }

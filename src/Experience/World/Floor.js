@@ -1,9 +1,11 @@
 import * as THREE from 'three'
-import gsap from 'gsap'
 import Experience from '../Experience.js'
 
 import { executeEffect } from '../Utils/Effect.js'
 import { initializeEffect } from '../Utils/InitializeEffect.js'
+
+import { get } from 'lodash'
+import { Config } from 'Experience/Config'
 
 export default class Floor
 {
@@ -58,9 +60,7 @@ export default class Floor
 
         this.setInitialProperties()
 
-        // this.mesh.rotation.x = - Math.PI * 0.5
-        // this.mesh.position.z = 0.1
-        this.mesh.receiveShadow = true
+        this.mesh.receiveShadow = get(Config, 'shadows.receiveShadows', false)
         this.scene.add(this.mesh)
     }
 
@@ -69,35 +69,18 @@ export default class Floor
         initializeEffect(this, this.timelineMetadata, this.experience.time)
     }
 
-    start() {}
+    start()
+    {
+    
+    }
 
     update()
     {
-        // console.log('updating Floor.js')
-        // console.log(this.timelineMetadata)
-        // this.time.delta * 0.001)
-        // console.log(this.experience)
-        // console.log("DELTA", this.experience.time.delta)
-
-        // debugger
-
-        executeEffect(this, this.timelineMetadata, this.experience.time.delta, this.experience.time)
-
-        
+        executeEffect(this, this.timelineMetadata, this.experience.time.delta, this.experience.time)   
     }
 
-    destroy() {
-        // console.log('destroy')
-
-        // console.log(
-        //     this.geometry    
-        // )
-        // console.log(
-        //     this.material    
-        // )
-        
-        // debugger
-
+    destroy()
+    {
         const object = this.scene.getObjectByProperty( 'uuid', this.mesh.uuid );
         object.geometry.dispose();
         object.material.dispose();

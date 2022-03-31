@@ -255,7 +255,7 @@ export function addTimelineEvents_intro(timeline) {
                         // y: Math.PI/6,
                         // y: Math.PI * 3 / 4,
                         // y: Math.PI * 2,
-                        y: Math.PI * 44.7 / 100,
+                        y: Math.PI * 44.2 / 100,
                         // y: 0,
                         z: 0
                     }

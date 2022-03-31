@@ -1,5 +1,5 @@
 import * as THREE from 'three'
-import gsap from 'gsap'
+import { get } from 'lodash'
 import Experience from '../../../Experience.js'
 
 import { executeEffect } from '../../../Utils/Effect.js'
@@ -35,7 +35,7 @@ export default class JimboBackground
     setMesh()
     {   
         this.mesh = new THREE.Mesh(this.geometry, this.material)
-        this.mesh.receiveShadow = true
+        this.mesh.receiveShadow = get(Config, 'shadows.receiveShadows', false)
         this.scene.add(this.mesh)
     }
 

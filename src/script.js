@@ -72,16 +72,20 @@ const main = () => {
           var key = event.which || event.keyCode;
       
           if (key === 32) { // spacebar
-      
             // eat the spacebar, so it does not scroll the page
             event.preventDefault();
       
-            audio.paused ? audio.play() : audio.pause();
-            
+            debugger
+
+            // audio.paused ? audio.play() : audio.pause();
+            window.experience.audio.track.isPlaying ?
+              window.experience.audio.track.stop() :
+              window.experience.audio.track.play()
+
           }
       
         });
-      }
+    }
 
 }
 

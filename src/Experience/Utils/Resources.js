@@ -27,6 +27,7 @@ export default class Resources extends EventEmitter
         this.loaders.objLoader = new GLTFLoader()
         this.loaders.textureLoader = new THREE.TextureLoader()
         this.loaders.cubeTextureLoader = new THREE.CubeTextureLoader()
+        this.loaders.audioLoader = new THREE.AudioLoader()
         this.loaders.fontLoader = new FontLoader()
     }
 
@@ -75,13 +76,21 @@ export default class Resources extends EventEmitter
                     }
                 )
             }
+            else if(source.type === 'audio')
+            {
+                this.loaders.audioLoader.load(
+                    source.path,
+                    (file) =>
+                    {
+                        this.sourceLoaded(source, file)
+                    }
+                )
+            }
         }
     }
 
     sourceLoaded(source, file)
     {
-        // console.log('sourceLoaded')
-
         this.items[source.name] = file
 
         this.loaded++

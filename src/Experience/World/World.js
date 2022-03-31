@@ -46,6 +46,7 @@ import {
     get,
 } from 'lodash'
 
+import AudioClass from './AudioClass'
 
 export default class World
 {
@@ -54,6 +55,7 @@ export default class World
         this.experience = new Experience()
         this.scene = this.experience.scene
         this.resources = this.experience.resources
+        this.audio = this.experience.audio
         this.timelineOfEvents = {};
         this.updatables = {};
 
@@ -97,6 +99,10 @@ export default class World
             addTimelineEvents_bridge_cross(this.timelineOfEvents)
 
             this.environment = new Environment()
+
+            this.audio = this.experience.audio
+            this.audio.loadAudio()
+            this.audio.play()
         })
     }
 

@@ -2,6 +2,8 @@ import * as THREE from 'three'
 import Experience from 'Experience/Experience.js'
 
 import { executeEffect } from 'Experience/Utils/Effect.js'
+import { get } from 'lodash'
+import { Config } from 'Experience/Config'
 
 export default class Phrase2Background
 {
@@ -51,7 +53,7 @@ export default class Phrase2Background
     setMesh()
     {   
         this.mesh = new THREE.Mesh(this.geometry, this.material)
-        this.mesh.receiveShadow = true
+        this.mesh.receiveShadow = get(Config, 'shadows.receiveShadows', false)
         this.scene.add(this.mesh)
     }
 
