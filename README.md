@@ -21,9 +21,7 @@ https://techbrood.com/threejs/examples/webgl_fire.html
 
 open -a "Google Chrome" --args --disable-gpu-vsync --disable-frame-rate-limit --window-size=1920,1080 
 
-
-
-canvas to data url and send to node server to save to hadrdrive
+canvas to data url and send to node server to save to harddrive
 
 then
 
@@ -37,3 +35,7 @@ Could implement what you have with
 
 - A Background
 - A Text Object
+- A Light Object
+
+endAt sets the object
+
