@@ -26,7 +26,7 @@ export function addTimelineEvents_A_Section_Light(timeline) {
             }],
             // startAt: 17000,
             // endAt: 19000
-            startAt: 17,
+            startAt: 16.9,
             // endAt: 19
             endAt: 23.7
         },

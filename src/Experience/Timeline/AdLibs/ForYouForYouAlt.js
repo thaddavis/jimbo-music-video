@@ -39,6 +39,31 @@ export function addTimelineEvents_ad_libs_for_you_for_you_alt(timeline) {
             properties: [{
                 path: 'mesh.position',
                 from: {
+                    x: 0,
+                    y: -2,
+                    z: -2
+                },
+                to: {
+                    x: 0,
+                    y: 0,
+                    z: -2
+                }
+            }],
+            // startAt: 30500,
+            // endAt: 31500
+            startAt: 30.5,
+            endAt: 31.5
+        },
+        started: false,
+        theClass: ForYou
+    }
+
+    timeline[uuidv4()] = {
+        effect: {
+            name: EFFECTS.FROM_TO,
+            properties: [{
+                path: 'mesh.position',
+                from: {
                     x: 10,
                     y: -44,
                     z: 0

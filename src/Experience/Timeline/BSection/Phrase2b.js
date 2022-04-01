@@ -27,8 +27,8 @@ export function addTimelineEvents_b_section_phrase2b(timeline) {
                 // from: 1,
                 // to: 0
             }],
-            startAt: 65200,
-            endAt: 71700,
+            startAt: 65.2,
+            endAt: 71.7,
         },
         started: false,
         theClass: Phrase2b
@@ -99,8 +99,8 @@ export function addTimelineEvents_b_section_phrase2b(timeline) {
                     z: 4
                 }
             }],
-            startAt: 65200,
-            endAt: 72500
+            startAt: 65.2,
+            endAt: 72.5
         },
         started: false,
         theClass: Phrase2bLight2

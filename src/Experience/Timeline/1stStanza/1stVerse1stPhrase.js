@@ -26,7 +26,7 @@ export function addTimelineEvents_1st_verse_1st_phrase(timeline) {
             }],
             // startAt: 17000,
             // endAt: 19000
-            startAt: 17,
+            startAt: 16.9,
             endAt: 19
         },
         started: false,
@@ -53,7 +53,7 @@ export function addTimelineEvents_1st_verse_1st_phrase(timeline) {
             }],
             // startAt: 17000,
             // endAt: 19000
-            startAt: 17,
+            startAt: 16.9,
             endAt: 19
         },
         started: false 

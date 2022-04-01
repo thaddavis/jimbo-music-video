@@ -10,16 +10,16 @@ export default class Environment
         this.resources = this.experience.resources
         this.debug = this.experience.debug
         
-        this.setLights()
+        // this.setLights()
         // this.addGrid()
         // this.addFrame()
         // this.setEnvironmentMap()
     }
 
-    setLights()
-    {
-        
-    }
+    // setLights()
+    // {
+         
+    // }
 
     setEnvironmentMap()
     {

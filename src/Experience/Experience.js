@@ -49,7 +49,6 @@ export default class Experience
 
         this.effectComposer = new EffectComposerClass()
 
-        // this.audio = new AudioClass()
         this.world = new World()
 
         this.stats = new Stats();

@@ -198,7 +198,7 @@ export function addTimelineEvents_intro(timeline) {
             }],
             startAt: 0,
             // endAt: 17000
-            endAt: 17
+            endAt: 16.9
         },
         started: false,
         theClass: JimboLight4
@@ -238,7 +238,7 @@ export function addTimelineEvents_intro(timeline) {
             // startAt: 1250,
             // endAt: 17000
             startAt: 1.25,
-            endAt: 17
+            endAt: 16.9
         },
         started: false,
         theClass: Globe
@@ -262,10 +262,8 @@ export function addTimelineEvents_intro(timeline) {
                     z: 10
                 }
             }],
-            // startAt: 1250,
-            // endAt: 17000
             startAt: 1.25,
-            endAt: 17
+            endAt: 16.9
         },
         started: false 
     }

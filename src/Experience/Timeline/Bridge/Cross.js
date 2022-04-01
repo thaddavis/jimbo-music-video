@@ -57,8 +57,10 @@ export function addTimelineEvents_bridge_cross(timeline) {
                     }
                 }
             ],
-            startAt: 72500,
-            endAt: 80000
+            // startAt: 72500,
+            // endAt: 80000
+            startAt: 72.5,
+            endAt: 80
         },
         started: false,
         theClass: Cross
@@ -95,8 +97,8 @@ export function addTimelineEvents_bridge_cross(timeline) {
                     }
                 }
             ],
-            startAt: 72500,
-            endAt: 80000
+            startAt: 72.5,
+            endAt: 80
         },
         started: false,
         theClass: CrossLight
@@ -120,8 +122,8 @@ export function addTimelineEvents_bridge_cross(timeline) {
                     z: 10
                 }
             }],
-            startAt: 72500,
-            endAt: 80000
+            startAt: 72.5,
+            endAt: 80
         },
         started: false 
     }

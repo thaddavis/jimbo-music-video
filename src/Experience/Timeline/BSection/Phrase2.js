@@ -23,12 +23,9 @@ export function addTimelineEvents_b_section_2nd_phrase(timeline) {
                     y: 1,
                     z: 1,
                 }
-                // path: 'mesh.material.opacity',
-                // from: 1,
-                // to: 0
             }],
-            startAt: 59300,
-            endAt: 64500
+            startAt: 59.3,
+            endAt: 64.5
         },
         started: false,
         theClass: Phrase2
@@ -52,8 +49,10 @@ export function addTimelineEvents_b_section_2nd_phrase(timeline) {
                     z: 18
                 }
             }],
-            startAt: 59300,
-            endAt: 64500
+            // startAt: 59300,
+            // endAt: 64500
+            startAt: 59.3,
+            endAt: 64.5
         },
         started: false 
     }
@@ -75,8 +74,8 @@ export function addTimelineEvents_b_section_2nd_phrase(timeline) {
                     z: 4
                 }
             }],
-            startAt: 59300,
-            endAt: 64500
+            startAt: 59.3,
+            endAt: 64.5
         },
         started: false,
         theClass: Phrase2_Light
@@ -99,8 +98,10 @@ export function addTimelineEvents_b_section_2nd_phrase(timeline) {
                     z: 4
                 }
             }],
-            startAt: 59300,
-            endAt: 64500
+            // startAt: 59300,
+            // endAt: 64500
+            startAt: 59.3,
+            endAt: 64.5
         },
         started: false,
         theClass: Phrase2_Light2

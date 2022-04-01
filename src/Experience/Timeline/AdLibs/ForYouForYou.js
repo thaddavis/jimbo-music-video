@@ -38,6 +38,31 @@ export function addTimelineEvents_ad_libs_for_you_for_you(timeline) {
             properties: [{
                 path: 'mesh.position',
                 from: {
+                    x: 0,
+                    y: -3,
+                    z: 1
+                },
+                to: {
+                    x: 0,
+                    y: -5,
+                    z: 2
+                }
+            }],
+            // startAt: 23700,
+            // endAt: 24500
+            startAt: 23.7,
+            endAt: 24.5
+        },
+        started: false,
+        theClass: ForYou
+    }
+
+    timeline[uuidv4()] = {
+        effect: {
+            name: EFFECTS.FROM_TO,
+            properties: [{
+                path: 'mesh.position',
+                from: {
                     x: 10,
                     y: -44,
                     z: 0

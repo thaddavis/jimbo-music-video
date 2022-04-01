@@ -45,7 +45,6 @@ import {
 } from '../Utils/Enums.js';
 
 import {
-    set,
     get,
 } from 'lodash'
 
@@ -56,7 +55,7 @@ export default class World
         this.experience = new Experience()
         this.scene = this.experience.scene
         this.resources = this.experience.resources
-        this.audio = this.experience.audio
+        // this.audio = this.experience.audio
         this.timelineOfEvents = {};
         this.updatables = {};
 
@@ -117,22 +116,18 @@ export default class World
                 EFFECTS.FROM_TO
               ].includes(updatable.effect.name)
             ) {
-
                 if (
                     this.experience.time.elapsed >= updatable.effect.startAt &&
                     this.experience.time.elapsed <= updatable.effect.endAt &&
                     updatable.started === false
                 ) {
-                    // debugger
                     this.updatables[updatableId] = new updatable.theClass(updatable)
                     updatable.started = true
                 } else if (
                     this.experience.time.elapsed > updatable.effect.endAt &&
                     updatable.started === true
                 ) {
-                    // debugger
-                    // dispose and delete
-                    this.updatables[updatableId].destroy()
+                    this.updatables[updatableId].destroy() // *** FOR SPEED ***
                     this.timelineOfEvents[updatableId].started = false
                     delete this.updatables[updatableId]
                 }
@@ -146,15 +141,11 @@ export default class World
                     this.experience.time.elapsed <= updatable.effect.endAt &&
                     updatable.started === false
                 ) {
-                    // debugger
-                    // this.updatables[updatableId] = new updatable.theClass(updatable)
-                    // debugger
                     this.updatables[updatableId] = {
                         isGlobal: true,
                         updatable: updatable
                     }
-                    // debugger
-
+                    
                     // vvv initialize camera to from value for effect vvv
                     if ([
                         GLOBAL_UPDATABLES.CAMERA_INSTANCE
@@ -178,8 +169,6 @@ export default class World
 
             }
         }
-
-        // debugger
 
         for (let updatableId in this.updatables) {
             

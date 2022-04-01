@@ -18,3 +18,22 @@ https://discourse.threejs.org/t/how-to-rotateonaxis-to-specified-angle/14343/10
 - Hallelujah
 
 https://techbrood.com/threejs/examples/webgl_fire.html
+
+open -a "Google Chrome" --args --disable-gpu-vsync --disable-frame-rate-limit --window-size=1920,1080 
+
+
+
+canvas to data url and send to node server to save to hadrdrive
+
+then
+
+https://stackoverflow.com/questions/24961127/how-to-create-a-video-from-images-with-ffmpeg
+
+
+
+// Object Creation and Disposal is expensive
+
+Could implement what you have with 
+
+- A Background
+- A Text Object

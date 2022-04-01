@@ -18,10 +18,21 @@ export default class Sizes extends EventEmitter
             this.width = window.innerWidth
             this.height = window.innerHeight
 
-            // let ele = document.getElementById('debug')
-            // ele.innerHTML = `width: ${this.width} height: ${this.height}`
+            let ele = document.getElementById('debug')
+            ele.innerHTML = `width: ${this.width} height: ${this.height}`
 
             this.pixelRatio = Math.min(window.devicePixelRatio, 2)
+
+            this.trigger('resize')
+        })
+
+        document.addEventListener('onload', () =>
+        {
+            this.width = window.innerWidth
+            this.height = window.innerHeight
+
+            let ele = document.getElementById('debug')
+            ele.innerHTML = `width: ${this.width} height: ${this.height}`
 
             this.trigger('resize')
         })

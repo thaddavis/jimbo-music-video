@@ -27,8 +27,10 @@ export function addTimelineEvents_b_section_1st_phrase(timeline) {
                 // from: 1,
                 // to: 0
             }],
-            startAt: 45500,
-            endAt: 51000
+            // startAt: 45500,
+            // endAt: 51000
+            startAt: 45.5,
+            endAt: 51
         },
         started: false,
         theClass: Phrase1

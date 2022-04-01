@@ -27,8 +27,10 @@ export function addTimelineEvents_b_section_phrase1a(timeline) {
                 // from: 1,
                 // to: 0
             }],
-            startAt: 50500,
-            endAt: 56500
+            // startAt: 50500,
+            // endAt: 56500
+            startAt: 50.5,
+            endAt: 56.5
         },
         started: false,
         theClass: Phrase1a
@@ -52,8 +54,10 @@ export function addTimelineEvents_b_section_phrase1a(timeline) {
                     z: 18
                 }
             }],
-            startAt: 50500,
-            endAt: 56500
+            // startAt: 50500,
+            // endAt: 56500
+            startAt: 50.5,
+            endAt: 56.5
         },
         started: false 
     }
@@ -75,8 +79,10 @@ export function addTimelineEvents_b_section_phrase1a(timeline) {
                     z: 4
                 }
             }],
-            startAt: 50500,
-            endAt: 56500
+            // startAt: 50500,
+            // endAt: 56500
+            startAt: 50.5,
+            endAt: 56.5
         },
         started: false,
         theClass: Phrase1aLight
@@ -99,8 +105,10 @@ export function addTimelineEvents_b_section_phrase1a(timeline) {
                     z: 4
                 }
             }],
-            startAt: 50500,
-            endAt: 56500
+            // startAt: 50500,
+            // endAt: 56500
+            startAt: 50.5,
+            endAt: 56.5
         },
         started: false,
         theClass: Phrase1aLight2
