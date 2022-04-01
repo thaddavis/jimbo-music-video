@@ -2,7 +2,8 @@ import * as THREE from "three";
 import Experience from "../../Experience.js";
 import { TextGeometry } from "three/examples/jsm/geometries/TextGeometry.js";
 
-import { executeEffects } from "../../Utils/ExecuteEffects.js";
+import { executeEffects } from "Experience/Utils/ExecuteEffects.js";
+import { executeInitializeEffects } from "Experience/Utils/ExecuteInitializeEffects.js";
 
 import { Config } from "Experience/Config/index.js";
 import { get } from "lodash";
@@ -14,6 +15,13 @@ export default class Text {
     this.experience = new Experience();
     this.scene = this.experience.scene;
     this.resources = this.experience.resources;
+
+    console.log(
+      "initialProperties.instanceName",
+      initialProperties.instanceName
+    );
+
+    this.instanceName = initialProperties.instanceName;
 
     this.setGeometry(initialProperties);
     this.setMaterial();
@@ -47,21 +55,18 @@ export default class Text {
     this.scene.add(this.mesh);
   }
 
-  setInitialProperties(initializeProperties) {
-    // initializeProperties(this, this.timelineMetadata, this.experience.time);
-    initializeProperties(this, initializeProperties);
+  initializeEffects(effects) {
+    executeInitializeEffects(this, effects, this.experience.time);
   }
-
-  start() {}
 
   update(effects) {
     console.log("update Reusable Text");
-    debugger;
+    // debugger;
     executeEffects(this, effects, this.experience.time.delta);
   }
 
   moveOffStage() {
-    debugger;
+    // debugger;
     const offStagePlacement = get(Config, "offStage");
     console.log(get(Config, "offStage"));
 

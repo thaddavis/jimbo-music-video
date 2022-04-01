@@ -3,7 +3,7 @@ import { set, get } from "lodash";
 import { EFFECTS, GLOBAL_UPDATABLES } from "./Enums";
 
 export function initializeProperties(object, initialProperties) {
-  debugger;
+  //   debugger;
 
   // debugger
   // if (timelineMetadata.theClass.name === 'Phrase1') {

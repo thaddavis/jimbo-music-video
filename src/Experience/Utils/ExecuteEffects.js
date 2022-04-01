@@ -1,19 +1,22 @@
 import { set, get, delay } from "lodash";
-import { EFFECTS, GLOBAL_UPDATABLES } from "./Enums";
+import { EFFECTS, GLOBAL_UPDATABLES, INSTANCE_NAMES } from "./Enums";
 
 export function executeEffects(object, effects, delta) {
-  debugger;
+  // debugger;
+
+  console.log("object", object);
+  console.log("effects", effects);
 
   for (let effect of effects) {
-    console.log(effect);
+    // console.log(effect);
     // console.log('--- --- ---', get(timelineMetadata, 'theClass.name'))
     // console.log('--- --- ---', get(timelineMetadata, 'theClass.name') === 'WitherberryLogo')
 
-    debugger;
+    // debugger;
 
     for (let property of effect.properties) {
       const value = get(object, property.path);
-      debugger;
+      //   debugger;
       if (typeof value === "number") {
         // covers animating scalars
         let updatedValue =
@@ -30,8 +33,12 @@ export function executeEffects(object, effects, delta) {
           value.hasOwnProperty("_y") &&
           value.hasOwnProperty("_z")) // covers animating rotation
       ) {
-        debugger;
+        // debugger;
         // handle property `rotation`
+
+        // if (object.instanceName === INSTANCE_NAMES.CROSS) {
+        //   debugger;
+        // }
 
         let updatedValue = {};
         for (let dimension of ["x", "y", "z"]) {
@@ -44,7 +51,11 @@ export function executeEffects(object, effects, delta) {
 
         value.set(updatedValue.x, updatedValue.y, updatedValue.z);
 
-        debugger;
+        // if (object.instanceName === INSTANCE_NAMES.GLOBE) {
+        //   debugger;
+        // }
+
+        // debugger;
         object.needsUpdate = true;
       }
     }

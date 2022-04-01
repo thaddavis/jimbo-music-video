@@ -1,12 +1,28 @@
-import Experience from "../Experience.js";
-import Environment from "./Environment.js";
+import Experience from "Experience/Experience.js";
+import Environment from "Experience/World/Environment.js";
 
 // vvv NewTimeline vvv
 import { initializeReusables } from "Experience/NewTimeline/initializeReusables";
-import { timeline_intro } from "Experience/NewTimeline/Intro";
+import { timeline_intro } from "Experience/NewTimeline/Sections/Intro/Intro";
+import { timeline_a_section_background } from "Experience/NewTimeline/Sections/A_Section/Background";
+
+import { timeline_a_section_1_stanza } from "Experience/NewTimeline/Sections/A_Section/1_Stanza";
+import { timeline_a_section_ad_lib_1_for_you_for_you } from "Experience/NewTimeline/Sections/A_Section/ad_libs/1_for_you_for_you";
+import { timeline_a_section_2_stanza } from "Experience/NewTimeline/Sections/A_Section/2_Stanza";
+import { timeline_a_section_ad_lib_2_for_you_for_you } from "Experience/NewTimeline/Sections/A_Section/ad_libs/2_for_you_for_you";
+import { timeline_a_section_3_stanza } from "Experience/NewTimeline/Sections/A_Section/3_Stanza";
+import { timeline_a_section_ad_lib_3_for_you } from "Experience/NewTimeline/Sections/A_Section/ad_libs/3_for_you";
+import { timeline_a_section_4_stanza } from "Experience/NewTimeline/Sections/A_Section/4_Stanza";
+import { timeline_b_section_cutaway_1_flag } from "Experience/NewTimeline/Sections/B_Section/Cutaways/1_Flag";
+import { timeline_b_section_backgrounds } from "Experience/NewTimeline/Sections/B_Section/Backgrounds";
+
+import { timeline_b_section_1_stanza } from "Experience/NewTimeline/Sections/B_Section/1_Stanza";
+import { timeline_b_section_2_stanza } from "Experience/NewTimeline/Sections/B_Section/2_Stanza";
+
+import { timeline_bridge_cross } from "Experience/NewTimeline/Sections/Bridge/Cross";
 // ^^^ NewTimeline ^^^
 
-import { EFFECTS, GLOBAL_UPDATABLES } from "../Utils/Enums.js";
+import { EFFECTS, GLOBAL_UPDATABLES } from "Experience/Utils/Enums";
 
 import { get } from "lodash";
 
@@ -29,6 +45,21 @@ export default class World {
       console.log("*** *** ***", this.reusables);
 
       timeline_intro(this.timelineOfEvents);
+      timeline_a_section_background(this.timelineOfEvents);
+      timeline_a_section_1_stanza(this.timelineOfEvents);
+      timeline_a_section_ad_lib_1_for_you_for_you(this.timelineOfEvents);
+      timeline_a_section_2_stanza(this.timelineOfEvents);
+      timeline_a_section_ad_lib_2_for_you_for_you(this.timelineOfEvents);
+      timeline_a_section_3_stanza(this.timelineOfEvents);
+      timeline_a_section_ad_lib_3_for_you(this.timelineOfEvents);
+      timeline_a_section_4_stanza(this.timelineOfEvents);
+
+      timeline_b_section_cutaway_1_flag(this.timelineOfEvents);
+      timeline_b_section_backgrounds(this.timelineOfEvents);
+      timeline_b_section_1_stanza(this.timelineOfEvents);
+      timeline_b_section_2_stanza(this.timelineOfEvents);
+
+      timeline_bridge_cross(this.timelineOfEvents);
       // ^^^ NEW TIMELINE ^^^
 
       this.environment = new Environment();
@@ -36,34 +67,36 @@ export default class World {
   }
 
   update() {
-    console.log("World.js update");
+    // console.log("World.js update");
 
     for (let updatableId in this.timelineOfEvents) {
       const updatable = this.timelineOfEvents[updatableId];
-      console.log("updatable", updatable);
+      // console.log("updatable", updatable);
 
       for (let e of updatable.effects) {
-        console.log("e", e);
-
         if ([EFFECTS.FROM_TO].includes(e.name)) {
           if (
             this.experience.time.elapsed >= e.startAt &&
             this.experience.time.elapsed <= e.endAt &&
             updatable.started === false
           ) {
-            // this.updatables[updatableId] = new updatable.theClass(updatable)
-            // debugger;
             this.updatables[updatableId] =
-              this.reusables[updatable.theClass.name];
+              this.reusables[updatable.instanceName];
             updatable.started = true;
+
+            console.log("-> ", this.updatables[updatableId]);
+
+            this.updatables[updatableId].initializeEffects(updatable.effects);
           } else if (
             this.experience.time.elapsed > e.endAt &&
             updatable.started === true
           ) {
-            debugger;
-            console.log("vvv MOVE object off stage vvv");
+            console.log(
+              "vvv MOVE object off stage vvv",
+              this.updatables[updatableId].instanceName
+            );
             // vvv MOVE object off stage vvv
-            debugger;
+            // debugger;
             this.updatables[updatableId].moveOffStage();
             this.timelineOfEvents[updatableId].started = false;
             delete this.updatables[updatableId];
@@ -77,6 +110,7 @@ export default class World {
     }
 
     for (let updatableId in this.updatables) {
+      // debugger;
       const updatable = this.timelineOfEvents[updatableId];
       if (
         this.updatables[updatableId] &&
@@ -96,7 +130,9 @@ export default class World {
           );
         }
       } else {
-        debugger;
+        // debugger;
+        // console.log(this.updatables[updatableId]);
+
         this.updatables[updatableId].update(updatable.effects);
       }
     }

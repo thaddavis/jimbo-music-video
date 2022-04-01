@@ -1,60 +1,65 @@
-import * as THREE from 'three'
-import Experience from 'Experience/Experience.js'
+import * as THREE from "three";
+import Experience from "Experience/Experience.js";
 
-import { executeEffect } from 'Experience/Utils/Effect.js'
+import { executeEffects } from "Experience/Utils/ExecuteEffects.js";
+import { executeInitializeEffects } from "Experience/Utils/ExecuteInitializeEffects.js";
 
-import { get } from 'lodash'
-import { Config } from 'Experience/Config'
+import { get } from "lodash";
+import { Config } from "Experience/Config";
 
-export default class Background
-{
-    constructor(timelineMetadata)
-    {
-        this.timelineMetadata = timelineMetadata
-        this.experience = new Experience()
-        this.scene = this.experience.scene
-        this.resources = this.experience.resources
+export default class Background {
+  constructor(initialProperties) {
+    this.experience = new Experience();
+    this.scene = this.experience.scene;
+    this.resources = this.experience.resources;
+    this.instanceName = initialProperties.instanceName;
 
-        this.setGeometry()
-        this.setMaterial()
-        this.setMesh()
+    this.setGeometry();
+    this.setMaterial();
+    this.setMesh();
+  }
 
-        this.start()
-    }
+  setGeometry() {
+    this.geometry = new THREE.PlaneGeometry(20, 20, 10, 10);
+  }
 
-    setGeometry()
-    {
-        this.geometry = new THREE.PlaneGeometry( 20, 20, 10, 10 );
-    }
+  setMaterial() {
+    this.material = new THREE.MeshStandardMaterial({
+      color: "white",
+    });
+  }
 
-    setMaterial()
-    {
-        this.material = new THREE.MeshStandardMaterial({
-            color: 'white'
-        })
-    }
+  setMesh() {
+    this.mesh = new THREE.Mesh(this.geometry, this.material);
+    this.mesh.receiveShadow = get(Config, "shadows.receiveShadows", false);
+    this.scene.add(this.mesh);
+  }
 
-    setMesh()
-    {   
-        this.mesh = new THREE.Mesh(this.geometry, this.material)
-        this.mesh.receiveShadow = get(Config, 'shadows.receiveShadows', false)
-        this.scene.add(this.mesh)
-    }
+  initializeEffects(effects) {
+    // debugger;
+    executeInitializeEffects(this, effects, this.experience.time);
+  }
 
-    start() 
-    {
+  update(effects) {
+    executeEffects(this, effects, this.experience.time.delta);
+  }
 
-    }
+  moveOffStage() {
+    // debugger;
+    const offStagePlacement = get(Config, "offStage");
+    console.log(get(Config, "offStage"));
 
-    update()
-    {
-        executeEffect(this, this.timelineMetadata, this.experience.time.delta, this.experience.time)
-    }
+    this.mesh.position.set(
+      offStagePlacement.x,
+      offStagePlacement.y,
+      offStagePlacement.z
+    );
+  }
 
-    destroy() {
-        const object = this.scene.getObjectByProperty( 'uuid', this.mesh.uuid );
-        object.geometry.dispose();
-        object.material.dispose();
-        this.scene.remove( object );
-    }
+  destroy() {
+    const object = this.scene.getObjectByProperty("uuid", this.mesh.uuid);
+    object.geometry.dispose();
+    object.material.dispose();
+    this.scene.remove(object);
+  }
 }
