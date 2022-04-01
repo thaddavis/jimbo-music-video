@@ -19,7 +19,7 @@ export default class JimboLight2
     }
 
     setLight() {
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 1, 100)
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1, 1)
         directionalLight.castShadow = get(Config, 'shadows.castShadows', false)
         directionalLight.shadow.mapSize.width = get(Config, 'shadows.mapSize.x', 2048)
         directionalLight.shadow.mapSize.height = get(Config, 'shadows.mapSize.y', 2048)

@@ -57,8 +57,10 @@ export function addTimelineEvents_intro(timeline) {
                     }
                 }
             ],
+            // startAt: 0,
+            // endAt: 1250
             startAt: 0,
-            endAt: 1250
+            endAt: 1.25
         },
         started: false,
         theClass: WitherberryLogo
@@ -95,35 +97,39 @@ export function addTimelineEvents_intro(timeline) {
                     }
                 }
             ],
+            // startAt: 0,
+            // endAt: 1250
             startAt: 0,
-            endAt: 1250
+            endAt: 1.25
         },
         started: false,
         theClass: Jimbo
     }
 
-    timeline[uuidv4()] = {
-        effect: {
-            name: EFFECTS.FROM_TO,
-            properties: [{
-                path: 'light.scale',
-                from: {
-                    x: 1,
-                    y: 1,
-                    z: 1
-                },
-                to: {
-                    x: 1,
-                    y: 1,
-                    z: 1
-                }
-            }],
-            startAt: 0,
-            endAt: 1250
-        },
-        started: false,
-        theClass: JimboLight
-    }
+    // timeline[uuidv4()] = {
+    //     effect: {
+    //         name: EFFECTS.FROM_TO,
+    //         properties: [{
+    //             path: 'light.scale',
+    //             from: {
+    //                 x: 1,
+    //                 y: 1,
+    //                 z: 1
+    //             },
+    //             to: {
+    //                 x: 1,
+    //                 y: 1,
+    //                 z: 1
+    //             }
+    //         }],
+    //         // startAt: 0,
+    //         // endAt: 1250
+    //         startAt: 0,
+    //         endAt: 1.25
+    //     },
+    //     started: false,
+    //     theClass: JimboLight
+    // }
 
     timeline[uuidv4()] = {
         effect: {
@@ -141,59 +147,13 @@ export function addTimelineEvents_intro(timeline) {
                     z: 1
                 }
             }],
+            // startAt: 0,
+            // endAt: 1250
             startAt: 0,
-            endAt: 1250
+            endAt: 1.25
         },
         started: false,
         theClass: JimboLight2
-    }
-
-    timeline[uuidv4()] = {
-        effect: {
-            name: EFFECTS.FROM_TO,
-            properties: [{
-                path: 'light.scale',
-                from: {
-                    x: 1,
-                    y: 1,
-                    z: 1
-                },
-                to: {
-                    x: 1,
-                    y: 1,
-                    z: 1
-                }
-            }],
-            startAt: 0,
-            // endAt: 1.25
-            endAt: 17000
-        },
-        started: false,
-        theClass: JimboLight3
-    }
-
-    timeline[uuidv4()] = {
-        effect: {
-            name: EFFECTS.FROM_TO,
-            properties: [{
-                path: 'light.scale',
-                from: {
-                    x: 1,
-                    y: 1,
-                    z: 1
-                },
-                to: {
-                    x: 1,
-                    y: 1,
-                    z: 1
-                }
-            }],
-            startAt: 0,
-            // endAt: 1.25
-            endAt: 17000
-        },
-        started: false,
-        theClass: JimboLight4
     }
 
     // timeline[uuidv4()] = {
@@ -213,11 +173,36 @@ export function addTimelineEvents_intro(timeline) {
     //             }
     //         }],
     //         startAt: 0,
-    //         endAt: 1.25
+    //         // endAt: 17000
+    //         endAt: 17
     //     },
     //     started: false,
-    //     theClass: AmbientLight
+    //     theClass: JimboLight3
     // }
+
+    timeline[uuidv4()] = {
+        effect: {
+            name: EFFECTS.FROM_TO,
+            properties: [{
+                path: 'light.scale',
+                from: {
+                    x: 1,
+                    y: 1,
+                    z: 1
+                },
+                to: {
+                    x: 1,
+                    y: 1,
+                    z: 1
+                }
+            }],
+            startAt: 0,
+            // endAt: 17000
+            endAt: 17
+        },
+        started: false,
+        theClass: JimboLight4
+    }
 
     timeline[uuidv4()] = {
         effect: {
@@ -239,30 +224,21 @@ export function addTimelineEvents_intro(timeline) {
                 {
                     path: 'rotation',
                     from: {
-                        // x: 0.9663591195426452,
-                        // y: -0.9086510911493443,
-                        // z: 1.219916915922639
-                        // x: -Math.PI / 2,
-                        // y: Math.PI / 4,
-                        // x: Math.PI / 4,
                         x: 0,
-                        // y: - Math.PI * 1 / 10,
                         y: 0,
                         z: 0
                     },
                     to: {
                         x: 0,
-                        // y: Math.PI/6,
-                        // y: Math.PI * 3 / 4,
-                        // y: Math.PI * 2,
-                        y: Math.PI * 44.2 / 100,
-                        // y: 0,
+                        y: Math.PI * 44.0 / 100,
                         z: 0
                     }
                 }
             ],
-            startAt: 1250,
-            endAt: 17000
+            // startAt: 1250,
+            // endAt: 17000
+            startAt: 1.25,
+            endAt: 17
         },
         started: false,
         theClass: Globe
@@ -286,8 +262,10 @@ export function addTimelineEvents_intro(timeline) {
                     z: 10
                 }
             }],
-            startAt: 1250,
-            endAt: 17000
+            // startAt: 1250,
+            // endAt: 17000
+            startAt: 1.25,
+            endAt: 17
         },
         started: false 
     }

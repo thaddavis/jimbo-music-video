@@ -49,7 +49,7 @@ export default class Experience
 
         this.effectComposer = new EffectComposerClass()
 
-        this.audio = new AudioClass()
+        // this.audio = new AudioClass()
         this.world = new World()
 
         this.stats = new Stats();
@@ -65,8 +65,8 @@ export default class Experience
         // Time tick event
         this.time.on('tick', () =>
         {
+            // console.log('tick...')
             this.update()
-
             // effectComposer.render()
         })
     }

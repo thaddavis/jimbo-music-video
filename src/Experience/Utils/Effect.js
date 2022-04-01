@@ -10,8 +10,7 @@ import {
 export function executeEffect(
     object,
     timelineMetadata,
-    delta,
-    timeObject
+    delta
 ) {
     // debugger
 

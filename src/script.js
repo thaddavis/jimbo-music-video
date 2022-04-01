@@ -75,12 +75,10 @@ const main = () => {
             // eat the spacebar, so it does not scroll the page
             event.preventDefault();
       
-            debugger
-
-            // audio.paused ? audio.play() : audio.pause();
-            window.experience.audio.track.isPlaying ?
-              window.experience.audio.track.stop() :
-              window.experience.audio.track.play()
+            audio.paused ? audio.play() : audio.pause();
+            // window.experience.audio.track.isPlaying ?
+            //   window.experience.audio.track.stop() :
+            //   window.experience.audio.track.play()
 
           }
       

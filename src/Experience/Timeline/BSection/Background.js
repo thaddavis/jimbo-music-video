@@ -36,8 +36,10 @@ export function addTimelineEvents_b_section_background(timeline) {
                     }
                 }
             ],
-            startAt: 45500,
-            endAt: 51200
+            // startAt: 45500,
+            // endAt: 51200
+            startAt: 45.5,
+            endAt: 51.2
         },
         started: false,
         theClass: SkinPlane1Background
@@ -74,8 +76,10 @@ export function addTimelineEvents_b_section_background(timeline) {
                     }
                 }
             ],
-            startAt: 51200,
-            endAt: 57700
+            // startAt: 51200,
+            // endAt: 57700
+            startAt: 51.2,
+            endAt: 57.7
         },
         started: false,
         theClass: SkinPlane2Background
@@ -112,8 +116,10 @@ export function addTimelineEvents_b_section_background(timeline) {
                     }
                 }
             ],
-            startAt: 59300,
-            endAt: 65500
+            // startAt: 59300,
+            // endAt: 65500
+            startAt: 59.3,
+            endAt: 65.5
         },
         started: false,
         theClass: SkinPlane1Background
@@ -150,8 +156,10 @@ export function addTimelineEvents_b_section_background(timeline) {
                     }
                 }
             ],
-            startAt: 65500,
-            endAt: 72500
+            // startAt: 65500,
+            // endAt: 72500
+            startAt: 65.5,
+            endAt: 72.5
         },
         started: false,
         theClass: SkinPlane2Background

@@ -36,6 +36,9 @@ import { addTimelineEvents_b_section_phrase2b } from 'Experience/Timeline/BSecti
 import { addTimelineEvents_b_section_flag_cutaway } from 'Experience/Timeline/BSection/Cutaways/BSectionFlag.js';
 import { addTimelineEvents_bridge_cross }  from 'Experience/Timeline/Bridge/Cross'
 
+import { addTimelineEvents_A_Section_Background }  from 'Experience/Timeline/ASection/ASection_Background'
+import { addTimelineEvents_A_Section_Light } from 'Experience/Timeline/ASection/ASection_Light'
+
 import { 
     EFFECTS,
     GLOBAL_UPDATABLES
@@ -45,8 +48,6 @@ import {
     set,
     get,
 } from 'lodash'
-
-import AudioClass from './AudioClass'
 
 export default class World
 {
@@ -64,6 +65,10 @@ export default class World
         {
             // Setup
             addTimelineEvents_intro(this.timelineOfEvents)
+
+            addTimelineEvents_A_Section_Background(this.timelineOfEvents)
+            addTimelineEvents_A_Section_Light(this.timelineOfEvents)
+
             addTimelineEvents_1st_verse_1st_phrase(this.timelineOfEvents)
             addTimelineEvents_1st_verse_2nd_phrase(this.timelineOfEvents)
             addTimelineEvents_1st_verse_3rd_phrase(this.timelineOfEvents)
@@ -99,10 +104,6 @@ export default class World
             addTimelineEvents_bridge_cross(this.timelineOfEvents)
 
             this.environment = new Environment()
-
-            this.audio = this.experience.audio
-            this.audio.loadAudio()
-            this.audio.play()
         })
     }
 

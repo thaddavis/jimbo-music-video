@@ -21,8 +21,10 @@ export function addTimelineEvents_b_section_camera(timeline) {
                     z: 1
                 }
             }],
-            startAt: 44800,
-            endAt: 45800
+            // startAt: 44800,
+            // endAt: 45800
+            startAt: 44.8,
+            endAt: 45.8
         },
         started: false
     }
@@ -45,8 +47,10 @@ export function addTimelineEvents_b_section_camera(timeline) {
                     z: 18
                 }
             }],
-            startAt: 45800,
-            endAt: 57800
+            // startAt: 45800,
+            // endAt: 57800
+            startAt: 45.8,
+            endAt: 57.8
         },
         started: false
     }
@@ -69,8 +73,10 @@ export function addTimelineEvents_b_section_camera(timeline) {
                     z: 1
                 }
             }],
-            startAt: 57800,
-            endAt: 59300
+            // startAt: 57800,
+            // endAt: 59300
+            startAt: 57.8,
+            endAt: 59.3
         },
         started: false 
     }
@@ -93,8 +99,10 @@ export function addTimelineEvents_b_section_camera(timeline) {
                     z: 18
                 }
             }],
-            startAt: 59300,
-            endAt: 72500
+            // startAt: 59300,
+            // endAt: 72500
+            startAt: 59.3,
+            endAt: 72.5
         },
         started: false 
     }

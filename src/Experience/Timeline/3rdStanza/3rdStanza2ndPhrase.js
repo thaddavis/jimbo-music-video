@@ -24,42 +24,14 @@ export function addTimelineEvents_3rd_stanza_2nd_phrase(timeline) {
                     y: 1,
                     z: 1,
                 }
-                // path: 'mesh.material.opacity',
-                // from: 1,
-                // to: 0
             }],
-            startAt: 33000,
-            endAt: 35000
+            // startAt: 33000,
+            // endAt: 35000
+            startAt: 33,
+            endAt: 35
         },
         started: false,
         theClass: Phrase2
-    }
-
-    timeline[uuidv4()] = {
-        isGlobal: false,
-        effect: {
-            name: EFFECTS.FROM_TO,
-            properties: [{
-                path: 'mesh.scale',
-                from: {
-                    x: 1,
-                    y: 1,
-                    z: 1
-                },
-                to: {
-                    x: 3,
-                    y: 3,
-                    z: 3,
-                }
-                // path: 'mesh.material.opacity',
-                // from: 1,
-                // to: 0
-            }],
-            startAt: 33000,
-            endAt: 35000
-        },
-        started: false,
-        theClass: Phrase2Background
     }
 
     timeline[uuidv4()] = {
@@ -80,58 +52,12 @@ export function addTimelineEvents_3rd_stanza_2nd_phrase(timeline) {
                     z: 12
                 }
             }],
-            startAt: 33000,
-            endAt: 35000
+            // startAt: 33000,
+            // endAt: 35000
+            startAt: 33,
+            endAt: 35
         },
         started: false 
-    }
-
-    timeline[uuidv4()] = {
-        isGlobal: false,
-        effect: {
-            name: EFFECTS.FROM_TO,
-            properties: [{
-                path: 'light.position',
-                from: {
-                    x: 0,
-                    y: 0,
-                    z: 2
-                },
-                to: {
-                    x: 0,
-                    y: 4,
-                    z: 4
-                }
-            }],
-            startAt: 33000,
-            endAt: 35000
-        },
-        started: false,
-        theClass: Phrase2Light
-    }
-
-    timeline[uuidv4()] = {
-        isGlobal: false,
-        effect: {
-            name: EFFECTS.FROM_TO,
-            properties: [{
-                path: 'light.position',
-                from: {
-                    x: 0,
-                    y: 0,
-                    z: 2
-                },
-                to: {
-                    x: 0,
-                    y: 4,
-                    z: 4
-                }
-            }],
-            startAt: 33000,
-            endAt: 35000
-        },
-        started: false,
-        theClass: Phrase2Light2
     }
 
 }

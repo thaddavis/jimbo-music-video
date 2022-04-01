@@ -24,8 +24,10 @@ export function addTimelineEvents_ad_libs_for_you_for_you(timeline) {
                     z: 2
                 }
             }],
-            startAt: 23700,
-            endAt: 24500
+            // startAt: 23700,
+            // endAt: 24500
+            startAt: 23.7,
+            endAt: 24.5
         },
         started: false,
         theClass: ForYou
@@ -47,8 +49,10 @@ export function addTimelineEvents_ad_libs_for_you_for_you(timeline) {
                     z: 1.5
                 }
             }],
-            startAt: 23700,
-            endAt: 24500
+            // startAt: 23700,
+            // endAt: 24500
+            startAt: 23.7,
+            endAt: 24.5
         },
         started: false,
         theClass: ForYou
@@ -70,8 +74,10 @@ export function addTimelineEvents_ad_libs_for_you_for_you(timeline) {
                     z: 2
                 }
             }],
-            startAt: 23700,
-            endAt: 24500
+            // startAt: 23700,
+            // endAt: 24500
+            startAt: 23.7,
+            endAt: 24.5
         },
         started: false,
         theClass: ForYouBackground
@@ -93,8 +99,10 @@ export function addTimelineEvents_ad_libs_for_you_for_you(timeline) {
                     z: 0
                 }
             }],
-            startAt: 23700,
-            endAt: 24500  
+            // startAt: 23700,
+            // endAt: 24500
+            startAt: 23.7,
+            endAt: 24.5
         },
         started: false,
         theClass: ForYouLight
@@ -118,8 +126,10 @@ export function addTimelineEvents_ad_libs_for_you_for_you(timeline) {
                     z: 12
                 }
             }],
-            startAt: 23700,
-            endAt: 24500
+            // startAt: 23700,
+            // endAt: 24500
+            startAt: 23.7,
+            endAt: 24.5
         },
         started: false 
     }

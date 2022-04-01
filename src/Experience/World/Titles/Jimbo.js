@@ -30,8 +30,7 @@ export default class Jimbo
     setMaterial()
     {
         this.material = new THREE.MeshStandardMaterial({
-            color: 'red',
-            transparent: true
+            color: 'red'
         })
     }
 

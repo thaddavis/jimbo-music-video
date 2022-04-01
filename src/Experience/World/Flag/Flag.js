@@ -25,7 +25,6 @@ export default class Flag
 
     setGeometry()
     {
-        // this.geometry = new THREE.CircleGeometry(5, 256)
         this.geometry = new THREE.PlaneGeometry( 1, 1, 32, 32 );
 
         const count = this.geometry.attributes.position.count
@@ -45,30 +44,10 @@ export default class Flag
 
         this.textures.color = this.resources.items.polishFlag
         this.textures.color.encoding = THREE.sRGBEncoding
-        // this.textures.color.repeat.set(1.5, 1.5)
-        // this.textures.color.wrapS = THREE.RepeatWrapping
-        // this.textures.color.wrapT = THREE.RepeatWrapping
-
-        // this.textures.normal = this.resources.items.grassNormalTexture
-        // this.textures.normal.repeat.set(1.5, 1.5)
-        // this.textures.normal.wrapS = THREE.RepeatWrapping
-        // this.textures.normal.wrapT = THREE.RepeatWrapping
     }
 
     setMaterial()
     {
-        // // this.material = new THREE.MeshStandardMaterial({
-        //     // map: this.textures.color,
-        //     // normalMap: this.textures.normal
-        // // })
-
-        // this.material = new THREE.MeshStandardMaterial({
-        //     color: 'purple',
-        //     // transparent: true
-        // })
-
-        // debugger
-
         // Material
         this.material = new THREE.ShaderMaterial({
             vertexShader: FlagVertexShader,
@@ -102,15 +81,6 @@ export default class Flag
     }
 
     destroy() {
-        // console.log(
-        //     this.geometry    
-        // )
-        // console.log(
-        //     this.material    
-        // )
-        
-        // debugger
-
         const object = this.scene.getObjectByProperty( 'uuid', this.mesh.uuid );
         object.geometry.dispose();
         object.material.dispose();
