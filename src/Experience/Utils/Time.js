@@ -66,7 +66,6 @@ export default class Time extends EventEmitter
         {
             this.then = currentTime - (frameRateElapsed % desiredFrameRateInterval);
             // console.log('TICK')
-            debugger
             this.trigger('tick')
         }
 
