@@ -48,7 +48,6 @@ export default class JimboLight
 
     update()
     {
-        // debugger
         executeEffect(this, this.timelineMetadata, this.experience.time.delta, this.experience.time)
     }
 

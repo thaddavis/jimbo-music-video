@@ -109,11 +109,6 @@ export default class World
 
     update()
     {
-        // debugger
-        // console.log(this.experience.playerInstance.player.getCurrentTime())
-        // console.log('this.experience.time', this.experience.time)
-        // debugger
-
         for (let updatableId in this.timelineOfEvents) {
             const updatable = this.timelineOfEvents[updatableId]
 

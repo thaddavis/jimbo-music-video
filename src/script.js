@@ -23,43 +23,43 @@ const main = () => {
 
         window.peaks = peaks
 
-        peaks.on('player.seeked', (e) => {
-            // console.log('event player.seeked', e)
-        });
+        // peaks.on('player.seeked', (e) => {
+        //     // console.log('event player.seeked', e)
+        // });
 
-        peaks.on('player.timeupdate', (e) => {
-            // console.log('event player.timeupdate', e)
+        // peaks.on('player.timeupdate', (e) => {
+        //     // console.log('event player.timeupdate', e)
 
-            // if (e > 84) {
-            //     window.peaks.player.seek(29)
-            // }
-        });
+        //     // if (e > 84) {
+        //     //     window.peaks.player.seek(29)
+        //     // }
+        // });
 
-        peaks.on('player.playing', (e) => {
-            // console.log('event player.playing', e)
-        });
+        // peaks.on('player.playing', (e) => {
+        //     // console.log('event player.playing', e)
+        // });
 
-        peaks.on('player.seeked', function(e) {
-            // console.log('event player.seeked', e)
+        // peaks.on('player.seeked', function(e) {
+        //     // console.log('event player.seeked', e)
 
-            // debugger
+        //     // debugger
 
-            if (
-                window && window.experience    
-            ) {
-                // console.log('DESTROYING...')
+        //     if (
+        //         window && window.experience    
+        //     ) {
+        //         // console.log('DESTROYING...')
 
-                window.experience.destroy()
-                delete window.experience
-                const experience = new Experience(document.querySelector('canvas.webgl'), window.peaks)
+        //         window.experience.destroy()
+        //         delete window.experience
+        //         const experience = new Experience(document.querySelector('canvas.webgl'), window.peaks)
 
-                // console.log('DESTROYING...')
-                // debugger
-            }
+        //         // console.log('DESTROYING...')
+        //         // debugger
+        //     }
             
 
             
-        });
+        // });
 
         const experience = new Experience(document.querySelector('canvas.webgl'), peaks)
     });
@@ -67,22 +67,22 @@ const main = () => {
     const audio = document.querySelector('audio');
     if (audio) {
 
-        window.addEventListener('keydown', function (event) {
+        // window.addEventListener('keydown', function (event) {
       
-          var key = event.which || event.keyCode;
+        //   var key = event.which || event.keyCode;
       
-          if (key === 32) { // spacebar
-            // eat the spacebar, so it does not scroll the page
-            event.preventDefault();
+        //   if (key === 32) { // spacebar
+        //     // eat the spacebar, so it does not scroll the page
+        //     event.preventDefault();
       
-            audio.paused ? audio.play() : audio.pause();
-            // window.experience.audio.track.isPlaying ?
-            //   window.experience.audio.track.stop() :
-            //   window.experience.audio.track.play()
+        //     audio.paused ? audio.play() : audio.pause();
+        //     // window.experience.audio.track.isPlaying ?
+        //     //   window.experience.audio.track.stop() :
+        //     //   window.experience.audio.track.play()
 
-          }
+        //   }
       
-        });
+        // });
     }
 
 }

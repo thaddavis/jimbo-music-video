@@ -51,31 +51,6 @@ export function addTimelineEvents_ad_libs_for_you_up(timeline) {
         effect: {
             name: EFFECTS.FROM_TO,
             properties: [{
-                path: 'mesh.scale',
-                from: {
-                    x: 1,
-                    y: 1,
-                    z: 1
-                },
-                to: {
-                    x: 2,
-                    y: 2,
-                    z: 2
-                }
-            }],
-            // startAt: 37500,
-            // endAt: 38500
-            startAt: 37.5,
-            endAt: 38.5
-        },
-        started: false,
-        theClass: ForYouBackground
-    }
-
-    timeline[uuidv4()] = {
-        effect: {
-            name: EFFECTS.FROM_TO,
-            properties: [{
                 path: 'mesh.position',
                 from: {
                     x: 10,
