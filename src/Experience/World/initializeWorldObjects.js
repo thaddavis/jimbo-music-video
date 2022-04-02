@@ -19,6 +19,7 @@ import BackgroundSkin2 from "Experience/World/WorldObjectInstances/BackgroundSki
 import i_just_wanna_feel_your_skin from "Experience/World/WorldObjectInstances/Titles/SectionB/1-i-just-wanna-feel-your-skin";
 import up_on_mine from "Experience/World/WorldObjectInstances/Titles/SectionB/2-up-on-mine";
 
+import Camera from "Experience/World/WorldObjectInstances/Camera";
 import Light1 from "Experience/World/WorldObjectInstances/Light1";
 import Globe from "Experience/World/WorldObjectInstances/Globe";
 import Background from "Experience/World/WorldObjectInstances/Background";
@@ -26,12 +27,16 @@ import Cross from "Experience/World/WorldObjectInstances/Cross";
 
 import { INSTANCE_NAMES } from "../Utils/Enums";
 
+import { get } from "lodash";
+
 export function initializeWorldObjects(reusables) {
   reusables[INSTANCE_NAMES.JIMBO_INTRO_TITLE] = JimboIntroTitle;
   reusables[INSTANCE_NAMES.LIGHT_1] = Light1;
   reusables[INSTANCE_NAMES.GLOBE] = Globe;
   reusables[INSTANCE_NAMES.BACKGROUND] = Background;
   reusables[INSTANCE_NAMES.CROSS] = Cross;
+
+  reusables[INSTANCE_NAMES.CAMERA] = Camera;
 
   reusables[INSTANCE_NAMES.SECTION_A_PHRASE_1] = i_told_you_i_meant_it;
   reusables[INSTANCE_NAMES.SECTION_A_PHRASE_2] = i_told_you_i_swept_it;
@@ -56,11 +61,15 @@ export function initializeWorldObjects(reusables) {
   reusables[INSTANCE_NAMES.SECTION_B_PHRASE_2] = up_on_mine;
 
   for (let r in reusables) {
-    // console.log("r", r);
-
-    reusables[r] = new reusables[r].theClass(reusables[r].initialProperties);
-
-    // debugger;
-    reusables[r].moveOffStage();
+    console.log("r", r);
+    if (INSTANCE_NAMES.CAMERA === r) {
+      // Global animatable
+      // debugger;
+      reusables[r] = get(window.experience, "camera");
+      // debugger;
+    } else {
+      reusables[r] = new reusables[r].theClass(reusables[r].initialProperties);
+      reusables[r].moveOffStage();
+    }
   }
 }

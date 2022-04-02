@@ -22,11 +22,16 @@ import { timeline_b_section_1_stanza } from "Experience/Timeline/Sections/B_Sect
 import { timeline_b_section_2_stanza } from "Experience/Timeline/Sections/B_Section/2_Stanza";
 
 import { timeline_bridge_cross } from "Experience/Timeline/Sections/Bridge/Cross";
+
+// GLOBALS
+import { timeline_camera } from "../Timeline/Camera/Camera";
+
 // ^^^ Timeline ^^^
 
 import { EFFECTS, GLOBAL_UPDATABLES } from "Experience/Utils/Enums";
 
 import { get } from "lodash";
+import { INSTANCE_NAMES } from "../Utils/Enums";
 
 export default class World {
   constructor() {
@@ -55,7 +60,10 @@ export default class World {
       timeline_a_section_4_stanza(this.timelineOfEvents);
 
       timeline_light_1(this.timelineOfEvents);
+      /* v can't handle this v */
       // timeline_light_2(this.timelineOfEvents);
+      /* ^ ^ */
+      timeline_camera(this.timelineOfEvents);
 
       timeline_b_section_cutaway_1_flag(this.timelineOfEvents);
       timeline_b_section_backgrounds(this.timelineOfEvents);
@@ -73,7 +81,10 @@ export default class World {
     for (let updatableId in this.timelineOfEvents) {
       const updatable = this.timelineOfEvents[updatableId];
 
+      // debugger;
+
       for (let e of updatable.effects) {
+        // * Animate Object Instances * //
         if ([EFFECTS.FROM_TO].includes(e.name)) {
           if (
             this.experience.time.elapsed >= e.startAt &&
@@ -106,29 +117,46 @@ export default class World {
             // delete this.updatables[updatableId];
           }
         }
+        // * Animate Global Properties * //
+        else if ([EFFECTS.GLOBAL_FROM_TO].includes(e.name)) {
+          // debugger;
+
+          if (
+            this.experience.time.elapsed >= e.startAt &&
+            this.experience.time.elapsed <= e.endAt &&
+            updatable.started === false
+          ) {
+            // debugger;
+
+            this.updatables[updatableId] =
+              this.reusables[updatable.instanceName];
+            updatable.started = true;
+
+            // debugger;
+
+            this.updatables[updatableId].initializeEffects(updatable.effects);
+          } else if (
+            this.experience.time.elapsed > e.endAt &&
+            updatable.started === true
+          ) {
+            // debugger;
+            this.timelineOfEvents[updatableId].started = false;
+            delete this.updatables[updatableId];
+            // ^^^ MOVE object off stage ^^^
+            // this.updatables[updatableId].destroy(); // *** FOR SPEED ***
+            // this.timelineOfEvents[updatableId].started = false;
+            // delete this.updatables[updatableId];
+          }
+        }
       }
     }
 
     for (let updatableId in this.updatables) {
       // debugger;
       const updatable = this.timelineOfEvents[updatableId];
-      if (
-        this.updatables[updatableId] &&
-        this.updatables[updatableId].isGlobal
-      ) {
-        if (
-          [GLOBAL_UPDATABLES.CAMERA_INSTANCE].includes(
-            get(
-              this.updatables[updatableId],
-              "updatable.effect.pathToExperienceGlobal"
-            )
-          )
-        ) {
-          // debugger
-          window.experience.camera.updateCamera(
-            this.updatables[updatableId].updatable
-          );
-        }
+      if ([INSTANCE_NAMES.CAMERA].includes(updatable.instanceName)) {
+        // * ANIMATE GLOBAL CAMERA * //
+        window.experience.camera.updateCamera(updatable.effects);
       } else {
         // debugger;
         // console.log(this.updatables[updatableId]);

@@ -1,8 +1,6 @@
 import { set, get, delay } from "lodash";
 
 export function executeEffects(object, effects, delta) {
-  // debugger;
-
   // console.log("object", object);
   // console.log("effects", effects);
 
@@ -12,6 +10,8 @@ export function executeEffects(object, effects, delta) {
     // console.log('--- --- ---', get(timelineMetadata, 'theClass.name') === 'WitherberryLogo')
 
     // debugger;
+
+    // ONLY EXECUTE CURRENT EFFECTS
 
     for (let property of effect.properties) {
       const value = get(object, property.path);
@@ -42,6 +42,10 @@ export function executeEffects(object, effects, delta) {
         let updatedValue = {};
         for (let dimension of ["x", "y", "z"]) {
           // debugger
+          if (get(object, "instanceName") === "CAMERA") {
+            debugger;
+          }
+
           updatedValue[dimension] =
             value[dimension] +
             (property.to[dimension] - property.from[dimension]) *
@@ -49,6 +53,14 @@ export function executeEffects(object, effects, delta) {
         }
 
         value.set(updatedValue.x, updatedValue.y, updatedValue.z);
+
+        if (get(object, "instanceName") === "CAMERA") {
+          console.log("updatedValue", updatedValue);
+        }
+
+        if (get(object, "instanceName") === "SECTION_B_PHRASE_2") {
+          console.log("updatedValue", updatedValue);
+        }
 
         // if (object.instanceName === INSTANCE_NAMES.GLOBE) {
         //   debugger;

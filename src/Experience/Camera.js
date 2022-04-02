@@ -2,8 +2,9 @@ import * as THREE from "three";
 import Experience from "./Experience.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
-// import { executeEffect } from './Utils/Effect.js'
-// import { initializeEffect } from './Utils/InitializeEffect.js'
+import { executeInitializeEffects } from "Experience/Utils/ExecuteInitializeEffects";
+import { executeEffects } from "Experience/Utils/ExecuteEffects";
+import { INSTANCE_NAMES } from "./Utils/Enums.js";
 
 export default class Camera {
   constructor() {
@@ -11,6 +12,7 @@ export default class Camera {
     this.sizes = this.experience.sizes;
     this.scene = this.experience.scene;
     this.canvas = this.experience.canvas;
+    this.instanceName = INSTANCE_NAMES.CAMERA; // Global
 
     this.setInstance();
     this.setControls();
@@ -37,13 +39,22 @@ export default class Camera {
     this.instance.updateProjectionMatrix();
   }
 
-  update() {
+  initializeEffects(effects) {
+    console.log("initializeEffects CAMERA");
+    // debugger;
+    executeInitializeEffects(this, effects, this.experience.time);
+  }
+
+  update(effects) {
+    if (effects) {
+      executeEffects(this, effects, this.experience.time.delta);
+    }
     this.controls.update();
   }
 
-  updateCamera(timelineMetadata) {
-    // debugger
-    // executeEffect(this.instance, timelineMetadata, this.experience.time.delta, this.experience.time)
+  updateCamera(effects) {
+    // debugger;
+    executeEffects(this, effects, this.experience.time.delta);
   }
 
   setCameraToInitialValue(timelineMetadata) {

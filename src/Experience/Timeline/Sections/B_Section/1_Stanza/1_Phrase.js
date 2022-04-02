@@ -8,9 +8,6 @@ import { INSTANCE_NAMES } from "Experience/Utils/Enums";
 export function timeline_b_section_1_stanza_1_phrase(timeline) {
   timeline[uuidv4()] = {
     instanceName: INSTANCE_NAMES.SECTION_B_PHRASE_1,
-    initialProperties: {
-      scale: new Vector3(1, 1, 1),
-    },
     effects: [
       {
         name: EFFECTS.FROM_TO,
@@ -20,12 +17,12 @@ export function timeline_b_section_1_stanza_1_phrase(timeline) {
             from: {
               x: 0,
               y: -3,
-              z: 2,
+              z: 3,
             },
             to: {
               x: 0,
               y: 3,
-              z: 2,
+              z: 4,
             },
           },
         ],
@@ -50,9 +47,6 @@ export function timeline_b_section_1_stanza_1_phrase(timeline) {
 
   timeline[uuidv4()] = {
     instanceName: INSTANCE_NAMES.SECTION_B_PHRASE_1,
-    initialProperties: {
-      scale: new Vector3(1, 1, 1),
-    },
     effects: [
       {
         name: EFFECTS.FROM_TO,
@@ -67,7 +61,7 @@ export function timeline_b_section_1_stanza_1_phrase(timeline) {
             to: {
               x: 0,
               y: 3,
-              z: 2,
+              z: 3,
             },
           },
         ],

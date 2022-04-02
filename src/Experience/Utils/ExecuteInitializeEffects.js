@@ -3,19 +3,9 @@ import { set, get } from "lodash";
 import { EFFECTS, GLOBAL_UPDATABLES } from "./Enums";
 
 export function executeInitializeEffects(object, effects, timeObject) {
-  //   debugger;
-  // if (timelineMetadata.theClass.name === 'Phrase1') {
-  //     debugger
-  // } else if (timelineMetadata.theClass.name === 'Floor') {
-  //     debugger
-  // }
-  //   if (
-  //     get(timelineMetadata, "effect.name") === EFFECTS.GLOBAL_FROM_TO &&
-  //     get(timelineMetadata, "effect.pathToExperienceGlobal") ===
-  //       GLOBAL_UPDATABLES.CAMERA_INSTANCE
-  //   ) {
-  //     // debugger
-  //   }
+  if (get(object, "instanceName") === "CAMERA") {
+    // debugger;
+  }
 
   for (let effect of effects) {
     for (let property of effect.properties) {

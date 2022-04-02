@@ -54,9 +54,9 @@ export default class Experience {
 
     this.world = new World();
 
-    this.stats = new Stats();
-    this.stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
-    document.body.appendChild(this.stats.dom);
+    // this.stats = new Stats();
+    // this.stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
+    // document.body.appendChild(this.stats.dom);
 
     // Resize event
     this.sizes.on("resize", () => {
@@ -79,7 +79,7 @@ export default class Experience {
   }
 
   update() {
-    this.stats.begin();
+    // this.stats.begin();
 
     this.camera.update();
     this.world.update();
@@ -89,7 +89,7 @@ export default class Experience {
       this.renderer.update();
     }
 
-    this.stats.end();
+    // this.stats.end();
   }
 
   destroy() {

@@ -7,9 +7,6 @@ import { INSTANCE_NAMES } from "Experience/Utils/Enums";
 export function timeline_light_1(timeline) {
   timeline[uuidv4()] = {
     instanceName: INSTANCE_NAMES.LIGHT_1,
-    initialProperties: {
-      scale: new Vector3(1, 1, 1),
-    },
     effects: [
       {
         name: EFFECTS.FROM_TO,
@@ -18,12 +15,12 @@ export function timeline_light_1(timeline) {
             path: "light.position",
             from: {
               x: 0,
-              y: -3,
+              y: -2,
               z: 10,
             },
             to: {
               x: 0,
-              y: 3,
+              y: 2,
               z: 10,
             },
           },
@@ -32,14 +29,14 @@ export function timeline_light_1(timeline) {
         // endAt: 1250
         // startAt: 0,
         // endAt: 1.25,
-        startAt: 1,
+        startAt: 0,
         endAt: 179,
       },
     ],
     started: false,
     // startAt: 0,
     // endAt: 1.25,
-    startAt: 1,
+    startAt: 0,
     endAt: 179,
   };
 }

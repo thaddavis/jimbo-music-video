@@ -8,9 +8,6 @@ import { INSTANCE_NAMES } from "Experience/Utils/Enums";
 export function timeline_b_section_cutaway_1_flag(timeline) {
   timeline[uuidv4()] = {
     instanceName: INSTANCE_NAMES.FLAG,
-    initialProperties: {
-      scale: new Vector3(1, 1, 1),
-    },
     effects: [
       {
         name: EFFECTS.FROM_TO,
@@ -40,9 +37,6 @@ export function timeline_b_section_cutaway_1_flag(timeline) {
 
   timeline[uuidv4()] = {
     instanceName: INSTANCE_NAMES.FLAG,
-    initialProperties: {
-      scale: new Vector3(1, 1, 1),
-    },
     effects: [
       {
         name: EFFECTS.FROM_TO,
@@ -67,6 +61,6 @@ export function timeline_b_section_cutaway_1_flag(timeline) {
     ],
     started: false,
     startAt: 57.7,
-    endAt: 59.3,
+    endAt: 59.4,
   };
 }

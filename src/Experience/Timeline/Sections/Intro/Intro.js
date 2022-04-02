@@ -8,10 +8,6 @@ import { INSTANCE_NAMES } from "Experience/Utils/Enums";
 export function timeline_intro(timeline) {
   timeline[uuidv4()] = {
     instanceName: INSTANCE_NAMES.JIMBO_INTRO_TITLE,
-    initialProperties: {
-      text: "BINGO!!!",
-      scale: new Vector3(1, 1, 1),
-    },
     effects: [
       {
         name: EFFECTS.FROM_TO,
@@ -43,9 +39,6 @@ export function timeline_intro(timeline) {
 
   timeline[uuidv4()] = {
     instanceName: INSTANCE_NAMES.GLOBE,
-    initialProperties: {
-      scale: new Vector3(1, 1, 1),
-    },
     effects: [
       {
         name: EFFECTS.FROM_TO,
@@ -84,8 +77,8 @@ export function timeline_intro(timeline) {
               z: 0,
             },
             to: {
-              x: 0,
-              y: (Math.PI * 44.0) / 100,
+              x: (Math.PI * 32.0) / 100,
+              y: (Math.PI * 45.0) / 100,
               z: 0,
             },
           },

@@ -6,9 +6,6 @@ import { INSTANCE_NAMES } from "Experience/Utils/Enums";
 export function timeline_bridge_cross(timeline) {
   timeline[uuidv4()] = {
     instanceName: INSTANCE_NAMES.CROSS,
-    initialProperties: {
-      scale: new Vector3(1, 1, 1),
-    },
     effects: [
       {
         name: EFFECTS.FROM_TO,

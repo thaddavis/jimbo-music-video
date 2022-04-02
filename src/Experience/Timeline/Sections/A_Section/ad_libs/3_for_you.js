@@ -8,9 +8,6 @@ import { INSTANCE_NAMES } from "Experience/Utils/Enums";
 export function timeline_a_section_ad_lib_3_for_you(timeline) {
   timeline[uuidv4()] = {
     instanceName: INSTANCE_NAMES.SECTION_A_AD_LIBS_FOR_YOU_A,
-    initialProperties: {
-      scale: new Vector3(1, 1, 1),
-    },
     effects: [
       {
         name: EFFECTS.FROM_TO,
@@ -20,12 +17,12 @@ export function timeline_a_section_ad_lib_3_for_you(timeline) {
             from: {
               x: 0,
               y: 4,
-              z: 1,
+              z: 3,
             },
             to: {
               x: 0,
               y: 2,
-              z: 2,
+              z: 4,
             },
           },
         ],

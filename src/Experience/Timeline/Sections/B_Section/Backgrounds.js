@@ -6,9 +6,6 @@ import { INSTANCE_NAMES } from "Experience/Utils/Enums";
 export function timeline_b_section_backgrounds(timeline) {
   timeline[uuidv4()] = {
     instanceName: INSTANCE_NAMES.BACKGROUND_SKIN_1,
-    initialProperties: {
-      scale: new Vector3(1, 1, 1),
-    },
     effects: [
       {
         name: EFFECTS.FROM_TO,
@@ -23,6 +20,19 @@ export function timeline_b_section_backgrounds(timeline) {
             to: {
               x: 0,
               y: 3,
+              z: 2,
+            },
+          },
+          {
+            path: "mesh.scale",
+            from: {
+              x: 1,
+              y: 1,
+              z: 1,
+            },
+            to: {
+              x: 2,
+              y: 2,
               z: 2,
             },
           },
@@ -44,9 +54,6 @@ export function timeline_b_section_backgrounds(timeline) {
 
   timeline[uuidv4()] = {
     instanceName: INSTANCE_NAMES.BACKGROUND_SKIN_2,
-    initialProperties: {
-      scale: new Vector3(1, 1, 1),
-    },
     effects: [
       {
         name: EFFECTS.FROM_TO,
@@ -61,6 +68,19 @@ export function timeline_b_section_backgrounds(timeline) {
             to: {
               x: 0,
               y: 3,
+              z: 2,
+            },
+          },
+          {
+            path: "mesh.scale",
+            from: {
+              x: 1,
+              y: 1,
+              z: 1,
+            },
+            to: {
+              x: 2,
+              y: 2,
               z: 2,
             },
           },
@@ -82,9 +102,6 @@ export function timeline_b_section_backgrounds(timeline) {
 
   timeline[uuidv4()] = {
     instanceName: INSTANCE_NAMES.BACKGROUND_SKIN_1,
-    initialProperties: {
-      scale: new Vector3(1, 1, 1),
-    },
     effects: [
       {
         name: EFFECTS.FROM_TO,
@@ -99,6 +116,19 @@ export function timeline_b_section_backgrounds(timeline) {
             to: {
               x: 0,
               y: 3,
+              z: 2,
+            },
+          },
+          {
+            path: "mesh.scale",
+            from: {
+              x: 1,
+              y: 1,
+              z: 1,
+            },
+            to: {
+              x: 2,
+              y: 2,
               z: 2,
             },
           },
@@ -108,21 +138,18 @@ export function timeline_b_section_backgrounds(timeline) {
         // startAt: 0,
         // endAt: 1.25,
         startAt: 59.3,
-        endAt: 65.5,
+        endAt: 65.2,
       },
     ],
     started: false,
     // startAt: 0,
     // endAt: 1.25,
     startAt: 59.3,
-    endAt: 65.5,
+    endAt: 65.2,
   };
 
   timeline[uuidv4()] = {
     instanceName: INSTANCE_NAMES.BACKGROUND_SKIN_2,
-    initialProperties: {
-      scale: new Vector3(1, 1, 1),
-    },
     effects: [
       {
         name: EFFECTS.FROM_TO,
@@ -140,19 +167,32 @@ export function timeline_b_section_backgrounds(timeline) {
               z: 2,
             },
           },
+          {
+            path: "mesh.scale",
+            from: {
+              x: 1,
+              y: 1,
+              z: 1,
+            },
+            to: {
+              x: 2,
+              y: 2,
+              z: 2,
+            },
+          },
         ],
         // startAt: 0,
         // endAt: 1250
         // startAt: 0,
         // endAt: 1.25,
-        startAt: 65.5,
+        startAt: 65.2,
         endAt: 72.5,
       },
     ],
     started: false,
     // startAt: 0,
     // endAt: 1.25,
-    startAt: 65.5,
+    startAt: 65.2,
     endAt: 72.5,
   };
 }

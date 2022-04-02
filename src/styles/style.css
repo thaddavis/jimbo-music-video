@@ -5,6 +5,7 @@
 
 body {
     font-family: 'Helvetica neue', Helvetica, Arial, sans-serif;
+    /* cursor: none; */
 }
 
 #titles, #waveform-container {

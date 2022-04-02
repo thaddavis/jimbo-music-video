@@ -29,7 +29,8 @@ export default class Time extends EventEmitter {
       // vvv vvv *** WITH THREE CLOCK *** vvv vvvv
       this.clock = new THREE.Clock();
       this.clock.start();
-      this.elapsed = this.clock.getElapsedTime();
+      // this.elapsed = this.clock.getElapsedTime();
+      this.elapsed = 50;
       this.delta = this.clock.getDelta();
       // ^^^ ^^^ *** WITH THREE CLOCK *** ^^^ ^^^
     }
@@ -49,7 +50,7 @@ export default class Time extends EventEmitter {
       this.current = currentTime;
       this.elapsed = this.current;
       //   console.log("FRAME RATE", 1 / this.delta);
-      //   console.log("*** this.elapsed", this.elapsed);
+      //   console.log("*** this.elapsed ***", this.elapsed);
       //   console.log(frameRateElapsed);
       //   console.log(desiredFrameRateInterval);
       //   console.log(frameRateElapsed > desiredFrameRateInterval);
@@ -62,6 +63,7 @@ export default class Time extends EventEmitter {
       // vvv vvv *** WITH THREE CLOCK *** vvv vvv
       this.delta = this.clock.getDelta();
       this.elapsed = this.clock.getElapsedTime();
+      console.log("*** this.elapsed ***", this.elapsed);
       this.trigger("tick");
       // ^^^ ^^^ *** WITH THREE CLOCK *** ^^^ ^^^
     }

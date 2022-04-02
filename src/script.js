@@ -29,6 +29,8 @@ const main = () => {
         // console.log('event player.seeked', e)
       });
       peaks.on("player.timeupdate", (e) => {
+        let ele = document.getElementById("debug");
+        if (ele) ele.innerHTML = `${e}`;
         // console.log('event player.timeupdate', e)
         // if (e > 84) {
         //     window.peaks.player.seek(29)

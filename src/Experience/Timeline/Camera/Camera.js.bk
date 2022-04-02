@@ -1,0 +1,77 @@
+import { v4 as uuidv4 } from "uuid";
+
+import { EFFECTS, GLOBAL_UPDATABLES } from "Experience/Utils/Enums";
+import { INSTANCE_NAMES } from "../../Utils/Enums";
+
+export function timeline_camera(timeline) {
+  // timeline[uuidv4()] = {
+  //   isGlobal: true,
+  //   instanceName: INSTANCE_NAMES.CAMERA,
+  //   effects: [
+  //     {
+  //       name: EFFECTS.GLOBAL_FROM_TO,
+  //       properties: [
+  //         {
+  //           path: "instance.position",
+  //           from: {
+  //             x: -3,
+  //             y: 0,
+  //             z: 10,
+  //           },
+  //           to: {
+  //             x: 3,
+  //             y: 0,
+  //             z: 10,
+  //           },
+  //         },
+  //       ],
+  //       // startAt: 0,
+  //       // endAt: 1250
+  //       // startAt: 0,
+  //       // endAt: 1.25,
+  //       startAt: 1,
+  //       endAt: 4,
+  //     },
+  //   ],
+  //   started: false,
+  //   // startAt: 0,
+  //   // endAt: 1.25,
+  //   startAt: 1,
+  //   endAt: 4,
+  // };
+  // timeline[uuidv4()] = {
+  //   isGlobal: true,
+  //   instanceName: INSTANCE_NAMES.CAMERA,
+  //   effects: [
+  //     {
+  //       name: EFFECTS.GLOBAL_FROM_TO,
+  //       properties: [
+  //         {
+  //           path: "instance.position",
+  //           from: {
+  //             x: 3,
+  //             y: 0,
+  //             z: 10,
+  //           },
+  //           to: {
+  //             x: -3,
+  //             y: 0,
+  //             z: 10,
+  //           },
+  //         },
+  //       ],
+  //       // startAt: 0,
+  //       // endAt: 1250
+  //       // startAt: 0,
+  //       // endAt: 1.25,
+  //       startAt: 4,
+  //       endAt: 9,
+  //     },
+  //   ],
+  //   started: false,
+  //   // startAt: 0,
+  //   // endAt: 1.25,
+  //   startAt: 4,
+  //   endAt: 9,
+  // };
+}
