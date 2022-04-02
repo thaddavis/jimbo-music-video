@@ -1,28 +1,28 @@
 import Experience from "Experience/Experience.js";
 import Environment from "Experience/World/Environment.js";
 
-// vvv NewTimeline vvv
-import { initializeReusables } from "./initializeReusables";
-import { timeline_intro } from "Experience/NewTimeline/Sections/Intro/Intro";
-import { timeline_a_section_background } from "Experience/NewTimeline/Sections/A_Section/Background";
+// vvv Timeline vvv
+import { initializeWorldObjects } from "./initializeWorldObjects";
+import { timeline_intro } from "Experience/Timeline/Sections/Intro/Intro";
+import { timeline_a_section_background } from "Experience/Timeline/Sections/A_Section/Background";
 
-import { timeline_a_section_1_stanza } from "Experience/NewTimeline/Sections/A_Section/1_Stanza";
-import { timeline_a_section_ad_lib_1_for_you_for_you } from "Experience/NewTimeline/Sections/A_Section/ad_libs/1_for_you_for_you";
-import { timeline_a_section_2_stanza } from "Experience/NewTimeline/Sections/A_Section/2_Stanza";
-import { timeline_a_section_ad_lib_2_for_you_for_you } from "Experience/NewTimeline/Sections/A_Section/ad_libs/2_for_you_for_you";
-import { timeline_a_section_3_stanza } from "Experience/NewTimeline/Sections/A_Section/3_Stanza";
-import { timeline_a_section_ad_lib_3_for_you } from "Experience/NewTimeline/Sections/A_Section/ad_libs/3_for_you";
-import { timeline_a_section_4_stanza } from "Experience/NewTimeline/Sections/A_Section/4_Stanza";
-import { timeline_b_section_cutaway_1_flag } from "Experience/NewTimeline/Sections/B_Section/Cutaways/1_Flag";
-import { timeline_b_section_backgrounds } from "Experience/NewTimeline/Sections/B_Section/Backgrounds";
-import { timeline_light_1 } from "Experience/NewTimeline/Lights/Light1";
-// import { timeline_light_2 } from "Experience/NewTimeline/Lights/Light2";
+import { timeline_a_section_1_stanza } from "Experience/Timeline/Sections/A_Section/1_Stanza";
+import { timeline_a_section_ad_lib_1_for_you_for_you } from "Experience/Timeline/Sections/A_Section/ad_libs/1_for_you_for_you";
+import { timeline_a_section_2_stanza } from "Experience/Timeline/Sections/A_Section/2_Stanza";
+import { timeline_a_section_ad_lib_2_for_you_for_you } from "Experience/Timeline/Sections/A_Section/ad_libs/2_for_you_for_you";
+import { timeline_a_section_3_stanza } from "Experience/Timeline/Sections/A_Section/3_Stanza";
+import { timeline_a_section_ad_lib_3_for_you } from "Experience/Timeline/Sections/A_Section/ad_libs/3_for_you";
+import { timeline_a_section_4_stanza } from "Experience/Timeline/Sections/A_Section/4_Stanza";
+import { timeline_b_section_cutaway_1_flag } from "Experience/Timeline/Sections/B_Section/Cutaways/1_Flag";
+import { timeline_b_section_backgrounds } from "Experience/Timeline/Sections/B_Section/Backgrounds";
+import { timeline_light_1 } from "Experience/Timeline/Lights/Light1";
+// import { timeline_light_2 } from "Experience/Timeline/Lights/Light2";
 
-import { timeline_b_section_1_stanza } from "Experience/NewTimeline/Sections/B_Section/1_Stanza";
-import { timeline_b_section_2_stanza } from "Experience/NewTimeline/Sections/B_Section/2_Stanza";
+import { timeline_b_section_1_stanza } from "Experience/Timeline/Sections/B_Section/1_Stanza";
+import { timeline_b_section_2_stanza } from "Experience/Timeline/Sections/B_Section/2_Stanza";
 
-import { timeline_bridge_cross } from "Experience/NewTimeline/Sections/Bridge/Cross";
-// ^^^ NewTimeline ^^^
+import { timeline_bridge_cross } from "Experience/Timeline/Sections/Bridge/Cross";
+// ^^^ Timeline ^^^
 
 import { EFFECTS, GLOBAL_UPDATABLES } from "Experience/Utils/Enums";
 
@@ -42,7 +42,7 @@ export default class World {
     this.resources.on("ready", () => {
       // Setup
       // vvv NEW TIMELINE vvv
-      initializeReusables(this.reusables);
+      initializeWorldObjects(this.reusables);
 
       timeline_intro(this.timelineOfEvents);
       timeline_a_section_background(this.timelineOfEvents);

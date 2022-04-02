@@ -6,7 +6,7 @@ import { INSTANCE_NAMES } from "Experience/Utils/Enums";
 
 export function timeline_light_1(timeline) {
   timeline[uuidv4()] = {
-    instanceName: INSTANCE_NAMES.LIGHT,
+    instanceName: INSTANCE_NAMES.LIGHT_1,
     initialProperties: {
       scale: new Vector3(1, 1, 1),
     },
@@ -33,13 +33,13 @@ export function timeline_light_1(timeline) {
         // startAt: 0,
         // endAt: 1.25,
         startAt: 1,
-        endAt: 30,
+        endAt: 179,
       },
     ],
     started: false,
     // startAt: 0,
     // endAt: 1.25,
     startAt: 1,
-    endAt: 30,
+    endAt: 179,
   };
 }

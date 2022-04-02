@@ -38,7 +38,7 @@ const main = () => {
         // console.log('event player.playing', e)
       });
       peaks.on("player.seeked", function (e) {
-        // console.log("event player.seeked", e);
+        console.log("event player.seeked", e);
         if (window && window.experience) {
           window.experience.destroy();
           delete window.experience;
