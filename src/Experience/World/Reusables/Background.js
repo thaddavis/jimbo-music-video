@@ -36,7 +36,6 @@ export default class Background {
   }
 
   initializeEffects(effects) {
-    // debugger;
     executeInitializeEffects(this, effects, this.experience.time);
   }
 
@@ -45,9 +44,7 @@ export default class Background {
   }
 
   moveOffStage() {
-    // debugger;
     const offStagePlacement = get(Config, "offStage");
-    console.log(get(Config, "offStage"));
 
     this.mesh.position.set(
       offStagePlacement.x,

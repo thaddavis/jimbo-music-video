@@ -67,9 +67,7 @@ export default class SkinPlane1 {
   }
 
   moveOffStage() {
-    // debugger;
     const offStagePlacement = get(Config, "offStage");
-    console.log(get(Config, "offStage"));
 
     this.mesh.position.set(
       offStagePlacement.x,

@@ -78,7 +78,6 @@ export default class Flag {
 
   moveOffStage() {
     const offStagePlacement = get(Config, "offStage");
-    console.log(get(Config, "offStage"));
 
     this.mesh.position.set(
       offStagePlacement.x,

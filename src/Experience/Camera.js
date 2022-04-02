@@ -1,56 +1,54 @@
-import * as THREE from 'three'
-import Experience from './Experience.js'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import * as THREE from "three";
+import Experience from "./Experience.js";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
-import { executeEffect } from './Utils/Effect.js'
-import { initializeEffect } from './Utils/InitializeEffect.js'
+// import { executeEffect } from './Utils/Effect.js'
+// import { initializeEffect } from './Utils/InitializeEffect.js'
 
-export default class Camera
-{
-    constructor()
-    {
-        this.experience = new Experience()
-        this.sizes = this.experience.sizes
-        this.scene = this.experience.scene
-        this.canvas = this.experience.canvas
+export default class Camera {
+  constructor() {
+    this.experience = new Experience();
+    this.sizes = this.experience.sizes;
+    this.scene = this.experience.scene;
+    this.canvas = this.experience.canvas;
 
-        this.setInstance()
-        this.setControls()
-    }
+    this.setInstance();
+    this.setControls();
+  }
 
-    setInstance()
-    {
-        this.instance = new THREE.PerspectiveCamera(45, this.sizes.width / this.sizes.height, 0.1, 100)
-        this.instance.position.set(0, 0, 22)
-        this.scene.add(this.instance)
-    }
+  setInstance() {
+    this.instance = new THREE.PerspectiveCamera(
+      45,
+      this.sizes.width / this.sizes.height,
+      0.1,
+      100
+    );
+    this.instance.position.set(0, 0, 22);
+    this.scene.add(this.instance);
+  }
 
-    setControls()
-    {
-        this.controls = new OrbitControls(this.instance, this.canvas)
-        this.controls.enableDamping = true
-    }
+  setControls() {
+    this.controls = new OrbitControls(this.instance, this.canvas);
+    this.controls.enableDamping = true;
+  }
 
-    resize()
-    {
-        this.instance.aspect = this.sizes.width / this.sizes.height
-        this.instance.updateProjectionMatrix()
-    }
+  resize() {
+    this.instance.aspect = this.sizes.width / this.sizes.height;
+    this.instance.updateProjectionMatrix();
+  }
 
-    update()
-    {
-        this.controls.update()
-    }
+  update() {
+    this.controls.update();
+  }
 
-    updateCamera(timelineMetadata) {
-        // debugger
-        executeEffect(this.instance, timelineMetadata, this.experience.time.delta, this.experience.time)
-    }
+  updateCamera(timelineMetadata) {
+    // debugger
+    // executeEffect(this.instance, timelineMetadata, this.experience.time.delta, this.experience.time)
+  }
 
-    setCameraToInitialValue(timelineMetadata) {
-        
-        // debugger
-        initializeEffect(this.instance, timelineMetadata, this.experience.time)
-        // debugger
-    }
+  setCameraToInitialValue(timelineMetadata) {
+    // debugger
+    // initializeEffect(this.instance, timelineMetadata, this.experience.time)
+    // debugger
+  }
 }

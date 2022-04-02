@@ -10,16 +10,9 @@ import { get } from "lodash";
 
 export default class Text {
   constructor(initialProperties) {
-    // debugger;
-    // this.timelineMetadata = timelineMetadata;
     this.experience = new Experience();
     this.scene = this.experience.scene;
     this.resources = this.experience.resources;
-
-    console.log(
-      "initialProperties.instanceName",
-      initialProperties.instanceName
-    );
 
     this.instanceName = initialProperties.instanceName;
 
@@ -60,15 +53,11 @@ export default class Text {
   }
 
   update(effects) {
-    console.log("update Reusable Text");
-    // debugger;
     executeEffects(this, effects, this.experience.time.delta);
   }
 
   moveOffStage() {
-    // debugger;
     const offStagePlacement = get(Config, "offStage");
-    console.log(get(Config, "offStage"));
 
     this.mesh.position.set(
       offStagePlacement.x,

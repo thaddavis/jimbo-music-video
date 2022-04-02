@@ -42,8 +42,6 @@ export default class World {
       // vvv NEW TIMELINE vvv
       initializeReusables(this.reusables);
 
-      console.log("*** *** ***", this.reusables);
-
       timeline_intro(this.timelineOfEvents);
       timeline_a_section_background(this.timelineOfEvents);
       timeline_a_section_1_stanza(this.timelineOfEvents);
@@ -67,11 +65,8 @@ export default class World {
   }
 
   update() {
-    // console.log("World.js update");
-
     for (let updatableId in this.timelineOfEvents) {
       const updatable = this.timelineOfEvents[updatableId];
-      // console.log("updatable", updatable);
 
       for (let e of updatable.effects) {
         if ([EFFECTS.FROM_TO].includes(e.name)) {
@@ -84,17 +79,17 @@ export default class World {
               this.reusables[updatable.instanceName];
             updatable.started = true;
 
-            console.log("-> ", this.updatables[updatableId]);
+            // console.log("-> ", this.updatables[updatableId]);
 
             this.updatables[updatableId].initializeEffects(updatable.effects);
           } else if (
             this.experience.time.elapsed > e.endAt &&
             updatable.started === true
           ) {
-            console.log(
-              "vvv MOVE object off stage vvv",
-              this.updatables[updatableId].instanceName
-            );
+            // console.log(
+            //   "vvv MOVE object off stage vvv",
+            //   this.updatables[updatableId].instanceName
+            // );
             // vvv MOVE object off stage vvv
             // debugger;
             this.updatables[updatableId].moveOffStage();

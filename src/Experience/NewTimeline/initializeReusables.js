@@ -63,7 +63,7 @@ export function initializeReusables(reusables) {
   reusables[INSTANCE_NAMES.SECTION_B_PHRASE_2] = up_on_mine;
 
   for (let r in reusables) {
-    console.log("r", r);
+    // console.log("r", r);
 
     reusables[r] = new reusables[r].theClass(reusables[r].initialProperties);
 

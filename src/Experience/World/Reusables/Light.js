@@ -64,9 +64,7 @@ export default class Light {
   }
 
   moveOffStage() {
-    // debugger;
     const offStagePlacement = get(Config, "offStage");
-    console.log(get(Config, "offStage"));
 
     this.light.position.set(
       offStagePlacement.x,

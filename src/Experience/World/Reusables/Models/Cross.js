@@ -39,7 +39,6 @@ export default class Cross {
 
   moveOffStage() {
     const offStagePlacement = get(Config, "offStage");
-    console.log(get(Config, "offStage"));
 
     this.model.position.set(
       offStagePlacement.x,

@@ -57,7 +57,6 @@ export default class SkinPlane2 {
   }
 
   initializeEffects(effects) {
-    // debugger;
     executeInitializeEffects(this, effects, this.experience.time);
   }
 
@@ -66,9 +65,7 @@ export default class SkinPlane2 {
   }
 
   moveOffStage() {
-    // debugger;
     const offStagePlacement = get(Config, "offStage");
-    console.log(get(Config, "offStage"));
 
     this.mesh.position.set(
       offStagePlacement.x,
