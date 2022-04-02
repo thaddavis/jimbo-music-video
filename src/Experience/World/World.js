@@ -3,6 +3,9 @@ import Environment from "Experience/World/Environment.js";
 
 // vvv Timeline vvv
 import { initializeWorldObjects } from "./initializeWorldObjects";
+
+import { timeline_camera } from "Experience/Timeline/Camera/Camera";
+
 import { timeline_intro } from "Experience/Timeline/Sections/Intro/Intro";
 import { timeline_a_section_background } from "Experience/Timeline/Sections/A_Section/Background";
 
@@ -16,7 +19,7 @@ import { timeline_a_section_4_stanza } from "Experience/Timeline/Sections/A_Sect
 import { timeline_b_section_cutaway_1_flag } from "Experience/Timeline/Sections/B_Section/Cutaways/1_Flag";
 import { timeline_b_section_backgrounds } from "Experience/Timeline/Sections/B_Section/Backgrounds";
 import { timeline_light_1 } from "Experience/Timeline/Lights/Light1";
-// import { timeline_light_2 } from "Experience/Timeline/Lights/Light2";
+import { timeline_light_2 } from "Experience/Timeline/Lights/Light2";
 
 import { timeline_b_section_1_stanza } from "Experience/Timeline/Sections/B_Section/1_Stanza";
 import { timeline_b_section_2_stanza } from "Experience/Timeline/Sections/B_Section/2_Stanza";
@@ -44,6 +47,8 @@ export default class World {
       // vvv NEW TIMELINE vvv
       initializeWorldObjects(this.reusables);
 
+      timeline_camera(this.timelineOfEvents);
+
       timeline_intro(this.timelineOfEvents);
       timeline_a_section_background(this.timelineOfEvents);
       timeline_a_section_1_stanza(this.timelineOfEvents);
@@ -70,8 +75,12 @@ export default class World {
   }
 
   update() {
+    console.log("World.js update");
+
     for (let updatableId in this.timelineOfEvents) {
       const updatable = this.timelineOfEvents[updatableId];
+
+      // debugger;
 
       for (let e of updatable.effects) {
         if ([EFFECTS.FROM_TO].includes(e.name)) {
@@ -89,7 +98,8 @@ export default class World {
             this.updatables[updatableId].initializeEffects(updatable.effects);
           } else if (
             this.experience.time.elapsed > e.endAt &&
-            updatable.started === true
+            updatable.started === true &&
+            !updatable.isGlobal
           ) {
             // console.log(
             //   "vvv MOVE object off stage vvv",
@@ -105,6 +115,39 @@ export default class World {
             // this.timelineOfEvents[updatableId].started = false;
             // delete this.updatables[updatableId];
           }
+        } else if (updatable.isGlobal) {
+          if (
+            this.experience.time.elapsed >= e.startAt &&
+            this.experience.time.elapsed <= e.endAt &&
+            updatable.started === false
+          ) {
+            this.updatables[updatableId] = {
+              isGlobal: true,
+              // globalObject: get(window.experience, updatable.effect.pathToExperienceGlobal),
+              updatable: updatable,
+            };
+
+            if (
+              [GLOBAL_UPDATABLES.CAMERA_INSTANCE].includes(
+                get(
+                  this.updatables[updatableId],
+                  "updatable.pathToExperienceGlobal"
+                )
+              )
+            ) {
+              debugger;
+              window.experience.camera.initializeEffects(
+                this.updatables[updatableId].updatable.effects
+              );
+            }
+          } else if (
+            this.experience.time.elapsed > updatable.endAt &&
+            updatable.started === true
+          ) {
+            this.timelineOfEvents[updatableId].started = false;
+            delete this.updatables[updatableId];
+          }
+        } else {
         }
       }
     }
@@ -116,15 +159,16 @@ export default class World {
         this.updatables[updatableId] &&
         this.updatables[updatableId].isGlobal
       ) {
+        // debugger;
         if (
           [GLOBAL_UPDATABLES.CAMERA_INSTANCE].includes(
             get(
               this.updatables[updatableId],
-              "updatable.effect.pathToExperienceGlobal"
+              "updatable.pathToExperienceGlobal"
             )
           )
         ) {
-          // debugger
+          // debugger;
           window.experience.camera.updateCamera(
             this.updatables[updatableId].updatable
           );

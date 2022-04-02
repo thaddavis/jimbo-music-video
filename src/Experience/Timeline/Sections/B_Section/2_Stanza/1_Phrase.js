@@ -20,12 +20,12 @@ export function timeline_b_section_2_stanza_1_phrase(timeline) {
             from: {
               x: 0,
               y: -3,
-              z: 2,
+              z: 4,
             },
             to: {
               x: 0,
               y: 3,
-              z: 2,
+              z: 4,
             },
           },
         ],
@@ -62,12 +62,12 @@ export function timeline_b_section_2_stanza_1_phrase(timeline) {
             from: {
               x: 0,
               y: 0,
-              z: 2,
+              z: 4,
             },
             to: {
               x: 0,
               y: 3,
-              z: 2,
+              z: 4,
             },
           },
         ],

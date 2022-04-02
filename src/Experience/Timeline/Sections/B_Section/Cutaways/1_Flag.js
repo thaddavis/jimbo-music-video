@@ -28,6 +28,19 @@ export function timeline_b_section_cutaway_1_flag(timeline) {
               z: 0,
             },
           },
+          {
+            path: "mesh.scale",
+            from: {
+              x: 1,
+              y: 1,
+              z: 1,
+            },
+            to: {
+              x: 1,
+              y: 1,
+              z: 1,
+            },
+          },
         ],
         startAt: 44.7,
         endAt: 45.7,

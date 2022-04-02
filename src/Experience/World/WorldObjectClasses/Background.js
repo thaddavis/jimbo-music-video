@@ -32,6 +32,7 @@ export default class Background {
   setMesh() {
     this.mesh = new THREE.Mesh(this.geometry, this.material);
     this.mesh.receiveShadow = get(Config, "shadows.receiveShadows", false);
+    // this.mesh.receiveShadow = false;
     this.scene.add(this.mesh);
   }
 
@@ -40,7 +41,12 @@ export default class Background {
   }
 
   update(effects) {
-    executeEffects(this, effects, this.experience.time.delta);
+    executeEffects(
+      this,
+      effects,
+      this.experience.time.delta,
+      this.experience.time
+    );
   }
 
   moveOffStage() {

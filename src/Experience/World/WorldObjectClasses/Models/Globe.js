@@ -33,7 +33,7 @@ export default class Globe {
     let axisZ = new THREE.Vector3(0, 0, 1).normalize();
     let tiltAxis = new THREE.Vector3(0, 1, 0).normalize();
 
-    this.model.rotateOnAxis(axisX, (Math.PI * 27) / 100);
+    // this.model.rotateOnAxis(axisX, 100);
 
     this.scene.add(this.model);
 
@@ -49,7 +49,12 @@ export default class Globe {
   }
 
   update(effects) {
-    executeEffects(this, effects, this.experience.time.delta);
+    executeEffects(
+      this,
+      effects,
+      this.experience.time.delta,
+      this.experience.time
+    );
   }
 
   moveOffStage() {

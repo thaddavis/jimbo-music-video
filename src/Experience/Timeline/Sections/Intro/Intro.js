@@ -84,8 +84,8 @@ export function timeline_intro(timeline) {
               z: 0,
             },
             to: {
-              x: 0,
-              y: (Math.PI * 44.0) / 100,
+              x: (Math.PI * 30.0) / 100,
+              y: (Math.PI * 41.0) / 100,
               z: 0,
             },
           },

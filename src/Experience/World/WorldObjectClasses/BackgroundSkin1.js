@@ -63,7 +63,12 @@ export default class SkinPlane1 {
   }
 
   update(effects) {
-    executeEffects(this, effects, this.experience.time.delta);
+    executeEffects(
+      this,
+      effects,
+      this.experience.time.delta,
+      this.experience.time
+    );
   }
 
   moveOffStage() {

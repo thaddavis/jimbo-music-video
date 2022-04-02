@@ -73,7 +73,12 @@ export default class Flag {
 
   update(effects) {
     this.material.uniforms.uTime.value = this.experience.time.elapsed;
-    executeEffects(this, effects, this.experience.time.delta);
+    executeEffects(
+      this,
+      effects,
+      this.experience.time.delta,
+      this.experience.time
+    );
   }
 
   moveOffStage() {

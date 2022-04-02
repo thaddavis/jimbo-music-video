@@ -4,8 +4,8 @@ export const Config = {
       x: 2048,
       y: 2048,
     },
-    castShadows: true,
-    receiveShadows: true,
+    castShadows: false,
+    receiveShadows: false,
   },
   offStage: {
     x: 0,
@@ -13,8 +13,8 @@ export const Config = {
     z: 40,
   },
   // vvv valid values are 'peaksPlayer' and 'threeClock' vvv
-  // timerMode: "peaksPlayer",
   timerMode: "peaksPlayer",
+  // timerMode: "threeClock",
   // ^^^ ^^^
   useEffectComposer: true,
 };

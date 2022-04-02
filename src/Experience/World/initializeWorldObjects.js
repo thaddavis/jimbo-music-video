@@ -20,6 +20,7 @@ import i_just_wanna_feel_your_skin from "Experience/World/WorldObjectInstances/T
 import up_on_mine from "Experience/World/WorldObjectInstances/Titles/SectionB/2-up-on-mine";
 
 import Light1 from "Experience/World/WorldObjectInstances/Light1";
+import Light2 from "Experience/World/WorldObjectInstances/Light2";
 import Globe from "Experience/World/WorldObjectInstances/Globe";
 import Background from "Experience/World/WorldObjectInstances/Background";
 import Cross from "Experience/World/WorldObjectInstances/Cross";
@@ -29,6 +30,7 @@ import { INSTANCE_NAMES } from "../Utils/Enums";
 export function initializeWorldObjects(reusables) {
   reusables[INSTANCE_NAMES.JIMBO_INTRO_TITLE] = JimboIntroTitle;
   reusables[INSTANCE_NAMES.LIGHT_1] = Light1;
+  // reusables[INSTANCE_NAMES.LIGHT_2] = Light2;
   reusables[INSTANCE_NAMES.GLOBE] = Globe;
   reusables[INSTANCE_NAMES.BACKGROUND] = Background;
   reusables[INSTANCE_NAMES.CROSS] = Cross;

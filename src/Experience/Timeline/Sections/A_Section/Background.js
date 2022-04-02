@@ -27,6 +27,19 @@ export function timeline_a_section_background(timeline) {
               z: 2,
             },
           },
+          {
+            path: "mesh.scale",
+            from: {
+              x: 1,
+              y: 1,
+              z: 1,
+            },
+            to: {
+              x: 2,
+              y: 2,
+              z: 1,
+            },
+          },
         ],
         // startAt: 0,
         // endAt: 1250
@@ -63,6 +76,19 @@ export function timeline_a_section_background(timeline) {
               x: 0,
               y: 3,
               z: 2,
+            },
+          },
+          {
+            path: "mesh.scale",
+            from: {
+              x: 1,
+              y: 1,
+              z: 1,
+            },
+            to: {
+              x: 2,
+              y: 2,
+              z: 1,
             },
           },
         ],
@@ -103,6 +129,19 @@ export function timeline_a_section_background(timeline) {
               z: 2,
             },
           },
+          {
+            path: "mesh.scale",
+            from: {
+              x: 1,
+              y: 1,
+              z: 1,
+            },
+            to: {
+              x: 2,
+              y: 2,
+              z: 1,
+            },
+          },
         ],
         // startAt: 0,
         // endAt: 1250
@@ -139,6 +178,19 @@ export function timeline_a_section_background(timeline) {
               x: 0,
               y: 3,
               z: 2,
+            },
+          },
+          {
+            path: "mesh.scale",
+            from: {
+              x: 1,
+              y: 1,
+              z: 1,
+            },
+            to: {
+              x: 2,
+              y: 2,
+              z: 1,
             },
           },
         ],

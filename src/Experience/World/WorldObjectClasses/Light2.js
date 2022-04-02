@@ -7,7 +7,7 @@ import { executeInitializeEffects } from "Experience/Utils/ExecuteInitializeEffe
 import { Config } from "Experience/Config";
 import { get } from "lodash";
 
-export default class Light {
+export default class Light2 {
   constructor(initialProperties) {
     this.experience = new Experience();
     this.scene = this.experience.scene;
@@ -18,8 +18,7 @@ export default class Light {
   }
 
   setLight() {
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1, 0.8);
-    // const directionalLight = new THREE.RectAreaLight(0xffffff, 1, 2, 2);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1, 1);
     directionalLight.castShadow = get(Config, "shadows.castShadows", false);
     directionalLight.shadow.mapSize.width = get(
       Config,
@@ -42,7 +41,7 @@ export default class Light {
     const t = new THREE.Object3D();
     t.translateX(0);
     t.translateY(0);
-    t.translateZ(6);
+    t.translateZ(4);
     directionalLight.target = t;
 
     this.light = directionalLight;
@@ -52,7 +51,7 @@ export default class Light {
     const directionalLightCameraHelper = new THREE.CameraHelper(
       directionalLight.shadow.camera
     );
-    directionalLightCameraHelper.visible = false;
+    directionalLightCameraHelper.visible = true;
     this.scene.add(directionalLightCameraHelper);
   }
 

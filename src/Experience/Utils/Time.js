@@ -29,7 +29,8 @@ export default class Time extends EventEmitter {
       // vvv vvv *** WITH THREE CLOCK *** vvv vvvv
       this.clock = new THREE.Clock();
       this.clock.start();
-      this.elapsed = this.clock.getElapsedTime();
+      // this.elapsed = this.clock.getElapsedTime();
+      this.elapsed = 2;
       this.delta = this.clock.getDelta();
       // ^^^ ^^^ *** WITH THREE CLOCK *** ^^^ ^^^
     }
