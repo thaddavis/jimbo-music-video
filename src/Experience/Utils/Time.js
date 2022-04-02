@@ -28,9 +28,11 @@ export default class Time extends EventEmitter {
       // 'threeClock'
       // vvv vvv *** WITH THREE CLOCK *** vvv vvvv
       this.clock = new THREE.Clock();
+      // console.log(this.clock);
+      // this.clock.elapsedTime = 50;
       this.clock.start();
       // this.elapsed = this.clock.getElapsedTime();
-      this.elapsed = 50;
+      this.elapsed = 0;
       this.delta = this.clock.getDelta();
       // ^^^ ^^^ *** WITH THREE CLOCK *** ^^^ ^^^
     }
@@ -63,7 +65,7 @@ export default class Time extends EventEmitter {
       // vvv vvv *** WITH THREE CLOCK *** vvv vvv
       this.delta = this.clock.getDelta();
       this.elapsed = this.clock.getElapsedTime();
-      console.log("*** this.elapsed ***", this.elapsed);
+      // console.log("*** this.elapsed ***", this.elapsed);
       this.trigger("tick");
       // ^^^ ^^^ *** WITH THREE CLOCK *** ^^^ ^^^
     }

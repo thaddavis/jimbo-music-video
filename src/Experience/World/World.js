@@ -81,86 +81,33 @@ export default class World {
     for (let updatableId in this.timelineOfEvents) {
       const updatable = this.timelineOfEvents[updatableId];
 
-      // debugger;
-
-      for (let e of updatable.effects) {
-        // * Animate Object Instances * //
-        if ([EFFECTS.FROM_TO].includes(e.name)) {
-          if (
-            this.experience.time.elapsed >= e.startAt &&
-            this.experience.time.elapsed <= e.endAt &&
-            updatable.started === false
-          ) {
-            this.updatables[updatableId] =
-              this.reusables[updatable.instanceName];
-            updatable.started = true;
-
-            // console.log("-> ", this.updatables[updatableId]);
-
-            this.updatables[updatableId].initializeEffects(updatable.effects);
-          } else if (
-            this.experience.time.elapsed > e.endAt &&
-            updatable.started === true
-          ) {
-            // console.log(
-            //   "vvv MOVE object off stage vvv",
-            //   this.updatables[updatableId].instanceName
-            // );
-            // vvv MOVE object off stage vvv
-            // debugger;
-            this.updatables[updatableId].moveOffStage();
-            this.timelineOfEvents[updatableId].started = false;
-            delete this.updatables[updatableId];
-            // ^^^ MOVE object off stage ^^^
-            // this.updatables[updatableId].destroy(); // *** FOR SPEED ***
-            // this.timelineOfEvents[updatableId].started = false;
-            // delete this.updatables[updatableId];
-          }
-        }
-        // * Animate Global Properties * //
-        else if ([EFFECTS.GLOBAL_FROM_TO].includes(e.name)) {
-          // debugger;
-
-          if (
-            this.experience.time.elapsed >= e.startAt &&
-            this.experience.time.elapsed <= e.endAt &&
-            updatable.started === false
-          ) {
-            // debugger;
-
-            this.updatables[updatableId] =
-              this.reusables[updatable.instanceName];
-            updatable.started = true;
-
-            // debugger;
-
-            this.updatables[updatableId].initializeEffects(updatable.effects);
-          } else if (
-            this.experience.time.elapsed > e.endAt &&
-            updatable.started === true
-          ) {
-            // debugger;
-            this.timelineOfEvents[updatableId].started = false;
-            delete this.updatables[updatableId];
-            // ^^^ MOVE object off stage ^^^
-            // this.updatables[updatableId].destroy(); // *** FOR SPEED ***
-            // this.timelineOfEvents[updatableId].started = false;
-            // delete this.updatables[updatableId];
-          }
-        }
+      if (
+        // !updatable.isGlobal &&
+        updatable.started === false &&
+        updatable.startAt < this.experience.time.elapsed &&
+        this.experience.time.elapsed < updatable.endAt
+      ) {
+        // if clip is active
+        updatable.started = true;
+        this.updatables[updatableId] = this.reusables[updatable.instanceName];
+        this.updatables[updatableId].initializeEffects(updatable.effects);
+        // -^-^- -^-^- -^-^- -^-^-
+      } else if (
+        this.experience.time.elapsed > updatable.endAt &&
+        updatable.started === true
+      ) {
+        if (!updatable.isGlobal) this.updatables[updatableId].moveOffStage();
+        this.timelineOfEvents[updatableId].started = false;
+        delete this.updatables[updatableId];
       }
     }
 
     for (let updatableId in this.updatables) {
-      // debugger;
       const updatable = this.timelineOfEvents[updatableId];
       if ([INSTANCE_NAMES.CAMERA].includes(updatable.instanceName)) {
         // * ANIMATE GLOBAL CAMERA * //
         window.experience.camera.updateCamera(updatable.effects);
       } else {
-        // debugger;
-        // console.log(this.updatables[updatableId]);
-
         this.updatables[updatableId].update(updatable.effects);
       }
     }

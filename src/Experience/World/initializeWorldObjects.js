@@ -64,9 +64,7 @@ export function initializeWorldObjects(reusables) {
     console.log("r", r);
     if (INSTANCE_NAMES.CAMERA === r) {
       // Global animatable
-      // debugger;
       reusables[r] = get(window.experience, "camera");
-      // debugger;
     } else {
       reusables[r] = new reusables[r].theClass(reusables[r].initialProperties);
       reusables[r].moveOffStage();

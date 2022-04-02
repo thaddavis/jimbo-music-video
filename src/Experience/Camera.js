@@ -45,16 +45,19 @@ export default class Camera {
     executeInitializeEffects(this, effects, this.experience.time);
   }
 
-  update(effects) {
-    if (effects) {
-      executeEffects(this, effects, this.experience.time.delta);
-    }
+  update() {
     this.controls.update();
   }
 
   updateCamera(effects) {
+    console.log("updateCamera");
     // debugger;
-    executeEffects(this, effects, this.experience.time.delta);
+    executeEffects(
+      this,
+      effects,
+      this.experience.time.delta,
+      this.experience.time.elapsed
+    );
   }
 
   setCameraToInitialValue(timelineMetadata) {

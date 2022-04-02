@@ -53,7 +53,12 @@ export default class Text {
   }
 
   update(effects) {
-    executeEffects(this, effects, this.experience.time.delta);
+    executeEffects(
+      this,
+      effects,
+      this.experience.time.delta,
+      this.experience.time.elapsed
+    );
   }
 
   moveOffStage() {

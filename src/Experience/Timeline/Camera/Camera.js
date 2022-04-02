@@ -9,18 +9,19 @@ export function timeline_camera(timeline) {
     instanceName: INSTANCE_NAMES.CAMERA,
     effects: [
       {
+        // id: "test",
         name: EFFECTS.GLOBAL_FROM_TO,
         properties: [
           {
             path: "instance.position",
             from: {
               x: 0,
-              y: -1,
+              y: -10,
               z: 20,
             },
             to: {
               x: 0,
-              y: 1,
+              y: 10,
               z: 20,
             },
           },
@@ -30,23 +31,59 @@ export function timeline_camera(timeline) {
         // startAt: 0,
         // endAt: 1.25,
         startAt: 1,
-        endAt: 16.9,
+        endAt: 8,
       },
     ],
     started: false,
     // startAt: 0,
     // endAt: 1.25,
     startAt: 1,
-    endAt: 16.9,
+    endAt: 8,
   };
 
-  // --- --- --- --- --- --- --- ---
+  // --- --- --- --- --- --- --- --- GLOBE INTRO
 
   timeline[uuidv4()] = {
     isGlobal: true,
     instanceName: INSTANCE_NAMES.CAMERA,
     effects: [
       {
+        // id: "test",
+        name: EFFECTS.GLOBAL_FROM_TO,
+        properties: [
+          {
+            path: "instance.position",
+            from: {
+              x: -10,
+              y: 0,
+              z: 20,
+            },
+            to: {
+              x: 10,
+              y: 0,
+              z: 20,
+            },
+          },
+        ],
+        startAt: 8,
+        endAt: 16.9,
+      },
+    ],
+    started: false,
+    // startAt: 0,
+    // endAt: 1.25,
+    startAt: 8,
+    endAt: 16.9,
+  };
+
+  // --- --- --- --- --- --- --- --- Section A - 1st Stanza
+
+  timeline[uuidv4()] = {
+    isGlobal: true,
+    instanceName: INSTANCE_NAMES.CAMERA,
+    effects: [
+      {
+        id: "test",
         name: EFFECTS.GLOBAL_FROM_TO,
         properties: [
           {
@@ -72,7 +109,22 @@ export function timeline_camera(timeline) {
         startAt: 16.9,
         endAt: 25.9,
       },
+    ],
+    started: false,
+    // startAt: 0,
+    // endAt: 1.25,
+    startAt: 16.9,
+    endAt: 25.9,
+  };
+
+  // --- --- --- --- --- --- --- --- Section A - 1st Stanza
+
+  timeline[uuidv4()] = {
+    isGlobal: true,
+    instanceName: INSTANCE_NAMES.CAMERA,
+    effects: [
       {
+        id: "test",
         name: EFFECTS.GLOBAL_FROM_TO,
         properties: [
           {
@@ -80,13 +132,13 @@ export function timeline_camera(timeline) {
             from: {
               //   x: -3,
               x: 0,
-              y: 5,
+              y: 10,
               z: 20,
             },
             to: {
               //   x: 3,
               x: 0,
-              y: -5,
+              y: -10,
               z: 20,
             },
           },
@@ -102,7 +154,7 @@ export function timeline_camera(timeline) {
     started: false,
     // startAt: 0,
     // endAt: 1.25,
-    startAt: 16.9,
+    startAt: 25.9,
     endAt: 31.5,
   };
 
