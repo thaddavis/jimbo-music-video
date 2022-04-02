@@ -15,6 +15,7 @@ import { timeline_a_section_ad_lib_3_for_you } from "Experience/NewTimeline/Sect
 import { timeline_a_section_4_stanza } from "Experience/NewTimeline/Sections/A_Section/4_Stanza";
 import { timeline_b_section_cutaway_1_flag } from "Experience/NewTimeline/Sections/B_Section/Cutaways/1_Flag";
 import { timeline_b_section_backgrounds } from "Experience/NewTimeline/Sections/B_Section/Backgrounds";
+import { timeline_a_section_light } from "Experience/NewTimeline/Lights/A_Section";
 
 import { timeline_b_section_1_stanza } from "Experience/NewTimeline/Sections/B_Section/1_Stanza";
 import { timeline_b_section_2_stanza } from "Experience/NewTimeline/Sections/B_Section/2_Stanza";
@@ -51,6 +52,8 @@ export default class World {
       timeline_a_section_3_stanza(this.timelineOfEvents);
       timeline_a_section_ad_lib_3_for_you(this.timelineOfEvents);
       timeline_a_section_4_stanza(this.timelineOfEvents);
+
+      timeline_a_section_light(this.timelineOfEvents);
 
       timeline_b_section_cutaway_1_flag(this.timelineOfEvents);
       timeline_b_section_backgrounds(this.timelineOfEvents);

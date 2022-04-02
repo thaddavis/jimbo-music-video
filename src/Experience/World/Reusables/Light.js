@@ -41,7 +41,7 @@ export default class Light {
     const t = new THREE.Object3D();
     t.translateX(0);
     t.translateY(0);
-    t.translateZ(0);
+    t.translateZ(4);
     directionalLight.target = t;
 
     this.light = directionalLight;
