@@ -50,7 +50,7 @@ export default class Camera {
   }
 
   updateCamera(effects) {
-    console.log("updateCamera");
+    // console.log("updateCamera");
     // debugger;
     executeEffects(
       this,
