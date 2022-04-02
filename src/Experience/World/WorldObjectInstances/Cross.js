@@ -1,13 +1,12 @@
-import Globe from "Experience/World/Reusables/Models/Globe";
+import Cross from "Experience/World/WorldObjectClasses/Models/Cross";
 import { Vector3 } from "three";
 
 import { INSTANCE_NAMES } from "../../Utils/Enums";
-import BackgroundSkin2 from "Experience/World/Reusables/BackgroundSkin2";
 
 export default {
-  theClass: BackgroundSkin2,
+  theClass: Cross,
   initialProperties: {
-    instanceName: INSTANCE_NAMES.BACKGROUND_SKIN_2,
+    instanceName: INSTANCE_NAMES.CROSS,
     position: new Vector3(0, 0, 0),
     scale: new Vector3(1, 1, 1),
     rotation: new Vector3(0, 0, 0),

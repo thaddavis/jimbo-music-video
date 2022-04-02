@@ -19,7 +19,7 @@ https://discourse.threejs.org/t/how-to-rotateonaxis-to-specified-angle/14343/10
 
 https://techbrood.com/threejs/examples/webgl_fire.html
 
-open -a "Google Chrome" --args --disable-gpu-vsync --disable-frame-rate-limit --window-size=1920,1080 
+open -a "Google Chrome" --args --disable-gpu-vsync --disable-frame-rate-limit --window-size=1920,1080
 
 canvas to data url and send to node server to save to harddrive
 
@@ -27,11 +27,9 @@ then
 
 https://stackoverflow.com/questions/24961127/how-to-create-a-video-from-images-with-ffmpeg
 
-
-
 // Object Creation and Disposal is expensive
 
-Could implement what you have with 
+Could implement what you have with
 
 - A Background
 - A Text Object
@@ -39,3 +37,4 @@ Could implement what you have with
 
 endAt sets the object
 
+// ERROR HANDLE WHEN DISCONNECTED FROM SERVER

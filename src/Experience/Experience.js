@@ -11,7 +11,11 @@ import Resources from "./Utils/Resources.js";
 
 import sources from "./sources.js";
 import EffectComposerClass from "./EffectComposerClass.js";
-import AudioClass from "./World/AudioClass.js";
+
+// import AudioClass from "./World/AudioClass.js";
+
+import { Config } from "Experience/Config/index.js";
+import { get } from "lodash";
 
 let instance = null;
 
@@ -44,7 +48,9 @@ export default class Experience {
     this.camera = new Camera();
     this.renderer = new Renderer();
 
-    this.effectComposer = new EffectComposerClass();
+    if (get(Config, "useEffectComposer")) {
+      this.effectComposer = new EffectComposerClass();
+    }
 
     this.world = new World();
 
@@ -61,14 +67,15 @@ export default class Experience {
     this.time.on("tick", () => {
       // console.log('tick...')
       this.update();
-      // effectComposer.render();
     });
   }
 
   resize() {
     this.camera.resize();
     this.renderer.resize();
-    this.effectComposer.resize();
+    if (get(Config, "useEffectComposer")) {
+      this.effectComposer.resize();
+    }
   }
 
   update() {
@@ -76,8 +83,11 @@ export default class Experience {
 
     this.camera.update();
     this.world.update();
-    this.renderer.update();
-    this.effectComposer.update();
+    if (get(Config, "useEffectComposer")) {
+      this.effectComposer.update();
+    } else {
+      this.renderer.update();
+    }
 
     this.stats.end();
   }

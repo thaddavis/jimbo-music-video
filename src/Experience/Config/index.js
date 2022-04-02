@@ -15,4 +15,5 @@ export const Config = {
   // vvv valid values are 'peaksPlayer' and 'threeClock' vvv
   timerMode: "peaksPlayer",
   // ^^^ ^^^
+  useEffectComposer: true,
 };

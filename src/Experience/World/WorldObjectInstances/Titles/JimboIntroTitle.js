@@ -1,4 +1,4 @@
-import Text from "Experience/World/Reusables/Text";
+import Text from "Experience/World/WorldObjectClasses/Text";
 import { Vector3 } from "three";
 import { INSTANCE_NAMES } from "../../../Utils/Enums";
 

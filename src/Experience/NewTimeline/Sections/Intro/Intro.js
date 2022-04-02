@@ -1,10 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
 import { EFFECTS } from "Experience/Utils/Enums";
-import Background from "Experience/World/Reusables/Background";
-import Light from "Experience/World/Reusables/Light";
-import Text from "Experience/World/Reusables/Text";
-import Globe from "Experience/World/Reusables/Models/Globe";
 import { Vector3 } from "three";
 
 import { INSTANCE_NAMES } from "Experience/Utils/Enums";

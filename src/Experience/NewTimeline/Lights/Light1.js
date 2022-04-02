@@ -4,7 +4,7 @@ import { EFFECTS } from "Experience/Utils/Enums";
 import { Vector3 } from "three";
 import { INSTANCE_NAMES } from "Experience/Utils/Enums";
 
-export function timeline_a_section_light(timeline) {
+export function timeline_light_1(timeline) {
   timeline[uuidv4()] = {
     instanceName: INSTANCE_NAMES.LIGHT,
     initialProperties: {
