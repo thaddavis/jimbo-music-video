@@ -1,11 +1,10 @@
 import { set, get, delay } from "lodash";
-import { EFFECTS, GLOBAL_UPDATABLES, INSTANCE_NAMES } from "./Enums";
 
 export function executeEffects(object, effects, delta) {
   // debugger;
 
-  console.log("object", object);
-  console.log("effects", effects);
+  // console.log("object", object);
+  // console.log("effects", effects);
 
   for (let effect of effects) {
     // console.log(effect);
