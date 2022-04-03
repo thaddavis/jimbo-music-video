@@ -42,3 +42,7 @@ endAt sets the object
 # Easing Functions Tutorial
 
 https://www.febucci.com/2018/08/easing-functions/
+
+# Convert .webm to .mp4
+
+ffmpeg -i d9e70db3-85fe-e9ec-a450-0e28aa069fd3.webm -crf 1 -c:v libx264 video.mp4

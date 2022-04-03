@@ -112,7 +112,7 @@ export default class World {
       const updatable = this.timelineOfEvents[updatableId];
       if ([INSTANCE_NAMES.CAMERA].includes(updatable.instanceName)) {
         // * ANIMATE GLOBAL CAMERA * //
-        window.experience.camera.updateCamera(updatable.effects);
+        // window.experience.camera.updateCamera(updatable.effects);
       } else {
         this.updatables[updatableId].update(updatable.effects);
       }

@@ -11,7 +11,7 @@ export default class Capturer {
     const options = {
       motionBlur: true,
       frameRate: 30,
-      format: "webm", // webm || gif || png || jpg || webm-mediarecorder
+      format: "jpg", // webm || gif || png || jpg || webm-mediarecorder
       quality: 99,
       workersPath: "../../src/",
       timeLimit: 60,
@@ -32,8 +32,8 @@ export default class Capturer {
       quality: 99,
       format: options.format,
       workersPath: "../../src/",
-      timeLimit: 2,
-      frameLimit: 0,
+      timeLimit: options.frameLimit,
+      frameLimit: 5,
       autoSaveTime: 0,
       onProgress: function (p) {
         console.log("PROGRESSION");

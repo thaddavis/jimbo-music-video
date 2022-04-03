@@ -8,6 +8,7 @@ import { get } from "lodash";
 // import alt_main_for_fire_text from "./alt_main_for_fire_text";
 
 import "./styles/style.css";
+import "./styles/button.css";
 
 const options = {
   zoomview: {

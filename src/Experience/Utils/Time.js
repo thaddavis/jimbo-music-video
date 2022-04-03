@@ -50,7 +50,7 @@ export default class Time extends EventEmitter {
       this.delta = currentTime - this.current;
       this.current = currentTime;
       this.elapsed = this.current;
-      console.log("FRAME RATE", 1 / this.delta);
+      // console.log("FRAME RATE", 1 / this.delta);
       //   console.log("*** this.elapsed ***", this.elapsed);
       //   console.log(frameRateElapsed);
       //   console.log(desiredFrameRateInterval);
@@ -71,10 +71,10 @@ export default class Time extends EventEmitter {
       this.current = currentTime;
       this.elapsed = this.current;
 
-      console.log("*** this.then ***", this.then);
-      console.log("*** this.elapsed ***", this.elapsed);
-      console.log("*** frameRateElapsed ***", frameRateElapsed);
-      console.log("*** FRAME RATE", 1 / this.delta);
+      // console.log("*** this.then ***", this.then);
+      // console.log("*** this.elapsed ***", this.elapsed);
+      // console.log("*** frameRateElapsed ***", frameRateElapsed);
+      // console.log("*** FRAME RATE", 1 / this.delta);
 
       if (frameRateElapsed > desiredFrameRateInterval) {
         this.then =
