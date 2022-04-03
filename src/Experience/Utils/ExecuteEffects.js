@@ -1,6 +1,8 @@
-import { set, get, delay } from "lodash";
+import { set, get } from "lodash";
+import { Interpolation } from "Experience/Utils/Interpolation";
 
 export function executeEffects(object, effects, delta, elapsed) {
+  // console.log("executeEffects");
   // console.log("object", object);
   // console.log("effects", effects);
 
@@ -51,11 +53,43 @@ export function executeEffects(object, effects, delta, elapsed) {
             //     effect.endAt - effect.startAt
             //   );
             // }
+            // debugger;
+            switch (property.interpolationMode) {
+              case Interpolation.MODES.EASE_IN:
+                updatedValue[dimension] = Interpolation.EaseIn(
+                  property.from[dimension],
+                  property.to[dimension],
+                  (elapsed - effect.startAt) / (effect.endAt - effect.startAt)
+                );
+                break;
+              case Interpolation.MODES.EASE_OUT:
+                // debugger;
+                updatedValue[dimension] = Interpolation.EaseOut(
+                  property.from[dimension],
+                  property.to[dimension],
+                  (elapsed - effect.startAt) / (effect.endAt - effect.startAt)
+                );
+                break;
+              case Interpolation.MODES.SPIKE:
+                // debugger;
+                updatedValue[dimension] = Interpolation.Spike(
+                  property.from[dimension],
+                  property.to[dimension],
+                  (elapsed - effect.startAt) / (effect.endAt - effect.startAt)
+                );
+                break;
+              default: // Interpolation.MODES.LINEAR
+                updatedValue[dimension] = Interpolation.Lerp(
+                  property.from[dimension],
+                  property.to[dimension],
+                  (elapsed - effect.startAt) / (effect.endAt - effect.startAt)
+                );
+            }
 
-            updatedValue[dimension] =
-              value[dimension] +
-              (property.to[dimension] - property.from[dimension]) *
-                (delta / (effect.endAt - effect.startAt));
+            // updatedValue[dimension] =
+            //   value[dimension] +
+            //   (property.to[dimension] - property.from[dimension]) *
+            //     (delta / (effect.endAt - effect.startAt));
           }
 
           value.set(updatedValue.x, updatedValue.y, updatedValue.z);

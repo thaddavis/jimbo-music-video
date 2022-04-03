@@ -72,7 +72,7 @@ export default class World {
       timeline_b_section_1_stanza(this.timelineOfEvents);
       timeline_b_section_2_stanza(this.timelineOfEvents);
 
-      timeline_bridge_cross(this.timelineOfEvents);
+      // timeline_bridge_cross(this.timelineOfEvents);
       timeline_bridge_white_background(this.timelineOfEvents);
 
       timeline_bridge_line_1(this.timelineOfEvents);

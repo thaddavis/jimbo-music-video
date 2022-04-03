@@ -367,6 +367,7 @@ export function timeline_camera(timeline) {
     // startAt: 0,
     // endAt: 1.25,
     startAt: 72.6,
-    endAt: 179,
+    // endAt: 179,
+    endAt: 73,
   };
 }

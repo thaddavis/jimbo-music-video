@@ -43,13 +43,13 @@ export function timeline_bridge_white_background(timeline) {
         // startAt: 0,
         // endAt: 1.25,
         startAt: 72.6,
-        endAt: 75,
+        endAt: 74.8,
       },
     ],
     started: false,
     // startAt: 0,
     // endAt: 1.25,
     startAt: 72.6,
-    endAt: 75,
+    endAt: 74.8,
   };
 }
