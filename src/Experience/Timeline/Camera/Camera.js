@@ -302,7 +302,7 @@ export function timeline_camera(timeline) {
     endAt: 59.3,
   };
 
-  // --- --- --- --- --- --- --- ---
+  // --- --- --- --- --- --- --- --- BRIDGE
 
   timeline[uuidv4()] = {
     isGlobal: true,
@@ -326,15 +326,47 @@ export function timeline_camera(timeline) {
           },
         ],
         startAt: 59.3,
-        endAt: 179,
+        endAt: 72.6,
       },
     ],
     started: false,
     // startAt: 0,
     // endAt: 1.25,
     startAt: 59.3,
-    endAt: 179,
+    endAt: 72.6,
   };
 
   // --- --- --- --- --- --- --- ---
+
+  timeline[uuidv4()] = {
+    isGlobal: true,
+    instanceName: INSTANCE_NAMES.CAMERA,
+    effects: [
+      {
+        name: EFFECTS.GLOBAL_FROM_TO,
+        properties: [
+          {
+            path: "instance.position",
+            from: {
+              x: 0,
+              y: 0,
+              z: 20,
+            },
+            to: {
+              x: 0,
+              y: 0,
+              z: 20,
+            },
+          },
+        ],
+        startAt: 72.6,
+        endAt: 179,
+      },
+    ],
+    started: false,
+    // startAt: 0,
+    // endAt: 1.25,
+    startAt: 72.6,
+    endAt: 179,
+  };
 }

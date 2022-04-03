@@ -38,3 +38,7 @@ Could implement what you have with
 endAt sets the object
 
 // ERROR HANDLE WHEN DISCONNECTED FROM SERVER
+
+# Easing Functions Tutorial
+
+https://www.febucci.com/2018/08/easing-functions/

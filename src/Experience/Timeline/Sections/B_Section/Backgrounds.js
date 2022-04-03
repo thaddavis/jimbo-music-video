@@ -193,6 +193,6 @@ export function timeline_b_section_backgrounds(timeline) {
     // startAt: 0,
     // endAt: 1.25,
     startAt: 65.2,
-    endAt: 72.5,
+    endAt: 72.6,
   };
 }

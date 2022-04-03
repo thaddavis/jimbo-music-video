@@ -7,7 +7,7 @@ import { executeInitializeEffects } from "Experience/Utils/ExecuteInitializeEffe
 import { get } from "lodash";
 import { Config } from "Experience/Config";
 
-export default class Background {
+export default class Line1 {
   constructor(initialProperties) {
     this.experience = new Experience();
     this.scene = this.experience.scene;

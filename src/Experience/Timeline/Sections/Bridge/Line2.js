@@ -3,10 +3,10 @@ import { v4 as uuidv4 } from "uuid";
 import { EFFECTS } from "Experience/Utils/Enums";
 import { INSTANCE_NAMES } from "Experience/Utils/Enums";
 
-export function timeline_bridge_white_background(timeline) {
+export function timeline_bridge_line_2(timeline) {
   // --- --- --- --- --- --- --- --- BRIDGE STARTS
   timeline[uuidv4()] = {
-    instanceName: INSTANCE_NAMES.BACKGROUND,
+    instanceName: INSTANCE_NAMES.LINE_2,
     effects: [
       {
         name: EFFECTS.FROM_TO,
@@ -16,25 +16,25 @@ export function timeline_bridge_white_background(timeline) {
             from: {
               x: 0,
               y: 0,
-              z: 0,
+              z: 1,
             },
             to: {
               x: 0,
               y: 0,
-              z: 0,
+              z: 1,
             },
           },
           {
             path: "mesh.scale",
             from: {
-              x: 1.5,
-              y: 1.5,
-              z: 1,
+              x: 0.05,
+              y: 0.05,
+              z: 0.05,
             },
             to: {
-              x: 2.2,
-              y: 2.2,
-              z: 1,
+              x: 0.05,
+              y: 2.0,
+              z: 0.05,
             },
           },
         ],

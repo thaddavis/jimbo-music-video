@@ -25,6 +25,9 @@ import Globe from "Experience/World/WorldObjectInstances/Globe";
 import Background from "Experience/World/WorldObjectInstances/Background";
 import Cross from "Experience/World/WorldObjectInstances/Cross";
 
+import Line1 from "Experience/World/WorldObjectInstances/Line1";
+import Line2 from "Experience/World/WorldObjectInstances/Line2";
+
 import { INSTANCE_NAMES } from "../Utils/Enums";
 
 import { get } from "lodash";
@@ -37,6 +40,8 @@ export function initializeWorldObjects(reusables) {
   reusables[INSTANCE_NAMES.CROSS] = Cross;
 
   reusables[INSTANCE_NAMES.CAMERA] = Camera;
+
+  // A Section
 
   reusables[INSTANCE_NAMES.SECTION_A_PHRASE_1] = i_told_you_i_meant_it;
   reusables[INSTANCE_NAMES.SECTION_A_PHRASE_2] = i_told_you_i_swept_it;
@@ -52,6 +57,8 @@ export function initializeWorldObjects(reusables) {
   reusables[INSTANCE_NAMES.SECTION_A_AD_LIBS_FOR_YOU_A] = for_you_a;
   reusables[INSTANCE_NAMES.SECTION_A_AD_LIBS_FOR_YOU_B] = for_you_b;
 
+  // B Section
+
   reusables[INSTANCE_NAMES.FLAG] = Flag;
 
   reusables[INSTANCE_NAMES.BACKGROUND_SKIN_1] = BackgroundSkin1;
@@ -59,6 +66,11 @@ export function initializeWorldObjects(reusables) {
 
   reusables[INSTANCE_NAMES.SECTION_B_PHRASE_1] = i_just_wanna_feel_your_skin;
   reusables[INSTANCE_NAMES.SECTION_B_PHRASE_2] = up_on_mine;
+
+  // BRIDGE
+
+  reusables[INSTANCE_NAMES.LINE_1] = Line1;
+  reusables[INSTANCE_NAMES.LINE_2] = Line2;
 
   for (let r in reusables) {
     console.log("r", r);

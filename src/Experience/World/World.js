@@ -22,13 +22,15 @@ import { timeline_b_section_1_stanza } from "Experience/Timeline/Sections/B_Sect
 import { timeline_b_section_2_stanza } from "Experience/Timeline/Sections/B_Section/2_Stanza";
 
 import { timeline_bridge_cross } from "Experience/Timeline/Sections/Bridge/Cross";
+import { timeline_bridge_white_background } from "Experience/Timeline/Sections/Bridge/Background";
+
+import { timeline_bridge_line_1 } from "Experience/Timeline/Sections/Bridge/Line1";
+import { timeline_bridge_line_2 } from "Experience/Timeline/Sections/Bridge/Line2";
 
 // GLOBALS
 import { timeline_camera } from "../Timeline/Camera/Camera";
 
 // ^^^ Timeline ^^^
-
-import { EFFECTS, GLOBAL_UPDATABLES } from "Experience/Utils/Enums";
 
 import { get } from "lodash";
 import { INSTANCE_NAMES } from "../Utils/Enums";
@@ -71,6 +73,10 @@ export default class World {
       timeline_b_section_2_stanza(this.timelineOfEvents);
 
       timeline_bridge_cross(this.timelineOfEvents);
+      timeline_bridge_white_background(this.timelineOfEvents);
+
+      timeline_bridge_line_1(this.timelineOfEvents);
+      timeline_bridge_line_2(this.timelineOfEvents);
       // ^^^ NEW TIMELINE ^^^
 
       this.environment = new Environment();
