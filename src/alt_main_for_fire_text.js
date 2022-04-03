@@ -43,7 +43,7 @@ function init() {
   camera.position.z = 25;
 
   scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x000000);
+  scene.background = new THREE.Color(0x00ff00);
 
   var ambientLight = new THREE.AmbientLight(0xcccccc, 0.4);
   scene.add(ambientLight);
@@ -191,7 +191,7 @@ function init() {
     var canvas = document.createElement("canvas");
     var context = canvas.getContext("2d");
 
-    context.font = "80pt Calibri";
+    context.font = "64pt Calibri";
     context.fillStyle = "black";
     // align text horizontally center
     context.textAlign = "center";
