@@ -32,6 +32,10 @@ import { INSTANCE_NAMES } from "../Utils/Enums";
 
 import { get } from "lodash";
 
+import * as THREE from "three";
+
+import { Fire } from "./WorldObjectClasses/Fire";
+
 export function initializeWorldObjects(reusables) {
   reusables[INSTANCE_NAMES.JIMBO_INTRO_TITLE] = JimboIntroTitle;
   reusables[INSTANCE_NAMES.LIGHT_1] = Light1;
@@ -72,11 +76,48 @@ export function initializeWorldObjects(reusables) {
   reusables[INSTANCE_NAMES.LINE_1] = Line1;
   reusables[INSTANCE_NAMES.LINE_2] = Line2;
 
+  // reusables[INSTANCE_NAMES.FIRE] = Fire;
+
   for (let r in reusables) {
     console.log("r", r);
     if (INSTANCE_NAMES.CAMERA === r) {
       // Global animatable
       reusables[r] = get(window.experience, "camera");
+    } else if (INSTANCE_NAMES.FIRE === r) {
+      // var plane = new THREE.PlaneBufferGeometry(20, 20);
+      // reusables[r] = new Fire(plane, {
+      //   textureWidth: 512,
+      //   textureHeight: 512,
+      //   debug: false,
+      // });
+      // var text = "Three JS";
+      // var size = 180;
+      // var color = "#FF0040";
+      // console.log("ESCOBAR");
+      // function init() {
+      //   debugger;
+      //   console.log("ON LOAD CUM");
+      // }
+      // window.onload = init;
+      // console.log(window.onload);
+      // // var canvas = document.createElement("canvas");
+      // // debugger;
+      // // var canvas = document.getElementById("webgl");
+      // // canvas.width = 1024;
+      // // canvas.height = 1024;
+      // // var context = canvas.getContext("2d");
+      // // context.font = size + "pt Arial";
+      // // context.strokeStyle = "black";
+      // // context.strokeRect(0, 0, canvas.width, canvas.height);
+      // // context.textAlign = "center";
+      // // context.textBaseline = "middle";
+      // // context.lineWidth = 5;
+      // // context.strokeStyle = color;
+      // // context.fillStyle = "black";
+      // // context.strokeText(text, canvas.width / 2, canvas.height * 0.75);
+      // // var texture = new THREE.Texture(canvas);
+      // // texture.needsUpdate = true;
+      // // fire.setSourceMap(texture);
     } else {
       reusables[r] = new reusables[r].theClass(reusables[r].initialProperties);
       reusables[r].moveOffStage();

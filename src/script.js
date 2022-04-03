@@ -4,6 +4,8 @@ import Peaks from "peaks.js";
 import { Config } from "./Experience/Config/index.js";
 import { get } from "lodash";
 
+import alt_main_for_fire_text from "./alt_main_for_fire_text";
+
 import "./styles/style.css";
 
 const options = {
@@ -83,4 +85,5 @@ const main = () => {
   }
 };
 
-main();
+// main();
+// alt_main_for_fire_text();

@@ -17,13 +17,12 @@ import {
 import Experience from "Experience/Experience.js";
 
 export class Fire extends Mesh {
-  constructor(geometry, options) {
+  constructor(geometry, options, scene, cameraInstance) {
     super(geometry);
 
-    // Corresponds to line 173 in Fire_es5.js
-    this.experience = new Experience();
-    this.scene = this.experience.scene;
-    this.orthoCamera = this.experience.camera.instance;
+    // Corresponds to line 173 in Fire_es5.jsthis.scene
+    this.scene = scene;
+    this.orthoCamera = cameraInstance;
 
     this.type = "Fire";
     this.clock = new Clock();
@@ -259,21 +258,24 @@ export class Fire extends Mesh {
   }
 
   addSource(u, v, radius, density = null, windX = null, windY = null) {
-    var startX = Math.max(Math.floor((u - radius) * textureWidth), 0);
-    var startY = Math.max(Math.floor((v - radius) * textureHeight), 0);
-    var endX = Math.min(Math.floor((u + radius) * textureWidth), textureWidth);
+    var startX = Math.max(Math.floor((u - radius) * this.textureWidth), 0);
+    var startY = Math.max(Math.floor((v - radius) * this.textureHeight), 0);
+    var endX = Math.min(
+      Math.floor((u + radius) * this.textureWidth),
+      this.textureWidth
+    );
     var endY = Math.min(
-      Math.floor((v + radius) * textureHeight),
-      textureHeight
+      Math.floor((v + radius) * this.textureHeight),
+      this.textureHeight
     );
 
     for (var y = startY; y < endY; y++) {
       for (var x = startX; x < endX; x++) {
-        var diffX = x * oneOverWidth - u;
-        var diffY = y * oneOverHeight - v;
+        var diffX = x * this.oneOverWidth - u;
+        var diffY = y * this.oneOverHeight - v;
 
         if (diffX * diffX + diffY * diffY < radius * radius) {
-          var i = y * textureWidth + x;
+          var i = y * this.textureWidth + x;
           var stride = i * 4;
 
           if (density != null) {

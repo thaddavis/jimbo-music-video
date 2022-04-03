@@ -22,7 +22,7 @@ import {
   ShaderMaterial,
   Vector2,
   WebGLRenderTarget,
-} from "three";
+} from "./build/three.module.js";
 
 var Fire = function (geometry, options) {
   Mesh.call(this, geometry);
