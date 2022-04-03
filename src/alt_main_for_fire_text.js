@@ -40,10 +40,10 @@ function init() {
   var height = window.innerHeight;
 
   camera = new THREE.PerspectiveCamera(70, width / height, 1, 1000);
-  camera.position.z = 25;
+  camera.position.z = 20;
 
   scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x00ff00);
+  scene.background = new THREE.Color(0x000000);
 
   var ambientLight = new THREE.AmbientLight(0xcccccc, 0.4);
   scene.add(ambientLight);
@@ -52,7 +52,7 @@ function init() {
   camera.add(pointLight);
   scene.add(camera);
 
-  var plane = new THREE.PlaneBufferGeometry(50, 50);
+  var plane = new THREE.PlaneBufferGeometry(120, 120);
   fire = new Fire(
     plane,
     {
@@ -62,6 +62,8 @@ function init() {
       // textureHeight: 1024,
       textureWidth: 2048,
       textureHeight: 2048,
+      // textureWidth: 4096,
+      // textureHeight: 4096,
       debug: false,
     },
     scene,
@@ -189,15 +191,19 @@ function init() {
     // vvv vvv 2D
     // vvv vvv 2D Alternative
     var canvas = document.createElement("canvas");
+    // canvas.width = 1920;
+    // canvas.height = 1080;
     var context = canvas.getContext("2d");
 
-    context.font = "64pt Calibri";
+    context.font = "32pt Helvetica";
     context.fillStyle = "black";
     // align text horizontally center
     context.textAlign = "center";
     // align text vertically center
     context.textBaseline = "middle";
-    draw3dText(context, "Hallejujah", canvas.width / 2, 120, 5);
+    // draw3dText(context, "Hallejujah", canvas.width / 2, 120, 5);
+    // draw3dText(context, "Hallejujah", canvas.width / 2, 1200, 50);
+    draw3dText(context, "Hallelujah", canvas.width / 2, 96, 8);
     // ^^^ ^^^
     // ^^^ ^^^
     // vvv vvv 3D
@@ -444,7 +450,7 @@ function init() {
   params.Text();
 
   stats = new Stats();
-  document.body.appendChild(stats.dom);
+  // document.body.appendChild(stats.dom);
 
   window.addEventListener("resize", onWindowResize, false);
 }

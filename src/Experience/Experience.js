@@ -16,6 +16,7 @@ import EffectComposerClass from "./EffectComposerClass.js";
 
 import { Config } from "Experience/Config/index.js";
 import { get } from "lodash";
+import Capturer from "./Capturer.js";
 
 let instance = null;
 
@@ -47,6 +48,7 @@ export default class Experience {
 
     this.camera = new Camera();
     this.renderer = new Renderer();
+    this.capturer = new Capturer();
 
     if (get(Config, "useEffectComposer")) {
       this.effectComposer = new EffectComposerClass();
@@ -81,6 +83,8 @@ export default class Experience {
   update() {
     // this.stats.begin();
 
+    console.log("update");
+
     this.camera.update();
     this.world.update();
     if (get(Config, "useEffectComposer")) {
@@ -88,6 +92,10 @@ export default class Experience {
     } else {
       this.renderer.update();
     }
+
+    // * v CCapture HERE v *
+    // this.capturer.ccapture.capture(this.canvas);
+    // * ^ CCapture HERE ^ *
 
     // this.stats.end();
   }

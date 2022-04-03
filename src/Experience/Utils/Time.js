@@ -24,16 +24,15 @@ export default class Time extends EventEmitter {
         audio.paused ? audio.play() : audio.pause();
       }
       // ^^^ ^^^ *** WITH PEAKS PLAYER *** ^^^ ^^^
+    } else if (get(Config, "timerMode") === "date") {
     } else {
-      // 'threeClock'
       // vvv vvv *** WITH THREE CLOCK *** vvv vvvv
       this.clock = new THREE.Clock();
-      // console.log(this.clock);
-      // this.clock.elapsedTime = 50;
       this.clock.start();
-      // this.elapsed = this.clock.getElapsedTime();
-      this.elapsed = 0;
-      this.delta = this.clock.getDelta();
+      this.then = this.clock.getElapsedTime();
+      this.current = this.then;
+      this.elapsed = this.clock.getElapsedTime();
+      this.delta = 16;
       // ^^^ ^^^ *** WITH THREE CLOCK *** ^^^ ^^^
     }
 
@@ -51,7 +50,7 @@ export default class Time extends EventEmitter {
       this.delta = currentTime - this.current;
       this.current = currentTime;
       this.elapsed = this.current;
-      //   console.log("FRAME RATE", 1 / this.delta);
+      console.log("FRAME RATE", 1 / this.delta);
       //   console.log("*** this.elapsed ***", this.elapsed);
       //   console.log(frameRateElapsed);
       //   console.log(desiredFrameRateInterval);
@@ -61,18 +60,33 @@ export default class Time extends EventEmitter {
         this.trigger("tick");
       }
       // ^^^ ^^^ *** WITH PEAKS PLAYER *** ^^^ ^^^
+    } else if (get(Config, "timerMode") === "date") {
     } else {
       // vvv vvv *** WITH THREE CLOCK *** vvv vvv
-      this.delta = this.clock.getDelta();
-      this.elapsed = this.clock.getElapsedTime();
-      // console.log("*** this.elapsed ***", this.elapsed);
-      this.trigger("tick");
+      const desiredFrameRateInterval = 1 / 30;
+
+      const currentTime = this.clock.getElapsedTime();
+      const frameRateElapsed = currentTime - this.then;
+      this.delta = currentTime - this.current;
+      this.current = currentTime;
+      this.elapsed = this.current;
+
+      console.log("*** this.then ***", this.then);
+      console.log("*** this.elapsed ***", this.elapsed);
+      console.log("*** frameRateElapsed ***", frameRateElapsed);
+      console.log("*** FRAME RATE", 1 / this.delta);
+
+      if (frameRateElapsed > desiredFrameRateInterval) {
+        this.then =
+          this.elapsed - (frameRateElapsed % desiredFrameRateInterval);
+        this.trigger("tick");
+      }
+      // ^^^ ^^^ *** WITH THREE CLOCK *** ^^^ ^^^
+      // vvv vvv *** WITH THREE CLOCK *** vvv vvv
+      // this.elapsed = this.clock.getElapsedTime();
+      // this.delta = this.clock.getDelta();
       // ^^^ ^^^ *** WITH THREE CLOCK *** ^^^ ^^^
     }
-    // console.log('currentTime', currentTime)
-    // console.log(this.delta)
-    // console.log(this.current)
-    // console.log(this.elapsed)
 
     window.requestAnimationFrame(() => {
       this.tick();

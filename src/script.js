@@ -4,7 +4,8 @@ import Peaks from "peaks.js";
 import { Config } from "./Experience/Config/index.js";
 import { get } from "lodash";
 
-import alt_main_for_fire_text from "./alt_main_for_fire_text";
+// v * v importing the below line starts the fire context v * v
+// import alt_main_for_fire_text from "./alt_main_for_fire_text";
 
 import "./styles/style.css";
 
@@ -85,5 +86,4 @@ const main = () => {
   }
 };
 
-// main();
-// alt_main_for_fire_text();
+main();

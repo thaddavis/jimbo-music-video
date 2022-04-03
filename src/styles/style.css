@@ -31,7 +31,8 @@ body {
     bottom: 0;
     width: 100%;
     /* z-index: 100; */
-    opacity: 100;
+    /* opacity: 100; */
+    opacity: 0;
     height: 85px;
 }
 
@@ -96,7 +97,7 @@ p code {
     top: 0;
     left: 0;
     outline: none;
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
 }
 
 #debug {
