@@ -16,66 +16,66 @@ import EffectComposerClass from "./EffectComposerClass.js";
 // import AudioClass from "./World/AudioClass.js";
 
 import { get } from "lodash";
-import Capturer from "./Capturer.js";
+// import Capturer from "./Capturer.js";
 
 let instance = null; // Experience singleton
 
-if (get(Config, "exportMode")) {
-  let capturer = null;
-  var sCB = document.getElementById("start-capturing-button"),
-    dVB = document.getElementById("download-video-button");
+// if (get(Config, "exportMode")) {
+//   let capturer = null;
+//   var sCB = document.getElementById("start-capturing-button"),
+//     dVB = document.getElementById("download-video-button");
 
-  sCB.addEventListener(
-    "click",
-    function (e) {
-      let options = {
-        framerate: 30,
-      };
+//   sCB.addEventListener(
+//     "click",
+//     function (e) {
+//       let options = {
+//         framerate: 30,
+//       };
 
-      capturer = new CCapture({
-        verbose: true,
-        display: true,
-        framerate: options.framerate,
-        motionBlurFrames: (960 / options.framerate) * 0,
-        quality: 99,
-        format: "png", // webm || gif || png || jpg || webm-mediarecorder
-        workersPath: "../../src/",
-        timeLimit: 20,
-        frameLimit: 0,
-        autoSaveTime: 0,
-        onProgress: function (p) {
-          console.log("PROGRESSION");
-        },
-      });
+//       capturer = new CCapture({
+//         verbose: true,
+//         display: true,
+//         framerate: options.framerate,
+//         motionBlurFrames: (960 / options.framerate) * 0,
+//         quality: 99,
+//         format: "webm", // webm || gif || png || jpg || webm-mediarecorder
+//         workersPath: "../../src/",
+//         timeLimit: 20,
+//         frameLimit: 0,
+//         autoSaveTime: 0,
+//         onProgress: function (p) {
+//           console.log("PROGRESSION");
+//         },
+//       });
 
-      capturer.start();
-      this.style.display = "none";
-      dVB.style.display = "block";
-      e.preventDefault();
-    },
-    false
-  );
+//       capturer.start();
+//       this.style.display = "none";
+//       dVB.style.display = "block";
+//       e.preventDefault();
+//     },
+//     false
+//   );
 
-  dVB.addEventListener(
-    "click",
-    function (e) {
-      capturer.stop();
-      this.style.display = "none";
-      //this.setAttribute( 'href',  );
-      capturer.save();
-    },
-    false
-  );
-} else {
-  let sCB = document.getElementById("start-capturing-button"),
-    dVB = document.getElementById("download-video-button");
+//   dVB.addEventListener(
+//     "click",
+//     function (e) {
+//       capturer.stop();
+//       this.style.display = "none";
+//       //this.setAttribute( 'href',  );
+//       capturer.save();
+//     },
+//     false
+//   );
+// } else {
+//   let sCB = document.getElementById("start-capturing-button"),
+//     dVB = document.getElementById("download-video-button");
 
-  let peaksOverview = document.getElementById("overview-container");
+//   let peaksOverview = document.getElementById("overview-container");
 
-  sCB.style.display = "none";
-  dVB.style.display = "none";
-  peaksOverview.style.opacity = 100;
-}
+//   sCB.style.display = "none";
+//   dVB.style.display = "none";
+//   if (peaksOverview) peaksOverview.style.opacity = 100;
+// }
 
 export default class Experience {
   constructor(_canvas, playerInstance) {
@@ -151,14 +151,11 @@ export default class Experience {
     }
 
     // * v CCapture HERE v *
-    // this.capturer.ccapture.capture(this.canvas);
     if (get(Config, "exportMode")) {
       if (capturer) capturer.capture(this.renderer.instance.domElement);
     }
     // debugger;
     // * ^ CCapture HERE ^ *
-    // this.capturer.ccapture.save();
-    // this.stats.end();
   }
 
   destroy() {

@@ -11,7 +11,7 @@ export default class Capturer {
     const options = {
       motionBlur: true,
       frameRate: 30,
-      format: "jpg", // webm || gif || png || jpg || webm-mediarecorder
+      format: "webm", // webm || gif || png || jpg || webm-mediarecorder
       quality: 99,
       workersPath: "../../src/",
       timeLimit: 60,

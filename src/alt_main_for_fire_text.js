@@ -11,8 +11,91 @@ import * as THREE from "./FireExperience/build/three.module.js";
 import Stats from "./FireExperience/jsm/libs/stats.module.js";
 import { GUI } from "./FireExperience/jsm/libs/dat.gui.module.js";
 
+import { get } from "lodash";
+
+import { Config } from "./Experience/Config";
+
+// vvv vvv Exporter vvv vvv
+var capturer = null;
+
+if (get(Config, "exportMode")) {
+  // debugger;
+  var sCB = document.getElementById("start-capturing-button"),
+    dVB = document.getElementById("download-video-button");
+
+  sCB.addEventListener(
+    "click",
+    function (e) {
+      let options = {
+        framerate: 30,
+      };
+
+      capturer = new CCapture({
+        verbose: true,
+        display: true,
+        framerate: options.framerate,
+        motionBlurFrames: (960 / options.framerate) * 0,
+        quality: 99,
+        format: "webm", // webm || gif || png || jpg || webm-mediarecorder
+        workersPath: "../../src/",
+        timeLimit: 3,
+        frameLimit: 0,
+        autoSaveTime: 0,
+        onProgress: function (p) {
+          console.log("PROGRESSION");
+        },
+      });
+
+      capturer.start();
+      this.style.display = "none";
+      dVB.style.display = "block";
+      e.preventDefault();
+    },
+    false
+  );
+
+  dVB.addEventListener(
+    "click",
+    function (e) {
+      capturer.stop();
+      this.style.display = "none";
+      //this.setAttribute( 'href',  );
+      capturer.save();
+    },
+    false
+  );
+} else {
+  let sCB = document.getElementById("start-capturing-button"),
+    dVB = document.getElementById("download-video-button");
+
+  let peaksOverview = document.getElementById("overview-container");
+
+  sCB.style.display = "none";
+  dVB.style.display = "none";
+  if (peaksOverview) peaksOverview.style.opacity = 100;
+}
+// ^^^ ^^^ Exporter ^^^ ^^^
+
 var camera, scene, renderer, stats;
 var fire;
+
+// var params = {
+//   color1: "#ffffff",
+//   color2: "#ffa000",
+//   color3: "#000000",
+//   colorBias: 0.8,
+//   burnRate: 0.35,
+//   diffuse: 1.2,
+//   viscosity: 0.25,
+//   expansion: -0.25,
+//   swirl: 40.0,
+//   drag: 0.3,
+//   airSpeed: 11,
+//   windX: 0.0,
+//   windY: 0.7,
+//   speed: 600.0,
+//   massConservation: true,
+// };
 
 var params = {
   color1: "#ffffff",
@@ -20,16 +103,16 @@ var params = {
   color3: "#000000",
   colorBias: 0.8,
   burnRate: 0.35,
-  diffuse: 1.33,
-  viscosity: 0.25,
-  expansion: -0.25,
-  swirl: 50.0,
-  drag: 0.35,
-  airSpeed: 12.0,
+  diffuse: 0.59,
+  viscosity: 0.8,
+  expansion: -0.23,
+  swirl: 15.61,
+  drag: 0.3,
+  airSpeed: 10,
   windX: 0.0,
-  windY: 0.75,
-  speed: 500.0,
-  massConservation: false,
+  windY: 0.35,
+  speed: 637.0,
+  massConservation: true,
 };
 
 init();
@@ -195,15 +278,24 @@ function init() {
     // canvas.height = 1080;
     var context = canvas.getContext("2d");
 
-    context.font = "32pt Helvetica";
+    context.font = "24pt Helvetica";
+    // context.font = "32pt Helvetica"; // For Final Hallelujah
     context.fillStyle = "black";
+    // context.fillStyle = "rgba(255, 255, 255, 0.5)";
     // align text horizontally center
     context.textAlign = "center";
     // align text vertically center
     context.textBaseline = "middle";
     // draw3dText(context, "Hallejujah", canvas.width / 2, 120, 5);
     // draw3dText(context, "Hallejujah", canvas.width / 2, 1200, 50);
-    draw3dText(context, "Hallelujah", canvas.width / 2, 96, 8);
+    // draw3dText(context, "It's time to say", canvas.width / 2, 64, 8);
+    // draw3dText(context, "the things you've", canvas.width / 2, 96, 8);
+    // draw3dText(context, "always wanted", canvas.width / 2, 96, 8);
+    // draw3dText(context, "before you", canvas.width / 2, 96, 8);
+    // draw3dText(context, "are forgotten", canvas.width / 2, 96, 8);
+
+    // draw3dText(context, "Hallelujah", canvas.width / 2, 96, 8); // 3.5 seconds
+    draw3dText(context, "Hallelujah", canvas.width / 2, 90, 8); //  Final Halleluja // 4 seconds
     // ^^^ ^^^
     // ^^^ ^^^
     // vvv vvv 3D
@@ -466,9 +558,18 @@ function onWindowResize() {
 }
 
 function animate() {
+  // debugger;
   requestAnimationFrame(animate);
 
   renderer.clear();
   renderer.render(scene, camera);
-  stats.update();
+
+  // * v CCapture HERE v *
+  if (get(Config, "exportMode")) {
+    // debugger;
+    if (capturer) capturer.capture(renderer.domElement);
+  }
+  // debugger;
+
+  // stats.update();
 }

@@ -89,17 +89,11 @@ export function timeline_bridge_line_1(timeline) {
             },
           },
         ],
-        // startAt: 0,
-        // endAt: 1250
-        // startAt: 0,
-        // endAt: 1.25,
         startAt: 74.8,
         endAt: 77.0,
       },
     ],
     started: false,
-    // startAt: 0,
-    // endAt: 1.25,
     startAt: 74.8,
     endAt: 77.7,
   };

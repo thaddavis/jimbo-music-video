@@ -28,6 +28,9 @@ const main = () => {
     // vvv vvv *** WITH PEAKS PLAYER *** vvv vvv
     Peaks.init(options, function (err, peaks) {
       // console.log('init Peaks')
+
+      // debugger;
+
       window.peaks = peaks;
       peaks.on("player.seeked", (e) => {
         // console.log('event player.seeked', e)
