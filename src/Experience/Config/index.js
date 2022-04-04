@@ -18,6 +18,6 @@ export const Config = {
   timerMode: "peaksPlayer",
   // timerMode: "threeClock",
   // ^^^ ^^^
-  useEffectComposer: false,
-  exportMode: false,
+  useEffectComposer: true,
+  exportMode: true,
 };

@@ -6,6 +6,7 @@ import { get } from "lodash";
 
 // v * v importing the below line starts the fire context v * v
 // import alt_main_for_fire_text from "./alt_main_for_fire_text";
+// import alt_main_for_text from "./alt_main_for_text";
 
 import "./styles/style.css";
 import "./styles/button.css";

@@ -38,7 +38,7 @@ if (get(Config, "exportMode")) {
         quality: 99,
         format: "webm", // webm || gif || png || jpg || webm-mediarecorder
         workersPath: "../../src/",
-        timeLimit: 3,
+        timeLimit: 5,
         frameLimit: 0,
         autoSaveTime: 0,
         onProgress: function (p) {
@@ -278,10 +278,10 @@ function init() {
     // canvas.height = 1080;
     var context = canvas.getContext("2d");
 
-    context.font = "24pt Helvetica";
-    // context.font = "32pt Helvetica"; // For Final Hallelujah
-    context.fillStyle = "black";
-    // context.fillStyle = "rgba(255, 255, 255, 0.5)";
+    // context.font = "24pt Helvetica";
+    context.font = "32pt Helvetica"; // For Final Hallelujah
+    // context.fillStyle = "black";
+    context.fillStyle = "rgba(255, 255, 255, 0.5)";
     // align text horizontally center
     context.textAlign = "center";
     // align text vertically center
@@ -295,7 +295,7 @@ function init() {
     // draw3dText(context, "are forgotten", canvas.width / 2, 96, 8);
 
     // draw3dText(context, "Hallelujah", canvas.width / 2, 96, 8); // 3.5 seconds
-    draw3dText(context, "Hallelujah", canvas.width / 2, 90, 8); //  Final Halleluja // 4 seconds
+    draw3dText(context, "Hallelujah", canvas.width / 2, 96, 8); //  Final Hallelujah // 4 seconds
     // ^^^ ^^^
     // ^^^ ^^^
     // vvv vvv 3D

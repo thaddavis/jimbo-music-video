@@ -77,18 +77,18 @@ export function timeline_intro(timeline) {
               z: 0,
             },
             to: {
-              x: (Math.PI * 32.0) / 100,
-              y: (Math.PI * 45.0) / 100,
+              x: (Math.PI * 26.0) / 100,
+              y: (Math.PI * 40.0) / 100,
               z: 0,
             },
           },
         ],
-        startAt: 1.25,
+        startAt: 0.0,
         endAt: 16.9,
       },
     ],
     started: false,
-    startAt: 1.25,
+    startAt: 0.0,
     endAt: 16.9,
   };
 

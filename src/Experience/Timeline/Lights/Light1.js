@@ -15,6 +15,26 @@ export function timeline_light_1(timeline) {
             path: "light.position",
             from: {
               x: 0,
+              y: 0,
+              z: 10,
+            },
+            to: {
+              x: 0,
+              y: 0,
+              z: 10,
+            },
+          },
+        ],
+        startAt: 0,
+        endAt: 16.9,
+      },
+      {
+        name: EFFECTS.FROM_TO,
+        properties: [
+          {
+            path: "light.position",
+            from: {
+              x: 0,
               y: -2,
               z: 10,
             },
@@ -25,17 +45,11 @@ export function timeline_light_1(timeline) {
             },
           },
         ],
-        // startAt: 0,
-        // endAt: 1250
-        // startAt: 0,
-        // endAt: 1.25,
-        startAt: 0,
+        startAt: 16.9,
         endAt: 179,
       },
     ],
     started: false,
-    // startAt: 0,
-    // endAt: 1.25,
     startAt: 0,
     endAt: 179,
   };

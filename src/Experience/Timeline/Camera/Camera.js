@@ -4,43 +4,6 @@ import { EFFECTS, GLOBAL_UPDATABLES } from "Experience/Utils/Enums";
 import { INSTANCE_NAMES } from "../../Utils/Enums";
 
 export function timeline_camera(timeline) {
-  timeline[uuidv4()] = {
-    isGlobal: true,
-    instanceName: INSTANCE_NAMES.CAMERA,
-    effects: [
-      {
-        // id: "test",
-        name: EFFECTS.GLOBAL_FROM_TO,
-        properties: [
-          {
-            path: "instance.position",
-            from: {
-              x: 0,
-              y: -10,
-              z: 20,
-            },
-            to: {
-              x: 0,
-              y: 10,
-              z: 20,
-            },
-          },
-        ],
-        // startAt: 0,
-        // endAt: 1250
-        // startAt: 0,
-        // endAt: 1.25,
-        startAt: 1,
-        endAt: 8,
-      },
-    ],
-    started: false,
-    // startAt: 0,
-    // endAt: 1.25,
-    startAt: 1,
-    endAt: 8,
-  };
-
   // --- --- --- --- --- --- --- --- GLOBE INTRO
 
   timeline[uuidv4()] = {
@@ -54,25 +17,25 @@ export function timeline_camera(timeline) {
           {
             path: "instance.position",
             from: {
-              x: -10,
+              x: 0,
               y: 0,
               z: 20,
             },
             to: {
-              x: 10,
+              x: 0,
               y: 0,
               z: 20,
             },
           },
         ],
-        startAt: 8,
+        startAt: 0,
         endAt: 16.9,
       },
     ],
     started: false,
     // startAt: 0,
     // endAt: 1.25,
-    startAt: 8,
+    startAt: 0,
     endAt: 16.9,
   };
 
