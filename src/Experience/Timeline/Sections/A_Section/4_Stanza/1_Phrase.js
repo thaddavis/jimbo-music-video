@@ -17,12 +17,12 @@ export function timeline_a_section_4_stanza_1_phrase(timeline) {
             from: {
               x: 0,
               y: 2,
-              z: 4,
+              z: 3,
             },
             to: {
               x: 0,
               y: 1,
-              z: 4,
+              z: 3,
             },
           },
           {
@@ -30,30 +30,20 @@ export function timeline_a_section_4_stanza_1_phrase(timeline) {
             from: {
               x: 0,
               y: 0,
-              z: -(Math.PI / 16),
+              z: -(Math.PI / 32),
             },
             to: {
               x: 0,
               y: 0,
-              z: Math.PI / 16,
+              z: Math.PI / 32,
             },
           },
         ],
-        // startAt: 0,
-        // endAt: 1250
-        // startAt: 0,
-        // endAt: 1.25,
-        // startAt: 16.9,
-        // endAt: 23.7,
         startAt: 38.5,
         endAt: 40,
       },
     ],
     started: false,
-    // startAt: 0,
-    // endAt: 1.25,
-    // startAt: 16.9,
-    // endAt: 23.7,
     startAt: 38.5,
     endAt: 40,
   };

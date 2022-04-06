@@ -24,6 +24,7 @@ import Light1 from "Experience/World/WorldObjectInstances/Light1";
 import Globe from "Experience/World/WorldObjectInstances/Globe";
 import Background from "Experience/World/WorldObjectInstances/Background";
 import Cross from "Experience/World/WorldObjectInstances/Cross";
+import WitherberryLogo from "./WorldObjectInstances/WitherberryLogo";
 
 import Line1 from "Experience/World/WorldObjectInstances/Line1";
 import Line2 from "Experience/World/WorldObjectInstances/Line2";
@@ -42,6 +43,7 @@ export function initializeWorldObjects(reusables) {
   reusables[INSTANCE_NAMES.GLOBE] = Globe;
   reusables[INSTANCE_NAMES.BACKGROUND] = Background;
   reusables[INSTANCE_NAMES.CROSS] = Cross;
+  reusables[INSTANCE_NAMES.WITHERBERRY_LOGO] = WitherberryLogo;
 
   reusables[INSTANCE_NAMES.CAMERA] = Camera;
 

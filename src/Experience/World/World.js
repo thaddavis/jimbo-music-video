@@ -14,7 +14,7 @@ import { timeline_a_section_3_stanza } from "Experience/Timeline/Sections/A_Sect
 import { timeline_a_section_ad_lib_3_for_you } from "Experience/Timeline/Sections/A_Section/ad_libs/3_for_you";
 import { timeline_a_section_4_stanza } from "Experience/Timeline/Sections/A_Section/4_Stanza";
 import { timeline_b_section_cutaway_1_flag } from "Experience/Timeline/Sections/B_Section/Cutaways/1_Flag";
-import { timeline_b_section_backgrounds } from "Experience/Timeline/Sections/B_Section/Backgrounds";
+// import { timeline_b_section_backgrounds } from "Experience/Timeline/Sections/B_Section/Backgrounds";
 import { timeline_light_1 } from "Experience/Timeline/Lights/Light1";
 // import { timeline_light_2 } from "Experience/Timeline/Lights/Light2";
 
@@ -26,6 +26,8 @@ import { timeline_bridge_white_background } from "Experience/Timeline/Sections/B
 
 import { timeline_bridge_line_1 } from "Experience/Timeline/Sections/Bridge/Line1";
 import { timeline_bridge_line_2 } from "Experience/Timeline/Sections/Bridge/Line2";
+
+import { timeline_cross_to_english_cross } from "Experience/Sequences/CrossToEnglishCross";
 
 // GLOBALS
 import { timeline_camera } from "../Timeline/Camera/Camera";
@@ -48,36 +50,40 @@ export default class World {
     // Wait for resources
     this.resources.on("ready", () => {
       // Setup
-      // vvv NEW TIMELINE vvv
+      // // vvv NEW TIMELINE vvv
       initializeWorldObjects(this.reusables);
 
-      timeline_intro(this.timelineOfEvents);
-      timeline_a_section_background(this.timelineOfEvents);
-      timeline_a_section_1_stanza(this.timelineOfEvents);
-      timeline_a_section_ad_lib_1_for_you_for_you(this.timelineOfEvents);
-      timeline_a_section_2_stanza(this.timelineOfEvents);
-      timeline_a_section_ad_lib_2_for_you_for_you(this.timelineOfEvents);
-      timeline_a_section_3_stanza(this.timelineOfEvents);
-      timeline_a_section_ad_lib_3_for_you(this.timelineOfEvents);
-      timeline_a_section_4_stanza(this.timelineOfEvents);
+      // timeline_intro(this.timelineOfEvents);
+      // // timeline_a_section_background(this.timelineOfEvents);
+      // timeline_a_section_1_stanza(this.timelineOfEvents);
+      // timeline_a_section_ad_lib_1_for_you_for_you(this.timelineOfEvents);
+      // timeline_a_section_2_stanza(this.timelineOfEvents);
+      // // timeline_a_section_ad_lib_2_for_you_for_you(this.timelineOfEvents);
+      // timeline_a_section_3_stanza(this.timelineOfEvents);
+      // // timeline_a_section_ad_lib_3_for_you(this.timelineOfEvents);
+      // timeline_a_section_4_stanza(this.timelineOfEvents);
 
-      timeline_light_1(this.timelineOfEvents);
-      /* v can't handle this v */
-      // timeline_light_2(this.timelineOfEvents);
-      /* ^ ^ */
-      timeline_camera(this.timelineOfEvents);
+      // timeline_light_1(this.timelineOfEvents);
+      // /* v can't handle this v */
+      // // timeline_light_2(this.timelineOfEvents);
+      // /* ^ ^ */
+      // timeline_camera(this.timelineOfEvents);
 
-      timeline_b_section_cutaway_1_flag(this.timelineOfEvents);
-      timeline_b_section_backgrounds(this.timelineOfEvents);
-      timeline_b_section_1_stanza(this.timelineOfEvents);
-      timeline_b_section_2_stanza(this.timelineOfEvents);
+      // timeline_b_section_cutaway_1_flag(this.timelineOfEvents);
+      // // timeline_b_section_backgrounds(this.timelineOfEvents);
+      // timeline_b_section_1_stanza(this.timelineOfEvents);
+      // timeline_b_section_2_stanza(this.timelineOfEvents);
 
-      // timeline_bridge_cross(this.timelineOfEvents);
-      timeline_bridge_white_background(this.timelineOfEvents);
+      // // timeline_bridge_cross(this.timelineOfEvents);
+      // timeline_bridge_white_background(this.timelineOfEvents);
 
-      timeline_bridge_line_1(this.timelineOfEvents);
-      timeline_bridge_line_2(this.timelineOfEvents);
-      // ^^^ NEW TIMELINE ^^^
+      // timeline_bridge_line_1(this.timelineOfEvents);
+      // timeline_bridge_line_2(this.timelineOfEvents);
+      // // ^^^ NEW TIMELINE ^^^
+
+      // vvv Alt Sequence vvv
+      timeline_cross_to_english_cross(this.timelineOfEvents);
+      // ^^^ Alt Sequence ^^^
 
       this.environment = new Environment();
     });

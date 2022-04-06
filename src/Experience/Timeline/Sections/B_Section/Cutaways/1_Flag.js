@@ -56,7 +56,7 @@ export function timeline_b_section_cutaway_1_flag(timeline) {
           },
         ],
         startAt: 57.7,
-        endAt: 59.3,
+        endAt: 59.4,
       },
     ],
     started: false,

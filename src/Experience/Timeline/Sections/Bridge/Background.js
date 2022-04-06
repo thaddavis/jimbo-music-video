@@ -42,14 +42,15 @@ export function timeline_bridge_white_background(timeline) {
         // endAt: 1250
         // startAt: 0,
         // endAt: 1.25,
-        startAt: 72.6,
-        endAt: 74.8,
+        startAt: 72.8,
+        // endAt: 1:54.3,
+        endAt: 114.0,
       },
     ],
     started: false,
     // startAt: 0,
     // endAt: 1.25,
-    startAt: 72.6,
-    endAt: 74.8,
+    startAt: 72.8,
+    endAt: 114.0,
   };
 }

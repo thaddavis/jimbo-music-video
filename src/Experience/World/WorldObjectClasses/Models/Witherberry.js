@@ -1,52 +1,62 @@
 import * as THREE from "three";
 import Experience from "Experience/Experience.js";
 
-// import { executeEffect } from 'Experience/Utils/Effect.js'
-// import { initializeEffect } from 'Experience/Utils/InitializeEffect.js'
-
+import { executeEffects } from "Experience/Utils/ExecuteEffects.js";
+import { executeInitializeEffects } from "Experience/Utils/ExecuteInitializeEffects.js";
+import { Config } from "Experience/Config/index.js";
+import { get } from "lodash";
 export default class WitherberryLogo {
-  constructor(timelineMetadata) {
-    this.timelineMetadata = timelineMetadata;
+  constructor(initialProperties) {
     this.experience = new Experience();
     this.scene = this.experience.scene;
     this.resources = this.experience.resources;
+    this.instanceName = initialProperties.instanceName;
 
     this.resource = this.resources.items.witherberryLogo;
 
-    this.setModel();
-
-    this.start();
+    this.setModel(initialProperties);
   }
 
   setModel() {
     this.model = this.resource.scene;
-    // this.model.scale.set(1, 1, 1)
-    // this.model.position.set(0,-4, 2)
-    // this.model.position.set(0,0,0)
 
-    this.setInitialProperties();
+    this.model.scale.set(1, 1, 1);
+    this.model.position.set(0, -4, 2);
+    this.model.position.set(0, 0, 0);
 
     this.scene.add(this.model);
 
     this.model.traverse((child) => {
       if (child instanceof THREE.Mesh) {
-        child.castShadow = true;
+        // child.castShadow = true;
+        child.castShadow = false;
       }
     });
   }
 
-  setInitialProperties() {
-    // initializeEffect(this.model, this.timelineMetadata, this.experience.time)
+  initializeEffects(effects) {
+    executeInitializeEffects(this, effects, this.experience.time);
   }
 
-  start() {
-    // console.log('starting Floor.js', this.mesh.position)
-    // debugger
+  update(effects) {
+    console.log("update WitherberryLogo.js");
+
+    executeEffects(
+      this,
+      effects,
+      this.experience.time.delta,
+      this.experience.time.elapsed
+    );
   }
 
-  update() {
-    // debugger
-    // executeEffect(this.model, this.timelineMetadata, this.experience.time.delta, this.experience.time)
+  moveOffStage() {
+    const offStagePlacement = get(Config, "offStage");
+
+    this.model.position.set(
+      offStagePlacement.x,
+      offStagePlacement.y,
+      offStagePlacement.z
+    );
   }
 
   destroy() {

@@ -22,19 +22,19 @@ export function timeline_a_section_1_stanza_2_phrase(timeline) {
             to: {
               x: 0,
               y: 2,
-              z: 4,
+              z: 3,
             },
           },
           {
             path: "mesh.rotation",
             from: {
               x: 0,
-              y: -(Math.PI / 16),
+              y: -(Math.PI / 32),
               z: 0,
             },
             to: {
               x: 0,
-              y: Math.PI / 16,
+              y: Math.PI / 32,
               z: 0,
             },
           },

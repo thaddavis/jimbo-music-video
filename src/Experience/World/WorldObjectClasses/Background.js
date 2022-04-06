@@ -42,6 +42,7 @@ export default class Background {
   }
 
   update(effects) {
+    debugger;
     executeEffects(
       this,
       effects,

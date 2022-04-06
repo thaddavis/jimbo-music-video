@@ -17,23 +17,23 @@ export function timeline_a_section_1_stanza_1_phrase(timeline) {
             from: {
               x: -1,
               y: -2,
-              z: 4,
+              z: 3,
             },
             to: {
               x: 0,
               y: 2,
-              z: 4,
+              z: 3,
             },
           },
           {
             path: "mesh.rotation",
             from: {
-              x: -(Math.PI / 16),
+              x: -(Math.PI / 32),
               y: 0,
               z: 0,
             },
             to: {
-              x: Math.PI / 16,
+              x: Math.PI / 32,
               y: 0,
               z: 0,
             },

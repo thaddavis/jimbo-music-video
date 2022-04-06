@@ -42,14 +42,14 @@ export function timeline_b_section_backgrounds(timeline) {
         // startAt: 0,
         // endAt: 1.25,
         startAt: 45.5,
-        endAt: 51.2,
+        endAt: 50.8,
       },
     ],
     started: false,
     // startAt: 0,
     // endAt: 1.25,
     startAt: 45.5,
-    endAt: 51.2,
+    endAt: 50.8,
   };
 
   timeline[uuidv4()] = {
@@ -89,14 +89,14 @@ export function timeline_b_section_backgrounds(timeline) {
         // endAt: 1250
         // startAt: 0,
         // endAt: 1.25,
-        startAt: 51.2,
+        startAt: 50.8,
         endAt: 57.7,
       },
     ],
     started: false,
     // startAt: 0,
     // endAt: 1.25,
-    startAt: 51.2,
+    startAt: 50.8,
     endAt: 57.7,
   };
 
@@ -137,14 +137,14 @@ export function timeline_b_section_backgrounds(timeline) {
         // endAt: 1250
         // startAt: 0,
         // endAt: 1.25,
-        startAt: 59.3,
+        startAt: 59.4,
         endAt: 65.2,
       },
     ],
     started: false,
     // startAt: 0,
     // endAt: 1.25,
-    startAt: 59.3,
+    startAt: 59.4,
     endAt: 65.2,
   };
 
@@ -186,13 +186,13 @@ export function timeline_b_section_backgrounds(timeline) {
         // startAt: 0,
         // endAt: 1.25,
         startAt: 65.2,
-        endAt: 72.5,
+        endAt: 72.8,
       },
     ],
     started: false,
     // startAt: 0,
     // endAt: 1.25,
     startAt: 65.2,
-    endAt: 72.6,
+    endAt: 72.8,
   };
 }

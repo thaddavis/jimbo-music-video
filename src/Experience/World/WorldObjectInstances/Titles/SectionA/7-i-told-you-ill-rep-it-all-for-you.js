@@ -6,7 +6,7 @@ export default {
   theClass: Text,
   initialProperties: {
     instanceName: INSTANCE_NAMES.SECTION_A_PHRASE_7,
-    text: "I told you I'll rep it all for you",
+    text: "Told you I'll rep it all for you",
     position: new Vector3(1, 1, 1),
     scale: new Vector3(1, 1, 1),
   },

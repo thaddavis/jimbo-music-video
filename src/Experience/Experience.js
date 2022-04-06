@@ -40,7 +40,9 @@ if (get(Config, "exportMode")) {
         quality: 99,
         format: "webm", // webm || gif || png || jpg || webm-mediarecorder
         workersPath: "../../src/",
-        timeLimit: 20,
+        // timeLimit: 140,
+        // timeLimit: 75,
+        timeLimit: 8,
         frameLimit: 0,
         autoSaveTime: 0,
         onProgress: function (p) {
@@ -71,10 +73,12 @@ if (get(Config, "exportMode")) {
     dVB = document.getElementById("download-video-button");
 
   let peaksOverview = document.getElementById("overview-container");
+  let peaksZoomview = document.getElementById("zoomview-container");
 
   sCB.style.display = "none";
   dVB.style.display = "none";
   if (peaksOverview) peaksOverview.style.opacity = 100;
+  if (peaksZoomview) peaksZoomview.style.opacity = 100;
 }
 
 export default class Experience {
@@ -140,7 +144,7 @@ export default class Experience {
   update() {
     // this.stats.begin();
 
-    console.log("Experience.js update");
+    // console.log("Experience.js update");
 
     this.camera.update();
     this.world.update();

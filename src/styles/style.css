@@ -23,6 +23,7 @@ body {
 
 #zoomview-container {
     height: 200px;
+    opacity: 0;
 }
 
 #overview-container {

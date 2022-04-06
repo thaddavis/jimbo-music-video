@@ -56,12 +56,12 @@ export function timeline_bridge_cross(timeline) {
         ],
         // startAt: 0,
         // endAt: 1250
-        startAt: 72.6,
+        startAt: 72.8,
         endAt: 74.8,
       },
     ],
     started: false,
-    startAt: 72.6,
+    startAt: 72.8,
     endAt: 74.8,
   };
 }

@@ -46,20 +46,18 @@ export function timeline_camera(timeline) {
     instanceName: INSTANCE_NAMES.CAMERA,
     effects: [
       {
-        id: "test",
         name: EFFECTS.GLOBAL_FROM_TO,
         properties: [
           {
             path: "instance.position",
             from: {
               //   x: -3,
-              x: -10,
+              x: -4,
               y: 0,
               z: 20,
             },
             to: {
-              //   x: 3,
-              x: 10,
+              x: 4,
               y: 0,
               z: 20,
             },
@@ -111,14 +109,14 @@ export function timeline_camera(timeline) {
         // startAt: 0,
         // endAt: 1.25,
         startAt: 25.9,
-        endAt: 31.5,
+        endAt: 30.5,
       },
     ],
     started: false,
     // startAt: 0,
     // endAt: 1.25,
     startAt: 25.9,
-    endAt: 31.5,
+    endAt: 30.5,
   };
 
   // --- --- --- --- --- --- --- ---
@@ -148,14 +146,14 @@ export function timeline_camera(timeline) {
         // endAt: 1250
         // startAt: 0,
         // endAt: 1.25,
-        startAt: 31.5,
+        startAt: 30.5,
         endAt: 44.7,
       },
     ],
     started: false,
     // startAt: 0,
     // endAt: 1.25,
-    startAt: 31.5,
+    startAt: 30.5,
     endAt: 44.7,
   };
 
@@ -173,12 +171,12 @@ export function timeline_camera(timeline) {
             from: {
               x: 0,
               y: 0,
-              z: 1,
+              z: 2,
             },
             to: {
               x: 0,
               y: 0,
-              z: 1,
+              z: 2,
             },
           },
         ],
@@ -288,15 +286,13 @@ export function timeline_camera(timeline) {
             },
           },
         ],
-        startAt: 59.3,
-        endAt: 72.6,
+        startAt: 59.4,
+        endAt: 72.8,
       },
     ],
     started: false,
-    // startAt: 0,
-    // endAt: 1.25,
-    startAt: 59.3,
-    endAt: 72.6,
+    startAt: 59.4,
+    endAt: 72.8,
   };
 
   // --- --- --- --- --- --- --- ---
@@ -322,15 +318,42 @@ export function timeline_camera(timeline) {
             },
           },
         ],
-        startAt: 72.6,
+        startAt: 72.8,
         endAt: 179,
       },
     ],
     started: false,
-    // startAt: 0,
-    // endAt: 1.25,
-    startAt: 72.6,
-    // endAt: 179,
-    endAt: 73,
+    startAt: 72.8,
+    endAt: 179,
   };
+
+  // timeline[uuidv4()] = {
+  //   isGlobal: true,
+  //   instanceName: INSTANCE_NAMES.CAMERA,
+  //   effects: [
+  //     {
+  //       name: EFFECTS.GLOBAL_FROM_TO,
+  //       properties: [
+  //         {
+  //           path: "instance.position",
+  //           from: {
+  //             x: 0,
+  //             y: 0,
+  //             z: 20,
+  //           },
+  //           to: {
+  //             x: 0,
+  //             y: 0,
+  //             z: 20,
+  //           },
+  //         },
+  //       ],
+  //       startAt: 114.0,
+  //       endAt: 179,
+  //     },
+  //   ],
+  //   started: false,
+  //   startAt: 114.0,
+  //   endAt: 179,
+  // };
 }
